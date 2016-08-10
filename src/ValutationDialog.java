@@ -59,6 +59,8 @@ public class ValutationDialog extends JDialog {
     private void onOK() {
 // add your code here
         dispose();
+        System.out.println("Show only on develop - exit");
+        System.exit(0);
     }
 
     private void onCancel() {
