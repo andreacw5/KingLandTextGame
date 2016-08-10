@@ -38,19 +38,19 @@ public class Main {
         monitor1.pack();
         monitor1.setVisible(true);
 
+        // LANCIO DIALOG LOADING
+        LoadingScreen loading = new LoadingScreen();
+        loading.pack();
+        loading.setVisible(true);
+
         // Il Dialog Welcome lancia in cascata i dialog successivi in sequenza!
 
         // AVVIO DI UN GUI FORM
         //SampleForm myform = new SampleForm();
 
         // Avvio dell' applicazione
-        System.out.println(messages.getString("pause"));
-        Scanner alpha = new Scanner(System.in);
-        int start = alpha.nextInt();
-        if (start == 1) System.out.println(messages.getString("run"));
-        if (start < 1 ) System.out.println(messages.getString("notRun"));
 
-        // Dati dei PNG
+        // CREAZIONE DI RANDOM - NOMI PLAYER
 
         // Dati PLAYER
         Hero hero1 = new Hero(messages.getString("hero0"));
