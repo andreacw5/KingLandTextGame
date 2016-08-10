@@ -1,10 +1,38 @@
-import java.util.Random;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.Scanner;
+import java.util.*;
+
+/**
+ * King Land, The Roleplay gaming
+ *
+ * Build V. 0.1.0 - DEVELOP
+ *
+ * @Author:AndreaZago
+ */
 
 public class Main {
 
     public static void main(String[] args)
     {
+        String language;
+        String country;
+
+        if (args.length != 2) {
+            language = new String("it");
+            country = new String("IT");
+        } else {
+            language = new String(args[0]);
+            country = new String(args[1]);
+        }
+
+        Locale currentLocale;
+        ResourceBundle messages;
+
+        currentLocale = new Locale(language, country);
+
+        messages = ResourceBundle.getBundle("MessagesBundle", currentLocale);
+
         // LANCIO DIALOG WELCOME
         WelcomeDialog monitor1 = new WelcomeDialog();
         monitor1.pack();
@@ -12,21 +40,23 @@ public class Main {
 
         // Il Dialog Welcome lancia in cascata i dialog successivi in sequenza!
 
+        // AVVIO DI UN GUI FORM
         //SampleForm myform = new SampleForm();
+
         // Avvio dell' applicazione
-        System.out.println(" --- PREMI 1 PER AVVIARE ---");
+        System.out.println(messages.getString("pause"));
         Scanner alpha = new Scanner(System.in);
         int start = alpha.nextInt();
-        if (start == 1) System.out.println(" --- AVVIO IN CORSO! --- ");
-        if (start < 1 ) System.out.println("Brutto!"); //da compilare meglio l' annullamento!
+        if (start == 1) System.out.println(messages.getString("run"));
+        if (start < 1 ) System.out.println(messages.getString("notRun"));
 
         // Dati dei PNG
 
         // Dati PLAYER
-        Hero hero1 = new Hero("Il rè della Roccia");
-        Hero hero2 = new Hero("Il rè della Valle");
-        Hero hero4 = new Hero("Il rè del Fuoco");
-        Hero hero5 = new Hero("Il rè della Sabbia");
+        Hero hero1 = new Hero(messages.getString("hero0"));
+        Hero hero2 = new Hero(messages.getString("hero1"));
+        Hero hero4 = new Hero(messages.getString("hero2"));
+        Hero hero5 = new Hero(messages.getString("hero3"));
 
         // Array eroi
         Hero[] theHero = new Hero[4];
@@ -41,13 +71,13 @@ public class Main {
         int herogen = k.nextInt(3);
 
         // Dati MONSTER
-        Monster moster1 = new Monster("Il Grande Pollo");
-        Monster moster2 = new Monster("Il Leone di Plastica");
-        Monster moster4 = new Monster("Il Bruttone");
-        Monster moster5 = new Monster("La Trozzona");
-        Monster moster6 = new Monster("L' Orco Malvagio");
-        Monster moster7 = new Monster("Il Brutto Bananone");
-        Monster moster8 = new Monster("Il Mago delle Tuniche");
+        Monster moster1 = new Monster(messages.getString("monster0"));
+        Monster moster2 = new Monster(messages.getString("monster1"));
+        Monster moster4 = new Monster(messages.getString("monster2"));
+        Monster moster5 = new Monster(messages.getString("monster3"));
+        Monster moster6 = new Monster(messages.getString("monster4"));
+        Monster moster7 = new Monster(messages.getString("monster5"));
+        Monster moster8 = new Monster(messages.getString("monster6"));
 
         // Array mostri
         Monster[] theMonsters = new Monster[7];
@@ -66,19 +96,18 @@ public class Main {
         int yell = n.nextInt(6);
 
         // Print delle Statistiche a Monitor
-        System.out.println("Ecco i personaggi! ");
+        System.out.println(messages.getString("characters"));
         // Player
-        System.out.println("Il tuo eroe è "+ theHero[herogen].name);
+        System.out.println((messages.getString("yourHero"))+" "+ theHero[herogen].name);
 
         // Monster
-        System.out.println("Il mostro che affronterai in combattimento è "+ theMonsters[yell].name);
+        System.out.println((messages.getString("yourEnemy"))+" "+ theMonsters[yell].name);
         // Interruzione per lettura 2:
 
-        System.out.println(" --- Quando sei pronto premi 1! --- ");
+        System.out.println(messages.getString("ifReady"));
         Scanner charlie = new Scanner(System.in);
         int end2 = charlie.nextInt();
-        if (end2 == 1) System.out.println(" --- AVVIO BATTAGLIA! --- ");
-        if (end2 < 1 ) System.out.println("Brutto!"); //da compilare meglio l' annullamento!
+        if (end2 == 1) System.out.println(messages.getString("startBattle"));
 
         // Battaglia tra personaggi
 
@@ -90,53 +119,52 @@ public class Main {
         {
 
             Random generator = new Random();
-            System.out.println("------------");
             // Monster
-            System.out.println("--- MOSTRO ---");
-            System.out.println("Il tuo avversario è "+ theMonsters[yell].name+" (Atk: "+theMonsters[yell].attack()+" - Dif: "+theMonsters[yell].defence()+" - HP: "+theMonsters[yell].healt()+")");
+            System.out.println(messages.getString("headerMonster"));
+            System.out.println((messages.getString("yourEnemy"))+" "+ theMonsters[yell].name+" (Atk: "+theMonsters[yell].attack()+" - Dif: "+theMonsters[yell].defence()+" - HP: "+theMonsters[yell].healt()+")");
 
             // Player
-            System.out.println("--- EROE ---");
-            System.out.println("Il tuo eroe è "+ theHero[herogen].name+" (Atk: "+theHero[herogen].attack()+" - Dif: "+theHero[herogen].defence()+" - HP: "+theHero[herogen].healt()+")");
+            System.out.println(messages.getString("headerHero"));
+            System.out.println((messages.getString("yourHero"))+" "+ theHero[herogen].name+" (Atk: "+theHero[herogen].attack()+" - Dif: "+theHero[herogen].defence()+" - HP: "+theHero[herogen].healt()+")");
 
-            System.out.println("------------");
+            System.out.println(messages.getString("bar"));
             boolean attacker = generator.nextBoolean();
             if (attacker) {
-                System.out.println(theHero[herogen].name+" sferra un attacco massiccio!");
+                System.out.println(theHero[herogen].name+" "+(messages.getString("attack1")));
                 int dice = generator.nextInt(6) + 1 + generator.nextInt(6) + 1;
                 int attackValue = theHero[herogen].attack() + dice;
-                System.out.println("Il tuo attacco di "+theHero[herogen].attack()+" danneggia il mostro! ");
-                System.out.println("Danni Critici aggiuntivi al bersaglio di "+dice);
+                System.out.println((messages.getString("enemyAttack"))+" "+theHero[herogen].attack()+" "+(messages.getString("attack2")));
+                System.out.println((messages.getString("critical"))+" "+dice);
                 if (attackValue > theMonsters[yell].defence()) {
-                    System.out.println("L'Attacco di"+theHero[herogen].name+" è stato un successo! Abbiamo inflitto danni");
+                    System.out.println((messages.getString("yourAttack"))+" "+theHero[herogen].name+" "+(messages.getString("attack3")));
                     int restmonster1 = theMonsters[yell].healt() - theHero[herogen].attack();
 
                     if (restmonster1 >= 0){
-                        System.out.println("Il mostro è MORTO!!!!");
+                        System.out.println(messages.getString("deadMonster"));
                     }
 
-                    System.out.println("Vita rimanente all mostro: " + restmonster1);
+                    System.out.println((messages.getString("healtViewer")) +" "+ restmonster1);
                 } else {
-                    System.out.println("Il tuo attacco non ha avuto successo! ");
+                    System.out.println(messages.getString("notSuccess"));
                 }
             }else {
-                System.out.println(theMonsters[yell].name+" ti sta attaccando!");
+                System.out.println(theMonsters[yell].name+" "+(messages.getString("underAttack")));
                 int dice = generator.nextInt(6) + 1 + generator.nextInt(6) + 1;
                 int attackValue = theMonsters[yell].attack() + dice;
-                System.out.println("Critico: " + dice);
-                System.out.println("Attacco del mostro: " + theMonsters[yell].attack());
+                System.out.println((messages.getString("criticalDefence"))+" "+ dice);
+                System.out.println((messages.getString("yourEnemyAttack"))+" " + theMonsters[yell].attack());
                 if (attackValue > theHero[herogen].defence()) {
-                    System.out.println("L' attacco del mostro ha avuto SUCCESSO!");
+                    System.out.println(messages.getString("successAttack"));
                     int resthero1 = theHero[herogen].healt() - theMonsters[yell].attack();
-                    System.out.println("Vita rimanente all' eroe: " + resthero1);
+                    System.out.println((messages.getString("healtHViewer"))+" " + resthero1);
                 } else {
-                    System.out.println("l' attacco del mostro è fallito!");
+                    System.out.println(messages.getString("lostAttack"));
                 }
 
             }
-            System.out.println("------------");
+            System.out.println(messages.getString("bar"));
             // REPEAT CONFIRM
-            System.out.println(" --- Per riprovare premi 1 altrimenti per uscire premi 2! --- ");
+            System.out.println(messages.getString("restart"));
             Scanner delta = new Scanner(System.in);
             int ws = delta.nextInt();
             if (ws == 2){mistic = false;
@@ -148,13 +176,20 @@ public class Main {
 
         boolean GG = true;
 
-        System.out.println(" VALUTA L' APPLICAZIONE: ");
+        ValutationDialog endTable = new ValutationDialog();
+        endTable.pack();
+        endTable.setVisible(true);
 
-        System.out.println("Ti è piaciuto il gioco? Valutalo da 1 a 10 ");
-        Scanner sc1 = new Scanner(System.in);
-        int review = sc1.nextInt();
-            System.out.println("Grazie della valutazione!");
-            System.out.println(" ---------------- ");
-            System.out.println(" - CHIUSURA APPLICAZIONE - ");
+        /**
+         *  System.out.println(messages.getString("valuationTitle"));
+         *
+         *  System.out.println(messages.getString("valuation"));
+         *  Scanner sc1 = new Scanner(System.in);
+         *  int review = sc1.nextInt();
+         *  System.out.println(messages.getString("valuationThanks"));
+         *  System.out.println(messages.getString("bar"));
+         *  System.out.println(messages.getString("close"));
+         */
+
     }
 }
