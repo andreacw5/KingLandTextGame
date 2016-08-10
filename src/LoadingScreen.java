@@ -2,23 +2,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class ValutationDialog extends JDialog {
+public class LoadingScreen extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JButton a1Button;
-    private JButton a5Button;
-    private JButton a3Button;
-    private JButton a4Button;
-    private JButton a8Button;
-    private JButton a9Button;
-    private JButton a2Button;
-    private JButton a7Button;
     public static final int WIDTH=300;
     public static final int HEIGHT=WIDTH/12*9;
     public static final int SCALE=3;
 
-    public ValutationDialog() {
+    public LoadingScreen() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -59,8 +51,6 @@ public class ValutationDialog extends JDialog {
     private void onOK() {
 // add your code here
         dispose();
-        System.out.println("Show only on develop - exit");
-        System.exit(0);
     }
 
     private void onCancel() {
@@ -68,12 +58,10 @@ public class ValutationDialog extends JDialog {
         dispose();
     }
 
-
     public static void main(String[] args) {
-        ValutationDialog dialog = new ValutationDialog();
+        LoadingScreen dialog = new LoadingScreen();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);
     }
-
 }

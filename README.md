@@ -18,4 +18,8 @@ Inizio sviluppo
 * Rimosso Logo (King.png)
 * Aggiunto Dialog Valutativo finale
 * Miglioramento spaziature del testo
-
+* Miglioramento WelcomeDialog
+* Introduzione miglioramento grafico Dialog
+* Inserimento LoadingDialog
+* Aggiunto logo King Black, White 200px, Loading.gif, loading, logo testuale
+* Revisione codice Main.java
