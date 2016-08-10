@@ -92,7 +92,7 @@ public class Main {
             Random generator = new Random();
             System.out.println("------------");
             // Monster
-            System.out.println("--- MOSTRO ---");
+            System.out.println("--- MOSTRO fhsdkjhfjksd f---");
             System.out.println("Il tuo avversario è "+ theMonsters[yell].name+" (Atk: "+theMonsters[yell].attack()+" - Dif: "+theMonsters[yell].defence()+" - HP: "+theMonsters[yell].healt()+")");
 
             // Player
