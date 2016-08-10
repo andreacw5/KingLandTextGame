@@ -121,44 +121,44 @@ public class Main {
             Random generator = new Random();
             // Monster
             System.out.println(messages.getString("headerMonster"));
-            System.out.println("Il tuo avversario è "+ theMonsters[yell].name+" (Atk: "+theMonsters[yell].attack()+" - Dif: "+theMonsters[yell].defence()+" - HP: "+theMonsters[yell].healt()+")");
+            System.out.println((messages.getString("yourEnemy"))+" "+ theMonsters[yell].name+" (Atk: "+theMonsters[yell].attack()+" - Dif: "+theMonsters[yell].defence()+" - HP: "+theMonsters[yell].healt()+")");
 
             // Player
             System.out.println(messages.getString("headerHero"));
-            System.out.println("Il tuo eroe è "+ theHero[herogen].name+" (Atk: "+theHero[herogen].attack()+" - Dif: "+theHero[herogen].defence()+" - HP: "+theHero[herogen].healt()+")");
+            System.out.println((messages.getString("yourHero"))+" "+ theHero[herogen].name+" (Atk: "+theHero[herogen].attack()+" - Dif: "+theHero[herogen].defence()+" - HP: "+theHero[herogen].healt()+")");
 
             System.out.println(messages.getString("bar"));
             boolean attacker = generator.nextBoolean();
             if (attacker) {
-                System.out.println(theHero[herogen].name+" sferra un attacco massiccio!");
+                System.out.println(theHero[herogen].name+" "+(messages.getString("attack1")));
                 int dice = generator.nextInt(6) + 1 + generator.nextInt(6) + 1;
                 int attackValue = theHero[herogen].attack() + dice;
-                System.out.println("Il tuo attacco di "+theHero[herogen].attack()+" danneggia il mostro! ");
-                System.out.println("Danni Critici aggiuntivi al bersaglio di "+dice);
+                System.out.println((messages.getString("enemyAttack"))+" "+theHero[herogen].attack()+" "+(messages.getString("attack2")));
+                System.out.println((messages.getString("critical"))+" "+dice);
                 if (attackValue > theMonsters[yell].defence()) {
-                    System.out.println("L'Attacco di"+theHero[herogen].name+" è stato un successo! Abbiamo inflitto danni");
+                    System.out.println((messages.getString("yourAttack"))+" "+theHero[herogen].name+" "+(messages.getString("attack3")));
                     int restmonster1 = theMonsters[yell].healt() - theHero[herogen].attack();
 
                     if (restmonster1 >= 0){
-                        System.out.println("Il mostro è MORTO!!!!");
+                        System.out.println(messages.getString("deadMonster"));
                     }
 
-                    System.out.println("Vita rimanente all mostro: " + restmonster1);
+                    System.out.println((messages.getString("healtViewer")) +" "+ restmonster1);
                 } else {
-                    System.out.println("Il tuo attacco non ha avuto successo! ");
+                    System.out.println(messages.getString("notSuccess"));
                 }
             }else {
-                System.out.println(theMonsters[yell].name+" ti sta attaccando!");
+                System.out.println(theMonsters[yell].name+" "+(messages.getString("underAttack")));
                 int dice = generator.nextInt(6) + 1 + generator.nextInt(6) + 1;
                 int attackValue = theMonsters[yell].attack() + dice;
-                System.out.println("Critico: " + dice);
-                System.out.println("Attacco del mostro: " + theMonsters[yell].attack());
+                System.out.println((messages.getString("criticalDefence"))+" "+ dice);
+                System.out.println((messages.getString("yourEnemyAttack"))+" " + theMonsters[yell].attack());
                 if (attackValue > theHero[herogen].defence()) {
-                    System.out.println("L' attacco del mostro ha avuto SUCCESSO!");
+                    System.out.println(messages.getString("successAttack"));
                     int resthero1 = theHero[herogen].healt() - theMonsters[yell].attack();
-                    System.out.println("Vita rimanente all' eroe: " + resthero1);
+                    System.out.println((messages.getString("healtHViewer"))+" " + resthero1);
                 } else {
-                    System.out.println("l' attacco del mostro è fallito!");
+                    System.out.println(messages.getString("lostAttack"));
                 }
 
             }
