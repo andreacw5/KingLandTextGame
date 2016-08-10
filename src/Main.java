@@ -176,13 +176,20 @@ public class Main {
 
         boolean GG = true;
 
-        System.out.println(messages.getString("valuationTitle"));
+        ValutationDialog endTable = new ValutationDialog();
+        endTable.pack();
+        endTable.setVisible(true);
 
-        System.out.println(messages.getString("valuation"));
-        Scanner sc1 = new Scanner(System.in);
-        int review = sc1.nextInt();
-        System.out.println(messages.getString("valuationThanks"));
-        System.out.println(messages.getString("bar"));
-        System.out.println(messages.getString("close"));
+        /**
+         *  System.out.println(messages.getString("valuationTitle"));
+         *
+         *  System.out.println(messages.getString("valuation"));
+         *  Scanner sc1 = new Scanner(System.in);
+         *  int review = sc1.nextInt();
+         *  System.out.println(messages.getString("valuationThanks"));
+         *  System.out.println(messages.getString("bar"));
+         *  System.out.println(messages.getString("close"));
+         */
+
     }
 }
