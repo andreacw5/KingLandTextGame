@@ -94,10 +94,4 @@ public class ShowBattleEnemy extends JDialog {
         this.warE7.setText(testo7);
     }
 
-    public static void main(String[] args) {
-        ShowBattleEnemy dialog = new ShowBattleEnemy();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
-    }
 }

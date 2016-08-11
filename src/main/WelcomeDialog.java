@@ -77,10 +77,4 @@ public class WelcomeDialog extends JDialog {
         this.welcome3.setText(wel3);
     }
 
-    public static void main(String[] args) {
-        WelcomeDialog dialog = new WelcomeDialog();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
-    }
 }

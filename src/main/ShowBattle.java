@@ -95,10 +95,4 @@ public class ShowBattle extends JDialog {
         this.war7.setText(testo7);
     }
 
-    public static void main(String[] args) {
-        ShowBattle dialog = new ShowBattle();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
-    }
 }
