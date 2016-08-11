@@ -22,7 +22,6 @@ public class LoadingScreen extends JDialog {
         setResizable(false);
         setLocationRelativeTo(null);
 
-
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onOK();

@@ -6,7 +6,7 @@ import java.util.ResourceBundle;
 
 /**
  * King Land, The Roleplay gaming
- * Build V. 0.1.3 - DEVELOP
+ * Build V. 1.0.0 - DEVELOP
  * @Author:AndreaZago
  */
 
@@ -134,13 +134,8 @@ public class Main {
              * AVVIO ShowBattleDialog
              */
 
-            boolean attacker = generator.nextBoolean();
-
-            if (attacker = true) {
-                System.out.println("War.Dialog.Start.True.Player");
-            } else {
-                System.out.println("War.Dialog.Start.False.Player");
-            }
+            Random generator67 = new Random();
+            boolean attacker = generator67.nextBoolean();
 
             if (attacker) {
 
@@ -148,6 +143,7 @@ public class Main {
                  * ATTACCO
                  */
 
+                System.out.println("War.Dialog.Start.True.Player");
                 ShowBattle player = new ShowBattle();
                 player.setWar1(messages.getString("characters"));
                 player.setWar2(theHero[herogen].name + " " + (messages.getString("attack1")));
@@ -186,6 +182,7 @@ public class Main {
                  * DIFESA
                  */
 
+                System.out.println("War.Dialog.Start.False.Player");
                 ShowBattleEnemy enemy4 = new ShowBattleEnemy();
                 enemy4.setWarE1(messages.getString("characters"));
                 enemy4.setWarE2(theMonsters[yell].name + " " + (messages.getString("underAttack")));
@@ -197,7 +194,7 @@ public class Main {
 
                     // Successo attacco, danni inflitti
                     int resthero1 = theHero[herogen].healt() - theMonsters[yell].attack();
-                    enemy4.setWarE5(messages.getString("successAttack" + ", " + "healtHViewer" + " " + resthero1));
+                    enemy4.setWarE5(messages.getString("successAttack"));
 
                     if (resthero1 >= 0) {
 
