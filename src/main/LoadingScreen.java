@@ -60,10 +60,4 @@ public class LoadingScreen extends JDialog {
         dispose();
     }
 
-    public static void main(String[] args) {
-        LoadingScreen dialog = new LoadingScreen();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
-    }
 }

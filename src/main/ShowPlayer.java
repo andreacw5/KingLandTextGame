@@ -58,10 +58,4 @@ public class ShowPlayer extends JDialog {
         this.show5.setText(testo5);
     }
 
-    public static void main(String[] args) {
-        ShowPlayer dialog = new ShowPlayer();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
-    }
 }
