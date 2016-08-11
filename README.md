@@ -23,3 +23,12 @@ Inizio sviluppo
 * Inserimento LoadingDialog
 * Aggiunto logo King Black, White 200px, Loading.gif, loading, logo testuale
 * Revisione codice java.Main.java
+
+### 1.0.0 ###
+
+* Applicazione interamente usabile in finestra
+* Nuova grafica
+* Testo interamente tradotto in Italiano ed Inglese
+* Revisione completa delle classi
+* Introduzione di 4 nuove immagini
+* Valutazione testuale

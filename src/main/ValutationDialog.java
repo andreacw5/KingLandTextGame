@@ -8,17 +8,9 @@ public class ValutationDialog extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JButton a1Button;
-    private JButton a5Button;
-    private JButton a3Button;
-    private JButton a4Button;
-    private JButton a8Button;
-    private JButton a9Button;
-    private JButton a2Button;
-    private JButton a7Button;
-    private JLabel valuation1;
     private JLabel valuation;
     private JLabel valuationTitle;
+    private JTextField textField1;
     public static final int WIDTH=300;
     public static final int HEIGHT=WIDTH/12*9;
     public static final int SCALE=3;
@@ -64,7 +56,10 @@ public class ValutationDialog extends JDialog {
     private void onOK() {
 // add your code here
         dispose();
-        System.out.println("Show only on develop - exit");
+
+        // Uscita dall'applicazione
+        System.out.println("Bypass.Exit.System");
+        System.out.println("System.Stop.No.Error");
         System.exit(0);
     }
 
@@ -73,24 +68,12 @@ public class ValutationDialog extends JDialog {
         dispose();
     }
 
-    public void setValuationTitle(String testo1){
-        this.valuationTitle.setText(testo1);
+    public void setValuationTitle(String mark1){
+        this.valuationTitle.setText(mark1);
     }
 
-    public void setValuation(String testo2){
-        this.valuation.setText(testo2);
-    }
-
-    public void setValuation1(String testo3){
-        this.valuation1.setText(testo3);
-    }
-
-
-    public static void main(String[] args) {
-        ValutationDialog dialog = new ValutationDialog();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
+    public void setValuation(String mark2){
+        this.valuation.setText(mark2);
     }
 
 }

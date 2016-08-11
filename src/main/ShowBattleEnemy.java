@@ -4,23 +4,22 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class ShowBattle extends JDialog {
+public class ShowBattleEnemy extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
-    private JLabel war1;
-    private JLabel war2;
-    private JLabel war3;
-    private JLabel war4;
-    private JLabel war5;
-    private JLabel war6;
-    private JLabel war7;
     private JButton buttonCancel;
+    private JLabel warE1;
+    private JLabel warE2;
+    private JLabel warE3;
+    private JLabel warE4;
+    private JLabel warE5;
+    private JLabel warE6;
+    private JLabel warE7;
     public static final int WIDTH=300;
     public static final int HEIGHT=WIDTH/12*9;
     public static final int SCALE=3;
 
-
-    public ShowBattle() {
+    public ShowBattleEnemy() {
         setContentPane(contentPane);
         setModal(true);
         setMinimumSize(new Dimension(WIDTH*SCALE,HEIGHT*SCALE));
@@ -67,36 +66,36 @@ public class ShowBattle extends JDialog {
         dispose();
     }
 
-    public void setWar1(String testo1){
-        this.war1.setText(testo1);
+    public void setWarE1(String testo1){
+        this.warE1.setText(testo1);
     }
 
-    public void setWar2(String testo2){
-        this.war2.setText(testo2);
+    public void setWarE2(String testo2){
+        this.warE2.setText(testo2);
     }
 
-    public void setWar3(String testo3){
-        this.war3.setText(testo3);
+    public void setWarE3(String testo3){
+        this.warE3.setText(testo3);
     }
 
-    public void setWar4(String testo4){
-        this.war4.setText(testo4);
+    public void setWarE4(String testo4){
+        this.warE4.setText(testo4);
     }
 
-    public void setWar5(String testo5){
-        this.war5.setText(testo5);
+    public void setWarE5(String testo5){
+        this.warE5.setText(testo5);
     }
 
-    public void setWar6(String testo6){
-        this.war6.setText(testo6);
+    public void setWarE6(String testo6){
+        this.warE6.setText(testo6);
     }
 
-    public void setWar7(String testo7){
-        this.war7.setText(testo7);
+    public void setWarE7(String testo7){
+        this.warE7.setText(testo7);
     }
 
     public static void main(String[] args) {
-        ShowBattle dialog = new ShowBattle();
+        ShowBattleEnemy dialog = new ShowBattleEnemy();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);

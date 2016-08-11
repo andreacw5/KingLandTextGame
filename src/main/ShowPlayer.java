@@ -11,6 +11,8 @@ public class ShowPlayer extends JDialog {
     private JLabel show3;
     private JLabel show2;
     private JLabel show1;
+    private JLabel show5;
+    private JLabel show4;
     public static final int WIDTH=300;
     public static final int HEIGHT=WIDTH/12*9;
     public static final int SCALE=3;
@@ -18,7 +20,6 @@ public class ShowPlayer extends JDialog {
     public ShowPlayer() {
         setContentPane(contentPane);
         setModal(true);
-        getRootPane().setDefaultButton(buttonOK);
         setMinimumSize(new Dimension(WIDTH*SCALE,HEIGHT*SCALE));
         setMaximumSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
         setPreferredSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
@@ -47,6 +48,14 @@ public class ShowPlayer extends JDialog {
 
     public void setShow3(String testo3){
         this.show3.setText(testo3);
+    }
+
+    public void setShow4(String testo4){
+        this.show4.setText(testo4);
+    }
+
+    public void setShow5(String testo5){
+        this.show5.setText(testo5);
     }
 
     public static void main(String[] args) {
