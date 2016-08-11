@@ -1,25 +1,34 @@
+package main;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class WelcomeDialog extends JDialog {
+public class ShowBattle extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
+    private JLabel war1;
+    private JLabel war2;
+    private JLabel war3;
+    private JLabel war4;
+    private JLabel war5;
+    private JLabel war6;
+    private JLabel war7;
+    private JLabel war8;
     private JButton buttonCancel;
     public static final int WIDTH=300;
     public static final int HEIGHT=WIDTH/12*9;
     public static final int SCALE=3;
 
-    public WelcomeDialog() {
+
+    public ShowBattle() {
         setContentPane(contentPane);
         setModal(true);
-        getRootPane().setDefaultButton(buttonOK);
         setMinimumSize(new Dimension(WIDTH*SCALE,HEIGHT*SCALE));
         setMaximumSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
         setPreferredSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
         setResizable(false);
         setLocationRelativeTo(null);
-
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -29,7 +38,7 @@ public class WelcomeDialog extends JDialog {
 
         buttonCancel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.exit(0);
+                onCancel();
             }
         });
 
@@ -47,13 +56,11 @@ public class WelcomeDialog extends JDialog {
                 onCancel();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
     }
 
     private void onOK() {
 // add your code here
         dispose();
-        //SampleForm myform = new SampleForm();
     }
 
     private void onCancel() {
@@ -62,7 +69,7 @@ public class WelcomeDialog extends JDialog {
     }
 
     public static void main(String[] args) {
-        WelcomeDialog dialog = new WelcomeDialog();
+        ShowBattle dialog = new ShowBattle();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);

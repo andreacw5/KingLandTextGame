@@ -1,3 +1,5 @@
+package main;
+
 import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.Scanner;
@@ -6,7 +8,7 @@ import java.util.*;
 /**
  * King Land, The Roleplay gaming
  *
- * Build V. 0.1.0 - DEVELOP
+ * Build V. 0.1.3 - DEVELOP
  *
  * @Author:AndreaZago
  */
@@ -15,6 +17,7 @@ public class Main {
 
     public static void main(String[] args)
     {
+
         String language;
         String country;
 
@@ -33,24 +36,20 @@ public class Main {
 
         messages = ResourceBundle.getBundle("MessagesBundle", currentLocale);
 
+
         // LANCIO DIALOG WELCOME
         WelcomeDialog monitor1 = new WelcomeDialog();
+        monitor1.setWelcome1(messages.getString("welcome"));
+        monitor1.setWelcome2(messages.getString("dial1"));
+        monitor1.setWelcome3(messages.getString("dial2"));
         monitor1.pack();
         monitor1.setVisible(true);
 
-        // LANCIO DIALOG LOADING
-        LoadingScreen loading = new LoadingScreen();
-        loading.pack();
-        loading.setVisible(true);
-
-        // Il Dialog Welcome lancia in cascata i dialog successivi in sequenza!
-
-        // AVVIO DI UN GUI FORM
-        //SampleForm myform = new SampleForm();
-
-        // Avvio dell' applicazione
-
-        // CREAZIONE DI RANDOM - NOMI PLAYER
+        /**
+         *  AVVIO APPLICAZIONE
+         *  Qui di seguito il programma avvia il caricamento delle informazioni sui personaggi,
+         *  In seguito si avvia il LoadingDialog
+         */
 
         // Dati PLAYER
         Hero hero1 = new Hero(messages.getString("hero0"));
@@ -95,25 +94,45 @@ public class Main {
 
         int yell = n.nextInt(6);
 
-        // Print delle Statistiche a Monitor
-        System.out.println(messages.getString("characters"));
-        // Player
-        System.out.println((messages.getString("yourHero"))+" "+ theHero[herogen].name);
+        // LANCIO DIALOG LOADING
+        LoadingScreen loading = new LoadingScreen();
+        loading.pack();
+        loading.setVisible(true);
 
-        // Monster
-        System.out.println((messages.getString("yourEnemy"))+" "+ theMonsters[yell].name);
-        // Interruzione per lettura 2:
+        /**
+         * AVVIO showPlayerDialog
+         * Qui si avvia il dialog ShowPlayer, che mostra i nomi dei personaggi di gioco!
+         */
 
-        System.out.println(messages.getString("ifReady"));
-        Scanner charlie = new Scanner(System.in);
-        int end2 = charlie.nextInt();
-        if (end2 == 1) System.out.println(messages.getString("startBattle"));
+        ShowPlayer caratt = new ShowPlayer();
+        caratt.setShow1(messages.getString("characters"));
+        caratt.setShow2((messages.getString("yourHero"))+" "+ theHero[herogen].name);
+        caratt.setShow3((messages.getString("yourEnemy"))+" "+ theMonsters[yell].name);
+        caratt.pack();
+        caratt.setVisible(true);
 
-        // Battaglia tra personaggi
+        /**
+         *  AVVIO DELLA BATTAGLIA
+         */
 
         int value = 1;
 
         boolean mistic = true;
+
+        /**
+         *
+         --- MOSTRO ---
+         Il mostro che affronterai in combattimento è Il mangiatore di Ciabatte (Atk: 16 - Dif: 16 - HP: 42)
+         --- EROE ---
+         Il tuo eroe è Il rè degli Antichi (Atk: 13 - Dif: 10 - HP: 24)
+         ------------
+         Il rè degli Antichi sferra un attacco massiccio!
+         L'Attacco di 13 danneggia il mostro!
+         Danni Critici aggiuntivi al bersaglio di 3
+         Il tuo attacco non ha avuto successo!
+         ------------
+         --- Per riprovare premi 1 altrimenti per uscire premi 2! ---
+         */
 
         while(mistic)
         {
@@ -172,24 +191,23 @@ public class Main {
 
         }
 
-        // Valutazione con punteggio 1/10
-
-        boolean GG = true;
+        /**
+         * AVVIO ValutationDialog, con valutazione da 1 a 10!
+         */
 
         ValutationDialog endTable = new ValutationDialog();
+        endTable.setValuationTitle(messages.getString("valuationTitle"));
+        endTable.setValuation(messages.getString("valuation"));
+        endTable.setValuation1(messages.getString("valuation1"));
         endTable.pack();
         endTable.setVisible(true);
 
-        /**
-         *  System.out.println(messages.getString("valuationTitle"));
-         *
-         *  System.out.println(messages.getString("valuation"));
-         *  Scanner sc1 = new Scanner(System.in);
-         *  int review = sc1.nextInt();
-         *  System.out.println(messages.getString("valuationThanks"));
-         *  System.out.println(messages.getString("bar"));
-         *  System.out.println(messages.getString("close"));
-         */
+
 
     }
 }
+
+/**
+ * CALL DI UN GUI FORM
+ * SampleForm myform = new SampleForm();
+ */

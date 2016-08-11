@@ -22,4 +22,4 @@ Inizio sviluppo
 * Introduzione miglioramento grafico Dialog
 * Inserimento LoadingDialog
 * Aggiunto logo King Black, White 200px, Loading.gif, loading, logo testuale
-* Revisione codice Main.java
+* Revisione codice java.Main.java

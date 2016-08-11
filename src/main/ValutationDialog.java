@@ -1,16 +1,29 @@
+package main;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class LoadingScreen extends JDialog {
+public class ValutationDialog extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
+    private JButton a1Button;
+    private JButton a5Button;
+    private JButton a3Button;
+    private JButton a4Button;
+    private JButton a8Button;
+    private JButton a9Button;
+    private JButton a2Button;
+    private JButton a7Button;
+    private JLabel valuation1;
+    private JLabel valuation;
+    private JLabel valuationTitle;
     public static final int WIDTH=300;
     public static final int HEIGHT=WIDTH/12*9;
     public static final int SCALE=3;
 
-    public LoadingScreen() {
+    public ValutationDialog() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -51,6 +64,8 @@ public class LoadingScreen extends JDialog {
     private void onOK() {
 // add your code here
         dispose();
+        System.out.println("Show only on develop - exit");
+        System.exit(0);
     }
 
     private void onCancel() {
@@ -58,10 +73,24 @@ public class LoadingScreen extends JDialog {
         dispose();
     }
 
+    public void setValuationTitle(String testo1){
+        this.valuationTitle.setText(testo1);
+    }
+
+    public void setValuation(String testo2){
+        this.valuation.setText(testo2);
+    }
+
+    public void setValuation1(String testo3){
+        this.valuation1.setText(testo3);
+    }
+
+
     public static void main(String[] args) {
-        LoadingScreen dialog = new LoadingScreen();
+        ValutationDialog dialog = new ValutationDialog();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);
     }
+
 }
