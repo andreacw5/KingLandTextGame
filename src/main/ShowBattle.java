@@ -1,19 +1,28 @@
+package main;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class LoadingScreen extends JDialog {
+public class ShowBattle extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
+    private JLabel war1;
+    private JLabel war2;
+    private JLabel war3;
+    private JLabel war4;
+    private JLabel war5;
+    private JLabel war6;
+    private JLabel war7;
     private JButton buttonCancel;
     public static final int WIDTH=300;
     public static final int HEIGHT=WIDTH/12*9;
     public static final int SCALE=3;
 
-    public LoadingScreen() {
+
+    public ShowBattle() {
         setContentPane(contentPane);
         setModal(true);
-        getRootPane().setDefaultButton(buttonOK);
         setMinimumSize(new Dimension(WIDTH*SCALE,HEIGHT*SCALE));
         setMaximumSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
         setPreferredSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
@@ -58,8 +67,36 @@ public class LoadingScreen extends JDialog {
         dispose();
     }
 
+    public void setWar1(String testo1){
+        this.war1.setText(testo1);
+    }
+
+    public void setWar2(String testo2){
+        this.war2.setText(testo2);
+    }
+
+    public void setWar3(String testo3){
+        this.war3.setText(testo3);
+    }
+
+    public void setWar4(String testo4){
+        this.war4.setText(testo4);
+    }
+
+    public void setWar5(String testo5){
+        this.war5.setText(testo5);
+    }
+
+    public void setWar6(String testo6){
+        this.war6.setText(testo6);
+    }
+
+    public void setWar7(String testo7){
+        this.war7.setText(testo7);
+    }
+
     public static void main(String[] args) {
-        LoadingScreen dialog = new LoadingScreen();
+        ShowBattle dialog = new ShowBattle();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);
