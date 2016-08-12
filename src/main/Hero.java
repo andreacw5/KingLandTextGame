@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class Hero{
     String name;
+    String prefix;
 
     public Hero(String name){
         this.name = name;
@@ -23,4 +24,5 @@ public class Hero{
         Random number = new Random();
         return number.nextInt(30)+1 + number.nextInt(30)+1;
     }
+
 }

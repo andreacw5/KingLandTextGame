@@ -8,7 +8,6 @@ public class ShowBattleEnemy extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JLabel warE1;
     private JLabel warE2;
     private JLabel warE3;
     private JLabel warE4;
@@ -64,10 +63,6 @@ public class ShowBattleEnemy extends JDialog {
     private void onCancel() {
 // add your code here if necessary
         dispose();
-    }
-
-    public void setWarE1(String testo1){
-        this.warE1.setText(testo1);
     }
 
     public void setWarE2(String testo2){

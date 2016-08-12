@@ -120,13 +120,27 @@ public class Main {
             Random generator = new Random();
 
             System.out.println("ShowPlay.caratt.pack.Start");
-
             ShowPlayer caratt = new ShowPlayer();
-            caratt.setShow1(messages.getString("characters"));
-            caratt.setShow2((messages.getString("yourHero")) + " " + theHero[herogen].name);
-            caratt.setShow4("(Atk: " + theHero[herogen].attack() + " - Dif: " + theHero[herogen].defence() + " - HP: " + theHero[herogen].healt() + ")");
-            caratt.setShow3((messages.getString("yourEnemy")) + " " + theMonsters[yell].name);
-            caratt.setShow5("(Atk: " + theMonsters[yell].attack() + " - Dif: " + theMonsters[yell].defence() + " - HP: " + theMonsters[yell].healt() + ")");
+
+            // Sezione eroe
+            caratt.setShowHeroTitle(messages.getString("yourHero"));
+            caratt.setShowHeroName(theHero[herogen].name);
+            caratt.setShowHeroWeap(" ");
+            caratt.setShowHeroArmor(" ");
+            caratt.setShowHeroArmor(" ");
+            caratt.setShowHeroAttack(" " + theHero[herogen].attack());
+            caratt.setShowHeroDefence(" " + theHero[herogen].defence());
+            caratt.setShowHeroHealt(" " + theHero[herogen].healt());
+
+            // Sezione mostro
+            caratt.setShowMonsterTitle(messages.getString("yourEnemy"));
+            caratt.setShowMonsterName(theMonsters[yell].name);
+            caratt.setShowMonsterWeap(" ");
+            caratt.setShowMonsterArmor(" ");
+            caratt.setShowMonsterAttack(" "+theMonsters[yell].attack());
+            caratt.setShowMonsterDefence(" " + theMonsters[yell].defence());
+            caratt.setShowMonsterHealt(" "+ theMonsters[yell].healt());
+
             caratt.pack();
             caratt.setVisible(true);
 
@@ -145,7 +159,6 @@ public class Main {
 
                 System.out.println("War.Dialog.Start.True.Player");
                 ShowBattle player = new ShowBattle();
-                player.setWar1(messages.getString("characters"));
                 player.setWar2(theHero[herogen].name + " " + (messages.getString("attack1")));
                 int dice = generator.nextInt(6) + 1 + generator.nextInt(6) + 1;
                 int attackValue = theHero[herogen].attack() + dice;
@@ -184,7 +197,6 @@ public class Main {
 
                 System.out.println("War.Dialog.Start.False.Player");
                 ShowBattleEnemy enemy4 = new ShowBattleEnemy();
-                enemy4.setWarE1(messages.getString("characters"));
                 enemy4.setWarE2(theMonsters[yell].name + " " + (messages.getString("underAttack")));
                 int dice = generator.nextInt(6) + 1 + generator.nextInt(6) + 1;
                 int attackValue = theMonsters[yell].attack() + dice;
