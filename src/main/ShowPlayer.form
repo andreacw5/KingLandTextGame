@@ -102,7 +102,7 @@
                   <background color="-5126"/>
                   <font name="Footlight MT Light" size="22"/>
                   <foreground color="-5126"/>
-                  <icon value="icon/attack_icon.png"/>
+                  <icon value="icon/40x40/attack_icon.png"/>
                   <text value="Attk"/>
                 </properties>
               </component>
@@ -158,7 +158,7 @@
                   <background color="-5126"/>
                   <font name="Footlight MT Light" size="22"/>
                   <foreground color="-5126"/>
-                  <icon value="icon/defence_icon.png"/>
+                  <icon value="icon/40x40/defence_icon.png"/>
                   <text value="Def"/>
                 </properties>
               </component>
@@ -170,7 +170,7 @@
                   <background color="-5126"/>
                   <font name="Footlight MT Light" size="22"/>
                   <foreground color="-5126"/>
-                  <icon value="icon/healt_icon.png"/>
+                  <icon value="icon/40x40/healt_icon.png"/>
                   <text value="Healt"/>
                 </properties>
               </component>
@@ -242,7 +242,7 @@
                   <background color="-5126"/>
                   <font name="Footlight MT Light" size="22"/>
                   <foreground color="-5126"/>
-                  <icon value="icon/healt_icon.png"/>
+                  <icon value="icon/40x40/healt_icon.png"/>
                   <text value="Healt"/>
                 </properties>
               </component>
@@ -254,7 +254,7 @@
                   <background color="-5126"/>
                   <font name="Footlight MT Light" size="22"/>
                   <foreground color="-5126"/>
-                  <icon value="icon/attack_icon.png"/>
+                  <icon value="icon/40x40/attack_icon.png"/>
                   <text value="Attk"/>
                 </properties>
               </component>
@@ -266,13 +266,13 @@
                   <background color="-5126"/>
                   <font name="Footlight MT Light" size="22"/>
                   <foreground color="-5126"/>
-                  <icon value="icon/defence_icon.png"/>
+                  <icon value="icon/40x40/defence_icon.png"/>
                   <text value="Def"/>
                 </properties>
               </component>
               <component id="e9189" class="javax.swing.JLabel" binding="showHeroWeap">
                 <constraints>
-                  <grid row="4" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                  <grid row="4" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="2" indent="0" use-parent-layout="false">
                     <minimum-size width="0" height="0"/>
                   </grid>
                 </constraints>

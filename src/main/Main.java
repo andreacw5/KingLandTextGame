@@ -1,5 +1,7 @@
 package main;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -113,11 +115,32 @@ public class Main {
         while (isMistic()) {
 
             /**
-             * AVVIO showPlayerDialog
-             * Qui si avvia il dialog ShowPlayer, che mostra i nomi dei personaggi di gioco!
+             * AVVIO WeaponSelector
+             * Qui si avvia il dialog WeaponSelector, permettendo all'utente di scegliere la propria arma!
              */
 
             Random generator = new Random();
+
+            System.out.println("ShowPlay.caratt.pack.Start");
+
+            //Lista delle armi
+            ArrayList listOfWeapon = new ArrayList<Weapon>();
+            listOfWeapon.add(new Weapon("", "", "Mazza d'acciaio"));
+            listOfWeapon.add(new Weapon("", "", "Spada Mistica"));
+            listOfWeapon.add(new Weapon("", "", "Balestra d'acciaio"));
+
+
+            // Avvio dialog
+            WeapSelector secarm = new WeapSelector(listOfWeapon);
+            secarm.setInfoWeap(messages.getString("infoWeap"));
+            secarm.setInfoSelected(messages.getString("infoSelected"));
+            secarm.pack();
+            secarm.setVisible(true);
+
+            /**
+             * AVVIO showPlayerDialog
+             * Qui si avvia il dialog ShowPlayer, che mostra i nomi dei personaggi di gioco!
+             */
 
             System.out.println("ShowPlay.caratt.pack.Start");
             ShowPlayer caratt = new ShowPlayer();

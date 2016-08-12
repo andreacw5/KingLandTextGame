@@ -67,13 +67,4 @@ public class WeapPanel extends JDialog {
         this.firstAbility = firstAbility;
     }
 
-
-
-
-    public static void main(String[] args) {
-        WeapPanel dialog = new WeapPanel();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
-    }
 }
