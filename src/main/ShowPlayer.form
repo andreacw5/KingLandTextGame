@@ -125,7 +125,7 @@
                   <background color="-5126"/>
                   <font name="Footlight MT Light" size="22"/>
                   <foreground color="-5126"/>
-                  <text value="showMonsterArmor"/>
+                  <text value=""/>
                 </properties>
               </component>
               <component id="57f46" class="javax.swing.JLabel" binding="showMonsterWeap">
@@ -136,7 +136,7 @@
                   <background color="-5126"/>
                   <font name="Footlight MT Light" size="22"/>
                   <foreground color="-5126"/>
-                  <text value="showMonsterWeap"/>
+                  <text value=""/>
                 </properties>
               </component>
               <component id="c7748" class="javax.swing.JLabel" binding="showMonsterName">
@@ -209,6 +209,7 @@
                   <font name="Footlight MT Light" size="22"/>
                   <foreground color="-5126"/>
                   <text value="showHeroName"/>
+                  <visible value="true"/>
                 </properties>
               </component>
               <component id="7b84e" class="javax.swing.JLabel" binding="showHeroTitle">
@@ -224,13 +225,13 @@
               </component>
               <component id="4bccd" class="javax.swing.JLabel" binding="showHeroArmor">
                 <constraints>
-                  <grid row="5" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="2" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                  <grid row="5" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <background color="-5126"/>
                   <font name="Footlight MT Light" size="22"/>
                   <foreground color="-5126"/>
-                  <text value="showHeroArmor"/>
+                  <text value=""/>
                 </properties>
               </component>
               <component id="e9554" class="javax.swing.JLabel" binding="showHeroHealt">
@@ -271,13 +272,17 @@
               </component>
               <component id="e9189" class="javax.swing.JLabel" binding="showHeroWeap">
                 <constraints>
-                  <grid row="4" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="2" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                  <grid row="4" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                    <minimum-size width="0" height="0"/>
+                  </grid>
                 </constraints>
                 <properties>
                   <background color="-5126"/>
                   <font name="Footlight MT Light" size="22"/>
                   <foreground color="-5126"/>
-                  <text value="showHeroWeap"/>
+                  <iconTextGap value="4"/>
+                  <opaque value="false"/>
+                  <text value=""/>
                 </properties>
               </component>
             </children>

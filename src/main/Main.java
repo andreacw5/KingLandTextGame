@@ -127,7 +127,6 @@ public class Main {
             caratt.setShowHeroName(theHero[herogen].name);
             caratt.setShowHeroWeap(" ");
             caratt.setShowHeroArmor(" ");
-            caratt.setShowHeroArmor(" ");
             caratt.setShowHeroAttack(" " + theHero[herogen].attack());
             caratt.setShowHeroDefence(" " + theHero[herogen].defence());
             caratt.setShowHeroHealt(" " + theHero[herogen].healt());

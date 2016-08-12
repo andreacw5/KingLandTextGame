@@ -63,11 +63,13 @@ public class ShowPlayer extends JDialog {
     // Arma eroe
     public void setShowHeroWeap(String testo3){
         this.showHeroWeap.setText(testo3);
+        setVisible(false);
     }
 
     // Armatura eroe
     public void setShowHeroArmor(String testo4){
         this.showHeroArmor.setText(testo4);
+        setVisible(false);
     }
 
     // Attacco eroe
@@ -101,11 +103,13 @@ public class ShowPlayer extends JDialog {
     // Arma mostro
     public void setShowMonsterWeap(String testo9){
         this.showMonsterWeap.setText(testo9);
+        setVisible(false);
     }
 
     // Armatura mostro
     public void setShowMonsterArmor(String testo10){
         this.showMonsterArmor.setText(testo10);
+        setVisible(false);
     }
 
     // Attacco mostro
