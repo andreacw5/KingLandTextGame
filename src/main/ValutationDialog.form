@@ -10,11 +10,6 @@
     </properties>
     <border type="none"/>
     <children>
-      <hspacer id="87f9f">
-        <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </hspacer>
       <component id="52cab" class="javax.swing.JLabel">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
@@ -79,11 +74,18 @@
           <text value="Chiudi l'applicazione!"/>
         </properties>
       </component>
-      <hspacer id="322a3">
+      <component id="2b16b" class="javax.swing.JToolBar$Separator">
         <constraints>
-          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
-      </hspacer>
+        <properties/>
+      </component>
+      <component id="82a4d" class="javax.swing.JToolBar$Separator">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+      </component>
     </children>
   </grid>
 </form>

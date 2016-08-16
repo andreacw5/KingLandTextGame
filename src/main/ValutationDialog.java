@@ -11,7 +11,7 @@ public class ValutationDialog extends JDialog {
     private JLabel valuation;
     private JLabel valuationTitle;
     private JTextField textField1;
-    public static final int WIDTH=300;
+    public static final int WIDTH=400;
     public static final int HEIGHT=WIDTH/12*9;
     public static final int SCALE=3;
 

@@ -7,7 +7,6 @@ import java.awt.event.*;
 public class ShowBattle extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
-    private JLabel war1;
     private JLabel war2;
     private JLabel war3;
     private JLabel war4;
@@ -15,7 +14,7 @@ public class ShowBattle extends JDialog {
     private JLabel war6;
     private JLabel war7;
     private JButton buttonCancel;
-    public static final int WIDTH=300;
+    public static final int WIDTH=400;
     public static final int HEIGHT=WIDTH/12*9;
     public static final int SCALE=3;
 
@@ -65,10 +64,6 @@ public class ShowBattle extends JDialog {
     private void onCancel() {
 // add your code here if necessary
         dispose();
-    }
-
-    public void setWar1(String testo1){
-        this.war1.setText(testo1);
     }
 
     public void setWar2(String testo2){

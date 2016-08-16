@@ -1,5 +1,6 @@
 package main;
 
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -15,6 +16,7 @@ public class Main {
     private boolean mistic = true;
     private String country;
     private String language;
+
 
     public boolean isMistic() {
         return mistic;
@@ -113,20 +115,78 @@ public class Main {
         while (isMistic()) {
 
             /**
-             * AVVIO showPlayerDialog
-             * Qui si avvia il dialog ShowPlayer, che mostra i nomi dei personaggi di gioco!
+             * AVVIO WeaponSelector
+             * Qui si avvia il dialog WeaponSelector, permettendo all'utente di scegliere la propria arma!ù
+             * ASSOCIAZIONI: Weapon; WeaponSelector; WeapPanel
              */
 
             Random generator = new Random();
 
-            System.out.println("ShowPlay.caratt.pack.Start");
+            System.out.println("listOfWeapon.ArrayList.pack.Start");
 
+            //Lista delle armi
+            ArrayList listOfWeapon = new ArrayList<Weapon>();
+            listOfWeapon.add(new Weapon("Mazza d'acciaio", "Brutale", "Forza"));
+            listOfWeapon.add(new Weapon("Spada Mistica", "Agilità", "Rune"));
+            listOfWeapon.add(new Weapon("Balestra d'acciaio", "Raggio", "Munizioni"));
+
+
+            // Avvio dialog
+            WeapSelector secarm = new WeapSelector(listOfWeapon);
+            secarm.setInfoWeap(messages.getString("infoWeap"));
+            secarm.setInfoSelected(messages.getString("infoSelected"));
+            secarm.pack();
+            secarm.setVisible(true);
+
+            /**
+             * AVVIO ArmorSelector
+             * Qui si avvia il dialog ArmorSelector, permettendo all'utente di scegliere la propria armatura!
+             * ASSOCIAZIONI: Armor; ArmorSelector; ArmoPanel
+             */
+
+            System.out.println("listOfArmor.ArrayList.pack.Start");
+
+            //Lista delle armature
+            ArrayList listOfArmor = new ArrayList<Armor>();
+            listOfArmor.add(new Armor("Armatura di Krune", "Difesa", "Attacco Bonus"));
+            listOfArmor.add(new Armor("Armatura del Fuoco", "Forgia", "Runa"));
+            listOfArmor.add(new Armor("Armatura di Markart", "Difesa", "Munizioni"));
+
+
+            // Avvio dialog
+            ArmorSelector secarmor = new ArmorSelector(listOfArmor);
+            secarmor.setInfoArmor(messages.getString("infoArmor"));
+            secarmor.setInfoSelected(messages.getString("infoSelected"));
+            secarmor.pack();
+            secarmor.setVisible(true);
+
+
+            /**
+             * AVVIO showPlayerDialog
+             * Qui si avvia il dialog ShowPlayer, che mostra i nomi dei personaggi di gioco!
+             */
+
+            System.out.println("ShowPlay.caratt.pack.Start");
             ShowPlayer caratt = new ShowPlayer();
-            caratt.setShow1(messages.getString("characters"));
-            caratt.setShow2((messages.getString("yourHero")) + " " + theHero[herogen].name);
-            caratt.setShow4("(Atk: " + theHero[herogen].attack() + " - Dif: " + theHero[herogen].defence() + " - HP: " + theHero[herogen].healt() + ")");
-            caratt.setShow3((messages.getString("yourEnemy")) + " " + theMonsters[yell].name);
-            caratt.setShow5("(Atk: " + theMonsters[yell].attack() + " - Dif: " + theMonsters[yell].defence() + " - HP: " + theMonsters[yell].healt() + ")");
+
+            // Sezione eroe
+            caratt.setShowHeroTitle(messages.getString("yourHero"));
+            caratt.setShowHeroName(theHero[herogen].name);
+            caratt.setShowHeroWeap(secarm.getSelectedWeapText());
+            caratt.setShowHeroArmor(secarmor.getSelectedArmorText());
+            caratt.setShowHeroAttack(" " + theHero[herogen].attack());
+            caratt.setShowHeroDefence(" " + theHero[herogen].defence());
+            caratt.setShowHeroHealt(" " + theHero[herogen].healt());
+
+            // Sezione mostro
+            caratt.setShowMonsterTitle(messages.getString("yourEnemy"));
+            caratt.setShowMonsterName(theMonsters[yell].name);
+            caratt.setShowMonsterWeap("Spada a due lame");
+            caratt.setShowMonsterArmor("Vestito di pelle");
+            caratt.setShowMonsterAttack(" "+theMonsters[yell].attack());
+            caratt.setShowMonsterDefence(" " + theMonsters[yell].defence());
+            caratt.setShowMonsterHealt(" "+ theMonsters[yell].healt());
+
             caratt.pack();
             caratt.setVisible(true);
 
@@ -145,7 +205,6 @@ public class Main {
 
                 System.out.println("War.Dialog.Start.True.Player");
                 ShowBattle player = new ShowBattle();
-                player.setWar1(messages.getString("characters"));
                 player.setWar2(theHero[herogen].name + " " + (messages.getString("attack1")));
                 int dice = generator.nextInt(6) + 1 + generator.nextInt(6) + 1;
                 int attackValue = theHero[herogen].attack() + dice;
@@ -184,7 +243,6 @@ public class Main {
 
                 System.out.println("War.Dialog.Start.False.Player");
                 ShowBattleEnemy enemy4 = new ShowBattleEnemy();
-                enemy4.setWarE1(messages.getString("characters"));
                 enemy4.setWarE2(theMonsters[yell].name + " " + (messages.getString("underAttack")));
                 int dice = generator.nextInt(6) + 1 + generator.nextInt(6) + 1;
                 int attackValue = theMonsters[yell].attack() + dice;
