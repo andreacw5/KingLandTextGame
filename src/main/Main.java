@@ -160,6 +160,7 @@ public class Main {
             secarmor.pack();
             secarmor.setVisible(true);
 
+
             /**
              * AVVIO showPlayerDialog
              * Qui si avvia il dialog ShowPlayer, che mostra i nomi dei personaggi di gioco!

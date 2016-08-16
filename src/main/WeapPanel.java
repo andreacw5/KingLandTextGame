@@ -44,7 +44,7 @@ public class WeapPanel extends JDialog {
     }
 
     public void setSecondAbility(String secondAbility) {
-        this.secondAbility.getText();
+        this.secondAbility.setText(secondAbility);
     }
 
     public JLabel getIconHeader() {
@@ -68,7 +68,7 @@ public class WeapPanel extends JDialog {
     }
 
     public void setFirstAbility(String firstAbility) {
-        this.firstAbility.getText();
+        this.firstAbility.setText(firstAbility);
     }
 
 }

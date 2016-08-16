@@ -46,7 +46,7 @@ public class ArmoPanel extends JDialog {
     }
 
     public void setTitleNameA(String titleNameA) {
-        this.titleNameA.getText();
+        this.titleNameA.setText(titleNameA);
     }
 
     public JLabel getFirstAbilityA() {
@@ -54,7 +54,7 @@ public class ArmoPanel extends JDialog {
     }
 
     public void setFirstAbilityA(String firstAbilityA) {
-        this.firstAbilityA.getText();
+        this.firstAbilityA.setText(firstAbilityA);
     }
 
     public JLabel getSecondAbilityA() {
@@ -62,7 +62,7 @@ public class ArmoPanel extends JDialog {
     }
 
     public void setSecondAbilityA(String secondAbilityA) {
-        this.secondAbilityA.getText();
+        this.secondAbilityA.setText(secondAbilityA);
     }
 
     public JButton getSelectorButtonA() {
