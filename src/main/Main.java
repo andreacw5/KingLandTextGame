@@ -146,18 +146,18 @@ public class Main {
             System.out.println("listOfArmor.ArrayList.pack.Start");
 
             //Lista delle armi
-            //ArrayList listOfArmor = new ArrayList<Armor>();
-            //listOfArmor.add(new Armor("Mazza d'acciaio", "1", "2"));
-            //listOfArmor.add(new Armor("Spada Mistica", "3", "4"));
-            //listOfArmor.add(new Armor("Balestra d'acciaio", "5", "6"));
+            ArrayList listOfArmor = new ArrayList<Armor>();
+            listOfArmor.add(new Armor("Mazza d'acciaio", "1", "2"));
+            listOfArmor.add(new Armor("Spada Mistica", "3", "4"));
+            listOfArmor.add(new Armor("Balestra d'acciaio", "5", "6"));
 
 
             // Avvio dialog
-            //ArmorSelector secarmor = new ArmorSelector(listOfArmor);
-            //secarmor.setInfoArmor(messages.getString("infoArmor"));
-            //secarmor.setInfoSelected(messages.getString("infoSelected"));
-            //secarmor.pack();
-            //secarmor.setVisible(true);
+            ArmorSelector secarmor = new ArmorSelector(listOfArmor);
+            secarmor.setInfoArmor(messages.getString("infoArmor"));
+            secarmor.setInfoSelected(messages.getString("infoSelected"));
+            secarmor.pack();
+            secarmor.setVisible(true);
 
             /**
              * AVVIO showPlayerDialog

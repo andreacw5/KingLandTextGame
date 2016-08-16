@@ -1,4 +1,4 @@
-/**package main;
+package main;
 
 import javax.swing.*;
 import java.awt.event.*;
@@ -65,5 +65,3 @@ public class ArmoPanel extends JDialog {
         this.selectorButtonA = selectorButtonA;
     }
 }
-
- */

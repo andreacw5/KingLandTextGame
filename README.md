@@ -32,3 +32,5 @@ Inizio sviluppo
 * Revisione completa delle classi
 * Introduzione di 4 nuove immagini
 * Valutazione testuale
+
+
