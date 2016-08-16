@@ -42,6 +42,10 @@ public class WelcomeDialog extends JDialog {
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 onCancel();
+                // Uscita dall'applicazione
+                System.out.println("Bypass.Exit.System");
+                System.out.println("System.Stop.No.Error");
+                System.exit(0);
             }
         });
 
@@ -49,6 +53,10 @@ public class WelcomeDialog extends JDialog {
         contentPane.registerKeyboardAction(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
+                // Uscita dall'applicazione
+                System.out.println("Bypass.Exit.System");
+                System.out.println("System.Stop.No.Error");
+                System.exit(0);
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
@@ -57,7 +65,6 @@ public class WelcomeDialog extends JDialog {
     private void onOK() {
 // add your code here
         dispose();
-        //SampleForm myform = new SampleForm();
     }
 
     private void onCancel() {

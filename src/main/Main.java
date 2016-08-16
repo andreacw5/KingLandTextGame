@@ -126,9 +126,9 @@ public class Main {
 
             //Lista delle armi
             ArrayList listOfWeapon = new ArrayList<Weapon>();
-            listOfWeapon.add(new Weapon("Mazza d'acciaio", "1", "2"));
-            listOfWeapon.add(new Weapon("Spada Mistica", "3", "4"));
-            listOfWeapon.add(new Weapon("Balestra d'acciaio", "5", "6"));
+            listOfWeapon.add(new Weapon("Mazza d'acciaio", "Brutale", "Forza"));
+            listOfWeapon.add(new Weapon("Spada Mistica", "Agilità", "Rune"));
+            listOfWeapon.add(new Weapon("Balestra d'acciaio", "Raggio", "Munizioni"));
 
 
             // Avvio dialog
@@ -148,9 +148,9 @@ public class Main {
 
             //Lista delle armature
             ArrayList listOfArmor = new ArrayList<Armor>();
-            listOfArmor.add(new Armor("Armatura di Fortuna", "1", "2"));
-            listOfArmor.add(new Armor("Armatura Elfica", "3", "4"));
-            listOfArmor.add(new Armor("Armatura Mistica", "5", "6"));
+            listOfArmor.add(new Armor("Armatura di Krune", "Difesa", "Attacco Bonus"));
+            listOfArmor.add(new Armor("Armatura del Fuoco", "Forgia", "Runa"));
+            listOfArmor.add(new Armor("Armatura di Markart", "Difesa", "Munizioni"));
 
 
             // Avvio dialog

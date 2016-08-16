@@ -25,6 +25,7 @@ public class LoadingScreen extends JDialog {
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onOK();
+
             }
         });
 
@@ -39,6 +40,11 @@ public class LoadingScreen extends JDialog {
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 onCancel();
+                // Uscita dall'applicazione
+                System.out.println("Bypass.Exit.System");
+                System.out.println("System.Stop.No.Error");
+                System.exit(0);
+
             }
         });
 
@@ -46,6 +52,10 @@ public class LoadingScreen extends JDialog {
         contentPane.registerKeyboardAction(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
+                // Uscita dall'applicazione
+                System.out.println("Bypass.Exit.System");
+                System.out.println("System.Stop.No.Error");
+                System.exit(0);
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
