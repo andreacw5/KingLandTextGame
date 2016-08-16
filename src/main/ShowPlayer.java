@@ -22,7 +22,7 @@ public class ShowPlayer extends JDialog {
     private JLabel showHeroHealt;
     private JLabel showMonsterDefence;
     private JLabel showMonsterHealt;
-    public static final int WIDTH=300;
+    public static final int WIDTH=400;
     public static final int HEIGHT=WIDTH/12*9;
     public static final int SCALE=3;
 

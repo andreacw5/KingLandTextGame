@@ -10,7 +10,15 @@ public class ArmoPanel extends JDialog {
     private JLabel firstAbilityA;
     private JLabel secondAbilityA;
     private JButton selectorButtonA;
-    public ArmorSelector fatherA;
+    public ArmorSelector mother;
+
+    public void setMother(ArmorSelector mother) {
+        this.mother = mother;
+    }
+
+    public ArmorSelector getMother() {
+        return this.mother;
+    }
 
     public ArmoPanel() {
         setContentPane(contentPane);
@@ -19,7 +27,7 @@ public class ArmoPanel extends JDialog {
         selectorButtonA.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //fatherA.setSelectedArmor.(titleNameA.getText());
+                mother.setSelectedArmor(titleNameA.getText());
             }
         });
 

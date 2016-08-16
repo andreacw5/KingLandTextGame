@@ -14,12 +14,16 @@ public class ArmorSelector extends JDialog {
     private ArmoPanel far1;
     private ArmoPanel far2;
     private ArmoPanel far3;
-    public static final int WIDTH=300;
+    public static final int WIDTH=400;
     public static final int HEIGHT=WIDTH/12*9;
     public static final int SCALE=3;
 
-    public void setSelectedArmor(String selectedWeaponText) {
-        this.selectedArmor.setText(selectedWeaponText);
+    public void setSelectedArmor(String selectedArmorText) {
+        this.selectedArmor.setText(selectedArmorText);
+    }
+
+    public String getSelectedArmorText() {
+        return this.selectedArmor.getText();
     }
 
     public void setInfoArmor(String wel1){
@@ -45,19 +49,19 @@ public class ArmorSelector extends JDialog {
         far1.setFirstAbilityA(ar1.getAbility1A());
         far1.setSecondAbilityA(ar1.getAbility2A());
         far1.setIconHeaderA(new ImageIcon(ArmorSelector.this.getClass().getResource("/icon/Weap/Mace_icon.png")));
-        //far1.setFatherA(this);
+        far1.setMother(this);
 
         far2.setTitleNameA(ar2.getNameA());
         far2.setFirstAbilityA(ar2.getAbility1A());
         far2.setSecondAbilityA(ar2.getAbility2A());
         far2.setIconHeaderA(new ImageIcon(ArmorSelector.this.getClass().getResource("/icon/Weap/Mace_icon.png")));
-        //far2.setFatherA(this);
+        far2.setMother(this);
 
         far3.setTitleNameA(ar3.getNameA());
         far3.setFirstAbilityA(ar3.getAbility1A());
         far3.setSecondAbilityA(ar3.getAbility2A());
         far3.setIconHeaderA(new ImageIcon(ArmorSelector.this.getClass().getResource("/icon/Weap/Mace_icon.png")));
-        //far3.setFatherA(this);
+        far3.setMother(this);
 
         setContentPane(contentPane);
         setModal(true);

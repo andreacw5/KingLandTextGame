@@ -148,9 +148,9 @@ public class Main {
 
             //Lista delle armature
             ArrayList listOfArmor = new ArrayList<Armor>();
-            listOfArmor.add(new Armor("Mazza d'acciaio", "1", "2"));
-            listOfArmor.add(new Armor("Spada Mistica", "3", "4"));
-            listOfArmor.add(new Armor("Balestra d'acciaio", "5", "6"));
+            listOfArmor.add(new Armor("Armatura di Fortuna", "1", "2"));
+            listOfArmor.add(new Armor("Armatura Elfica", "3", "4"));
+            listOfArmor.add(new Armor("Armatura Mistica", "5", "6"));
 
 
             // Avvio dialog
@@ -172,7 +172,7 @@ public class Main {
             caratt.setShowHeroTitle(messages.getString("yourHero"));
             caratt.setShowHeroName(theHero[herogen].name);
             caratt.setShowHeroWeap(secarm.getSelectedWeapText());
-            caratt.setShowHeroArmor("Next");
+            caratt.setShowHeroArmor(secarmor.getSelectedArmorText());
             caratt.setShowHeroAttack(" " + theHero[herogen].attack());
             caratt.setShowHeroDefence(" " + theHero[herogen].defence());
             caratt.setShowHeroHealt(" " + theHero[herogen].healt());

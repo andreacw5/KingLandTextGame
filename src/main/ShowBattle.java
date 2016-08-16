@@ -14,7 +14,7 @@ public class ShowBattle extends JDialog {
     private JLabel war6;
     private JLabel war7;
     private JButton buttonCancel;
-    public static final int WIDTH=300;
+    public static final int WIDTH=400;
     public static final int HEIGHT=WIDTH/12*9;
     public static final int SCALE=3;
 

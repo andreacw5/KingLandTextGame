@@ -14,7 +14,7 @@ public class ShowBattleEnemy extends JDialog {
     private JLabel warE5;
     private JLabel warE6;
     private JLabel warE7;
-    public static final int WIDTH=300;
+    public static final int WIDTH=400;
     public static final int HEIGHT=WIDTH/12*9;
     public static final int SCALE=3;
 
