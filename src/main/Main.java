@@ -17,6 +17,7 @@ public class Main {
     private String country;
     private String language;
 
+
     public boolean isMistic() {
         return mistic;
     }
@@ -145,7 +146,7 @@ public class Main {
 
             System.out.println("listOfArmor.ArrayList.pack.Start");
 
-            //Lista delle armi
+            //Lista delle armature
             ArrayList listOfArmor = new ArrayList<Armor>();
             listOfArmor.add(new Armor("Mazza d'acciaio", "1", "2"));
             listOfArmor.add(new Armor("Spada Mistica", "3", "4"));
@@ -170,7 +171,7 @@ public class Main {
             // Sezione eroe
             caratt.setShowHeroTitle(messages.getString("yourHero"));
             caratt.setShowHeroName(theHero[herogen].name);
-            caratt.setShowHeroWeap("Next");
+            caratt.setShowHeroWeap(secarm.getSelectedWeapText());
             caratt.setShowHeroArmor("Next");
             caratt.setShowHeroAttack(" " + theHero[herogen].attack());
             caratt.setShowHeroDefence(" " + theHero[herogen].defence());

@@ -24,6 +24,10 @@ public class WeapSelector extends JDialog {
         this.selectedWeap.setText(selectedWeaponText);
     }
 
+    public String getSelectedWeapText() {
+        return this.selectedWeap.getText();
+    }
+
     public void setInfoWeap(String wel1){
         this.infoWeap.setText(wel1);
     }
@@ -68,6 +72,7 @@ public class WeapSelector extends JDialog {
         setPreferredSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
         setResizable(false);
         setLocationRelativeTo(null);
+
     }
 
     private void onOK() {

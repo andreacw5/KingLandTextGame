@@ -18,7 +18,7 @@ public class ArmorSelector extends JDialog {
     public static final int HEIGHT=WIDTH/12*9;
     public static final int SCALE=3;
 
-    public void setSelectedWeapText(String selectedWeaponText) {
+    public void setSelectedArmor(String selectedWeaponText) {
         this.selectedArmor.setText(selectedWeaponText);
     }
 
@@ -59,6 +59,7 @@ public class ArmorSelector extends JDialog {
         far3.setIconHeaderA(new ImageIcon(ArmorSelector.this.getClass().getResource("/icon/Weap/Mace_icon.png")));
         //far3.setFatherA(this);
 
+        setContentPane(contentPane);
         setModal(true);
         setMinimumSize(new Dimension(WIDTH*SCALE,HEIGHT*SCALE));
         setMaximumSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));

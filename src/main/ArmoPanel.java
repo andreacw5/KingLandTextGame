@@ -19,7 +19,7 @@ public class ArmoPanel extends JDialog {
         selectorButtonA.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //fatherA.setSelectedArmorText.(titleNameA.getText());
+                //fatherA.setSelectedArmor.(titleNameA.getText());
             }
         });
 

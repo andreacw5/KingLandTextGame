@@ -16,6 +16,10 @@ public class WeapPanel extends JDialog {
         this.father = father;
     }
 
+    public WeapSelector getFather() {
+        return this.father;
+    }
+
     public WeapPanel() {
         setContentPane(contentPane);
         setModal(true);
