@@ -1,6 +1,5 @@
 package main;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Random;
@@ -116,18 +115,19 @@ public class Main {
 
             /**
              * AVVIO WeaponSelector
-             * Qui si avvia il dialog WeaponSelector, permettendo all'utente di scegliere la propria arma!
+             * Qui si avvia il dialog WeaponSelector, permettendo all'utente di scegliere la propria arma!ù
+             * ASSOCIAZIONI: Weapon; WeaponSelector; WeapPanel
              */
 
             Random generator = new Random();
 
-            System.out.println("ShowPlay.caratt.pack.Start");
+            System.out.println("listOfWeapon.ArrayList.pack.Start");
 
             //Lista delle armi
             ArrayList listOfWeapon = new ArrayList<Weapon>();
-            listOfWeapon.add(new Weapon("", "", "Mazza d'acciaio"));
-            listOfWeapon.add(new Weapon("", "", "Spada Mistica"));
-            listOfWeapon.add(new Weapon("", "", "Balestra d'acciaio"));
+            listOfWeapon.add(new Weapon("Mazza d'acciaio", "1", "2"));
+            listOfWeapon.add(new Weapon("Spada Mistica", "3", "4"));
+            listOfWeapon.add(new Weapon("Balestra d'acciaio", "5", "6"));
 
 
             // Avvio dialog
@@ -136,6 +136,28 @@ public class Main {
             secarm.setInfoSelected(messages.getString("infoSelected"));
             secarm.pack();
             secarm.setVisible(true);
+
+            /**
+             * AVVIO ArmorSelector
+             * Qui si avvia il dialog ArmorSelector, permettendo all'utente di scegliere la propria armatura!
+             * ASSOCIAZIONI: Armor; ArmorSelector; ArmoPanel
+             */
+
+            System.out.println("listOfArmor.ArrayList.pack.Start");
+
+            //Lista delle armi
+            //ArrayList listOfArmor = new ArrayList<Armor>();
+            //listOfArmor.add(new Armor("Mazza d'acciaio", "1", "2"));
+            //listOfArmor.add(new Armor("Spada Mistica", "3", "4"));
+            //listOfArmor.add(new Armor("Balestra d'acciaio", "5", "6"));
+
+
+            // Avvio dialog
+            //ArmorSelector secarmor = new ArmorSelector(listOfArmor);
+            //secarmor.setInfoArmor(messages.getString("infoArmor"));
+            //secarmor.setInfoSelected(messages.getString("infoSelected"));
+            //secarmor.pack();
+            //secarmor.setVisible(true);
 
             /**
              * AVVIO showPlayerDialog
@@ -148,8 +170,8 @@ public class Main {
             // Sezione eroe
             caratt.setShowHeroTitle(messages.getString("yourHero"));
             caratt.setShowHeroName(theHero[herogen].name);
-            caratt.setShowHeroWeap(" ");
-            caratt.setShowHeroArmor(" ");
+            caratt.setShowHeroWeap("Next");
+            caratt.setShowHeroArmor("Next");
             caratt.setShowHeroAttack(" " + theHero[herogen].attack());
             caratt.setShowHeroDefence(" " + theHero[herogen].defence());
             caratt.setShowHeroHealt(" " + theHero[herogen].healt());
@@ -157,8 +179,8 @@ public class Main {
             // Sezione mostro
             caratt.setShowMonsterTitle(messages.getString("yourEnemy"));
             caratt.setShowMonsterName(theMonsters[yell].name);
-            caratt.setShowMonsterWeap(" ");
-            caratt.setShowMonsterArmor(" ");
+            caratt.setShowMonsterWeap("Spada a due lame");
+            caratt.setShowMonsterArmor("Vestito di pelle");
             caratt.setShowMonsterAttack(" "+theMonsters[yell].attack());
             caratt.setShowMonsterDefence(" " + theMonsters[yell].defence());
             caratt.setShowMonsterHealt(" "+ theMonsters[yell].healt());

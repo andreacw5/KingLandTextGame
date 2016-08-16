@@ -63,7 +63,6 @@ public class ShowPlayer extends JDialog {
     // Arma eroe
     public void setShowHeroWeap(String testo3){
         this.showHeroWeap.setText(testo3);
-        setVisible(false);
     }
 
     // Armatura eroe

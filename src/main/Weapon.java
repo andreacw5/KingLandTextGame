@@ -35,4 +35,5 @@ public class Weapon {
     public void setAbility2(String ability2) {
         this.ability2 = ability2;
     }
+
 }

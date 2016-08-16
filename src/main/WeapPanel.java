@@ -10,7 +10,7 @@ public class WeapPanel extends JDialog {
     private JButton selectorButton;
     private JLabel iconHeader;
     private JLabel secondAbility;
-    private WeapSelector father;
+    public WeapSelector father;
 
     public void setFather(WeapSelector father) {
         this.father = father;
@@ -39,8 +39,8 @@ public class WeapPanel extends JDialog {
         return secondAbility;
     }
 
-    public void setSecondAbility(JLabel secondAbility) {
-        this.secondAbility = secondAbility;
+    public void setSecondAbility(String secondAbility) {
+        this.secondAbility.getText();
     }
 
     public JLabel getIconHeader() {
@@ -63,8 +63,8 @@ public class WeapPanel extends JDialog {
         return firstAbility;
     }
 
-    public void setFirstAbility(JLabel firstAbility) {
-        this.firstAbility = firstAbility;
+    public void setFirstAbility(String firstAbility) {
+        this.firstAbility.getText();
     }
 
 }
