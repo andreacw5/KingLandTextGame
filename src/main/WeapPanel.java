@@ -10,6 +10,8 @@ public class WeapPanel extends JDialog {
     private JButton selectorButton;
     private JLabel iconHeader;
     private JLabel secondAbility;
+    private JLabel iconSecondAbilityA;
+    private JLabel iconFirstAbilityA;
     public WeapSelector father;
 
     public void setFather(WeapSelector father) {
@@ -51,6 +53,14 @@ public class WeapPanel extends JDialog {
 
     }
 
+    public JLabel getIconFirstAbilityA() {
+        return iconFirstAbilityA;
+    }
+
+    public void setIconFirstAbilityA(Icon iconFirstAbilityA) {
+        this.iconFirstAbilityA.setIcon(iconFirstAbilityA);
+    }
+
     // Abilità N°2
     public void setSecondAbility(String secondAbility) {
         this.secondAbility.setText(secondAbility);
@@ -58,6 +68,14 @@ public class WeapPanel extends JDialog {
 
     public JLabel getSecondAbility() {
         return secondAbility;
+    }
+
+    public JLabel getIconSecondAbilityA() {
+        return iconSecondAbilityA;
+    }
+
+    public void setIconSecondAbilityA(Icon iconSecondAbilityA) {
+        this.iconSecondAbilityA.setIcon(iconSecondAbilityA);
     }
 
     // Icona dell'arma

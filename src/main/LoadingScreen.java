@@ -15,7 +15,6 @@ public class LoadingScreen extends JDialog {
     public LoadingScreen() {
         setContentPane(contentPane);
         setModal(true);
-        getRootPane().setDefaultButton(buttonOK);
         setMinimumSize(new Dimension(WIDTH*SCALE,HEIGHT*SCALE));
         setMaximumSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
         setPreferredSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
@@ -34,6 +33,8 @@ public class LoadingScreen extends JDialog {
                 onCancel();
             }
         });
+
+
 
 // call onCancel() when cross is clicked
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
