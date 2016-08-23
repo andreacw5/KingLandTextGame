@@ -37,6 +37,9 @@ public class ShowBattle extends JDialog {
         buttonCancel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
+                System.out.println("Bypass.Exit.System");
+                System.out.println("System.Stop.No.Error");
+                System.exit(0);
             }
         });
 
@@ -45,6 +48,9 @@ public class ShowBattle extends JDialog {
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 onCancel();
+                System.out.println("Bypass.Exit.System");
+                System.out.println("System.Stop.No.Error");
+                System.exit(0);
             }
         });
 
@@ -52,6 +58,9 @@ public class ShowBattle extends JDialog {
         contentPane.registerKeyboardAction(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
+                System.out.println("Bypass.Exit.System");
+                System.out.println("System.Stop.No.Error");
+                System.exit(0);
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
