@@ -1,6 +1,8 @@
 package main;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class PlayerPanel extends JDialog {
     private JPanel contentPane;
@@ -19,6 +21,18 @@ public class PlayerPanel extends JDialog {
 
     public PlayerSelector getSon() {
         return this.son;
+    }
+
+    public PlayerPanel(){
+        setContentPane( contentPane );
+        setModal( true );
+        selectorButtonP.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                son.setSelectedPlayer(playerName.getText());
+            }
+        });
+
     }
 
     // Nome dell'eroe
@@ -83,10 +97,4 @@ public class PlayerPanel extends JDialog {
         this.iconPlayer.setIcon(iconPlayer);
     }
 
-
-    public PlayerPanel() {
-        setContentPane( contentPane );
-        setModal( true );
-
-    }
 }
