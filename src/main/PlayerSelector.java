@@ -50,7 +50,7 @@ public class PlayerSelector extends JDialog {
             }
         });
 
-        //play1.setIconPlayer(new ImageIcon(PlayerSelector.this.getClass().getResource("/icon/Armor/Metal_icon.png")));
+        play1.setIconPlayer(new ImageIcon(PlayerSelector.this.getClass().getResource( "/icon/Hero/Golden_Knight_featured.png" )));
         play1.setPlayerName(gen1.getName());
         play1.setPlayerHistory(gen1.getHistory());
         play1.setShowHeroAttack(gen1.getAttackPlayer());
@@ -58,7 +58,7 @@ public class PlayerSelector extends JDialog {
         play1.setShowHeroHealt(gen1.getHealtPlayer());
         play1.setSon(this);
 
-        //play2.setIconPlayer(new ImageIcon(PlayerSelector.this.getClass().getResource("/icon/Armor/Metal_icon.png")));
+        play2.setIconPlayer(new ImageIcon(PlayerSelector.this.getClass().getResource("/icon/Hero/red-knight-game-art-character-featured-2.png")));
         play2.setPlayerName(gen2.getName());
         play2.setPlayerHistory(gen2.getHistory());
         play2.setShowHeroAttack(gen2.getAttackPlayer());
@@ -66,7 +66,7 @@ public class PlayerSelector extends JDialog {
         play2.setShowHeroHealt(gen2.getHealtPlayer());
         play2.setSon(this);
 
-        //play3.setIconPlayer(new ImageIcon(PlayerSelector.this.getClass().getResource("/icon/Armor/Metal_icon.png")));
+        play3.setIconPlayer(new ImageIcon(PlayerSelector.this.getClass().getResource("/icon/Hero/armored-samurai-royalty-free-game-art.png")));
         play3.setPlayerName(gen3.getName());
         play3.setPlayerHistory(gen3.getHistory());
         play3.setShowHeroAttack(gen3.getAttackPlayer());

@@ -149,9 +149,9 @@ public class Main {
 
             //Lista delle armi
             ArrayList listOfWeapon = new ArrayList<Weapon>();
-            listOfWeapon.add(new Weapon("Mazza d'acciaio", "Brutale", "Forza"));
-            listOfWeapon.add(new Weapon("Spada Mistica", "Agilità", "Rune"));
-            listOfWeapon.add(new Weapon("Balestra d'acciaio", "Raggio", "Munizioni"));
+            listOfWeapon.add(new Weapon("Martello Supremo!", "ND", "ND"));
+            listOfWeapon.add(new Weapon("Spada Imperiale", "ND", "ND"));
+            listOfWeapon.add(new Weapon("Spada d'oriente", "ND", "ND"));
 
             // Avvio dialog
             WeapSelector secarm = new WeapSelector(listOfWeapon);
