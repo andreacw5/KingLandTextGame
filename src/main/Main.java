@@ -31,7 +31,7 @@ public class Main {
         this.mistic = mistic;
     }
 
-    public void initialize() {
+    public void initialize() throws InterruptedException {
 
         /**
          * Caricamento Traduzioni...
@@ -115,6 +115,29 @@ public class Main {
         while (isMistic()) {
 
             /**
+             * AVVIO PlayerSelector
+             * Qui si avvia il Dialog PlayerSelector permettendo all'utente di scegliere il proprio eroe
+             * ASSOCIAZIONI: Player; PlayerPanel; PlayerSelector
+             */
+
+            System.out.println("listOfHero.ArrayList.pack.Start");
+
+            //Lista dei player
+            ArrayList listOfHero = new ArrayList<Player>();
+            listOfHero.add(new Player(messages.getString("hero0"),"22","5","75",messages.getString("story")));
+            listOfHero.add(new Player(messages.getString("hero1"),"19","8","70",messages.getString("story1")));
+            listOfHero.add(new Player(messages.getString("hero2"),"21","4","72",messages.getString("story2")));
+
+
+            // Avvio dialog
+            PlayerSelector secplayer = new PlayerSelector(listOfHero);
+            secplayer.setInfoPlayer(messages.getString("infoPlayer"));
+            secplayer.setInfoSelected(messages.getString("infoSelected"));
+            secplayer.pack();
+            secplayer.setVisible(true);
+
+
+            /**
              * AVVIO WeaponSelector
              * Qui si avvia il dialog WeaponSelector, permettendo all'utente di scegliere la propria arma!ù
              * ASSOCIAZIONI: Weapon; WeaponSelector; WeapPanel
@@ -129,7 +152,6 @@ public class Main {
             listOfWeapon.add(new Weapon("Mazza d'acciaio", "Brutale", "Forza"));
             listOfWeapon.add(new Weapon("Spada Mistica", "Agilità", "Rune"));
             listOfWeapon.add(new Weapon("Balestra d'acciaio", "Raggio", "Munizioni"));
-
 
             // Avvio dialog
             WeapSelector secarm = new WeapSelector(listOfWeapon);
