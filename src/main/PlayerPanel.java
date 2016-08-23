@@ -30,12 +30,13 @@ public class PlayerPanel extends JDialog {
         this.playerName.setText(playerName);
     }
 
-    public JLabel getPlayerHistoryText() {
-        return playerHistory;
+    // Storia dell'eroe
+    public String getPlayerHistory() {
+        return playerHistory.getText();
     }
 
-    public void setPlayerHistoryText(JLabel playerHistory) {
-        this.playerHistory = playerHistory;
+    public void setPlayerHistory(String playerHistory) {
+        this.playerHistory.setText(playerHistory);
     }
 
     public JButton getSelectorButtonP() {

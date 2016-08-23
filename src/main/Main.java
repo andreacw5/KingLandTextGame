@@ -124,9 +124,9 @@ public class Main {
 
             //Lista dei player
             ArrayList listOfHero = new ArrayList<Player>();
-            listOfHero.add(new Player("Eroe", "20", "10","100","sgdfgdfgdfgdfgdfgdfgdfg"));
-            listOfHero.add(new Player("Eroe", "20", "10","100","fghsdhsfghsfghdfghdjujy"));
-            listOfHero.add(new Player("Eroe", "20", "10","100","rgtergrtghrthrthrthtyht"));
+            listOfHero.add(new Player(messages.getString("hero0"),"22","5","75",messages.getString("story")));
+            listOfHero.add(new Player(messages.getString("hero1"),"19","8","70",messages.getString("story1")));
+            listOfHero.add(new Player(messages.getString("hero2"),"21","4","72",messages.getString("story2")));
 
 
             // Avvio dialog

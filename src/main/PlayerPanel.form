@@ -85,7 +85,7 @@
             </constraints>
             <properties>
               <background color="-5126"/>
-              <font name="Footlight MT Light" size="26"/>
+              <font name="Footlight MT Light" size="18"/>
               <foreground color="-5126"/>
               <text value="playerHistory"/>
             </properties>

@@ -52,6 +52,7 @@ public class PlayerSelector extends JDialog {
 
         //play1.setIconPlayer(new ImageIcon(PlayerSelector.this.getClass().getResource("/icon/Armor/Metal_icon.png")));
         play1.setPlayerName(gen1.getName());
+        play1.setPlayerHistory(gen1.getHistory());
         play1.setShowHeroAttack(gen1.getAttackPlayer());
         play1.setShowHeroDefence(gen1.getDefencePlayer());
         play1.setShowHeroHealt(gen1.getHealtPlayer());
@@ -59,6 +60,7 @@ public class PlayerSelector extends JDialog {
 
         //play2.setIconPlayer(new ImageIcon(PlayerSelector.this.getClass().getResource("/icon/Armor/Metal_icon.png")));
         play2.setPlayerName(gen2.getName());
+        play2.setPlayerHistory(gen2.getHistory());
         play2.setShowHeroAttack(gen2.getAttackPlayer());
         play2.setShowHeroDefence(gen2.getDefencePlayer());
         play2.setShowHeroHealt(gen2.getHealtPlayer());
@@ -66,6 +68,7 @@ public class PlayerSelector extends JDialog {
 
         //play3.setIconPlayer(new ImageIcon(PlayerSelector.this.getClass().getResource("/icon/Armor/Metal_icon.png")));
         play3.setPlayerName(gen3.getName());
+        play3.setPlayerHistory(gen3.getHistory());
         play3.setShowHeroAttack(gen3.getAttackPlayer());
         play3.setShowHeroDefence(gen3.getDefencePlayer());
         play3.setShowHeroHealt(gen3.getHealtPlayer());
