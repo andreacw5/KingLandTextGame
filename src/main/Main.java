@@ -54,6 +54,13 @@ public class Main {
         monitor1.pack();
         monitor1.setVisible(true);
 
+        // Avvio LoadingDialog
+
+        System.out.println("LoadingScreen.loading.pack.Start");
+        LoadingScreen loading = new LoadingScreen();
+        loading.pack();
+        loading.setVisible(true);
+
         /**
          *  Generazione Array e Random
          */
@@ -100,13 +107,6 @@ public class Main {
         Random n = new Random();
         n.nextInt(6);
         int yell = n.nextInt(6);
-
-        // Avvio LoadingDialog
-
-        System.out.println("LoadingScreen.loading.pack.Start");
-        LoadingScreen loading = new LoadingScreen();
-        loading.pack();
-        loading.setVisible(true);
 
         /**
          *  Avvio dei Dialog di Battaglia...

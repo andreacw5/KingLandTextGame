@@ -10,6 +10,8 @@ public class ArmoPanel extends JDialog {
     private JLabel firstAbilityA;
     private JLabel secondAbilityA;
     private JButton selectorButtonA;
+    private JLabel iconFirstAbility;
+    private JLabel IconSecondAbility;
     public ArmorSelector mother;
 
     public void setMother(ArmorSelector mother) {
@@ -61,12 +63,28 @@ public class ArmoPanel extends JDialog {
         return secondAbilityA;
     }
 
+    public JLabel getIconFirstAbility() {
+        return iconFirstAbility;
+    }
+
+    public void setIconFirstAbility(Icon iconFirstAbility) {
+        this.iconFirstAbility.setIcon(iconFirstAbility);
+    }
+
     public void setSecondAbilityA(String secondAbilityA) {
         this.secondAbilityA.setText(secondAbilityA);
     }
 
     public JButton getSelectorButtonA() {
         return selectorButtonA;
+    }
+
+    public JLabel getIconSecondAbility() {
+        return IconSecondAbility;
+    }
+
+    public void setIconSecondAbility(Icon IconSecondAbility) {
+        this.IconSecondAbility.setIcon(IconSecondAbility);
     }
 
     public void setSelectorButtonA(JButton selectorButtonA) {

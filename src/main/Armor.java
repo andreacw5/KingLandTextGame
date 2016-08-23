@@ -10,6 +10,7 @@ public class Armor {
         this.nameA = nameA;
         this.ability1A = ability1A;
         this.ability2A = ability2A;
+
     }
 
     public String getNameA() {

@@ -47,19 +47,25 @@ public class ArmorSelector extends JDialog {
 
         far1.setTitleNameA(ar1.getNameA());
         far1.setFirstAbilityA(ar1.getAbility1A());
+        far1.setIconFirstAbility(new ImageIcon(ArmorSelector.this.getClass().getResource("/icon/40x40/defence_icon.png")));
         far1.setSecondAbilityA(ar1.getAbility2A());
+        far1.setIconSecondAbility(new ImageIcon(ArmorSelector.this.getClass().getResource("/icon/40x40/strength_icon.png")));
         far1.setIconHeaderA(new ImageIcon(ArmorSelector.this.getClass().getResource("/icon/Armor/Bone_Icon.png")));
         far1.setMother(this);
 
         far2.setTitleNameA(ar2.getNameA());
         far2.setFirstAbilityA(ar2.getAbility1A());
+        far2.setIconFirstAbility(new ImageIcon(ArmorSelector.this.getClass().getResource("/icon/40x40/smithing_icon.png")));
         far2.setSecondAbilityA(ar2.getAbility2A());
+        far2.setIconSecondAbility(new ImageIcon(ArmorSelector.this.getClass().getResource("/icon/40x40/rune_icon.png")));
         far2.setIconHeaderA(new ImageIcon(ArmorSelector.this.getClass().getResource("/icon/Armor/Metal_icon.png")));
         far2.setMother(this);
 
         far3.setTitleNameA(ar3.getNameA());
         far3.setFirstAbilityA(ar3.getAbility1A());
+        far3.setIconFirstAbility(new ImageIcon(ArmorSelector.this.getClass().getResource("/icon/40x40/defence_icon.png")));
         far3.setSecondAbilityA(ar3.getAbility2A());
+        far3.setIconSecondAbility(new ImageIcon(ArmorSelector.this.getClass().getResource("/icon/40x40/ammo_icon.png")));
         far3.setIconHeaderA(new ImageIcon(ArmorSelector.this.getClass().getResource("/icon/Armor/Wood_Icon.png")));
         far3.setMother(this);
 
