@@ -85,7 +85,7 @@
                   <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <icon value="orc_2.png"/>
+                  <icon value="icon/Monster/ogre.png"/>
                   <text value=""/>
                 </properties>
               </component>
@@ -191,7 +191,7 @@
                   <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <icon value="hero_2.png"/>
+                  <icon value="icon/Hero/Golden_Knight_featured.png"/>
                   <text value=""/>
                 </properties>
               </component>
