@@ -2,9 +2,10 @@ package main;
 
 import main.gui.*;
 import main.manager.CharacterManager;
+import main.manager.WeaponManager;
 import main.model.hero.Hero;
 import main.model.monster.*;
-import main.model.weapon.Mace;
+import main.model.weapon.Hammer;
 import main.model.weapon.Sword;
 import main.model.weapon.Weapon;
 import main.util.MessageUtils;
@@ -112,16 +113,17 @@ public class Main {
 
             Random generator = new Random();
 
-            System.out.println("listOfWeapon.ArrayList.pack.Start");
+            WeaponManager weaponManager = new WeaponManager();
 
-            //Lista delle armi
-            ArrayList listOfWeapon = new ArrayList<Weapon>();
-            listOfWeapon.add(new Sword());
-            listOfWeapon.add(new Mace());
-            listOfWeapon.add(new Mace());
+            Weapon[] weapons = new Weapon[3];
+            weapons[0] = weaponManager.getWeapon( WeaponManager.ALABARD_WEAPON );
+            weapons[1] = weaponManager.getWeapon( WeaponManager.HAMMER_WEAPON );
+            weapons[2] = weaponManager.getWeapon( WeaponManager.SWORD_WEAPON );
 
-            // Avvio dialog
-            WeapSelector secarm = new WeapSelector(listOfWeapon);
+            System.out.println("weapons.getWeapon.WeaponManager.new");
+
+            WeapSelector secweapon = new WeapSelector(weapons);
+
             /**
              * AVVIO ArmorSelector
              * Qui si avvia il dialog ArmorSelector, permettendo all'utente di scegliere la propria armatura!

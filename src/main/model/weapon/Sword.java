@@ -1,14 +1,8 @@
 package main.model.weapon;
 
-/**
- * Created by Andrea Zago on 24/08/2016.
- */
 public class Sword extends Weapon{
 
-    public Sword() {
-
-        super( "Spada Imperiale", "ND", "ND" );
+    public Sword(String name, String imageUrl, String ability1, String ability1Url, String ability2, String ability2Url) {
+        super( "Hammer", "Hammer", "Hammer", "Hammer", "Hammer", "Hammer" );
     }
-
-
 }

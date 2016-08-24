@@ -1,15 +1,10 @@
 package main.gui;
 
 import main.model.Character;
-import main.model.hero.ArmoredSamurai;
-import main.model.hero.Hero;
-import main.model.monster.DarknessKnight;
-import main.model.monster.Monster;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
 
 public class ShowSelectedCharacter extends JDialog {
     private JPanel contentPane;

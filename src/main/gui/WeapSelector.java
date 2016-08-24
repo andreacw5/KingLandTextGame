@@ -56,7 +56,7 @@ public class WeapSelector extends JDialog {
         pan1.setIconFirstAbilityA(new ImageIcon(WeapSelector.this.getClass().getResource( "/icon/40x40/kill_icon.png" )));
         pan1.setSecondAbility(wp1.getAbility2());
         pan1.setIconSecondAbilityA(new ImageIcon(WeapSelector.this.getClass().getResource( "/icon/40x40/strength_icon.png" )));
-        pan1.setIconHeaderImage(new ImageIcon(WeapSelector.this.getClass().getResource( "/icon/Weap/Mace_icon.png" )));
+        pan1.setIconHeaderImage(new ImageIcon(WeapSelector.this.getClass().getResource( "/icon/Weap/Hammer_icon.png" )));
         pan1.setFather(this);
 
         // Pannello Centrale
@@ -74,7 +74,7 @@ public class WeapSelector extends JDialog {
         pan3.setIconFirstAbilityA(new ImageIcon(WeapSelector.this.getClass().getResource( "/icon/40x40/raged_icon.png" )));
         pan3.setSecondAbility(wp3.getAbility2());
         pan3.setIconSecondAbilityA(new ImageIcon(WeapSelector.this.getClass().getResource( "/icon/40x40/ammo_icon.png" )));
-        pan3.setIconHeaderImage(new ImageIcon(WeapSelector.this.getClass().getResource( "/icon/Weap/Crossbow_icon.png" )));
+        pan3.setIconHeaderImage(new ImageIcon(WeapSelector.this.getClass().getResource( "/icon/Weap/Alabard_icon.png" )));
         pan3.setFather(this);
 
         setContentPane(contentPane);

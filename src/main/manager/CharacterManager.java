@@ -1,6 +1,5 @@
 package main.manager;
 
-import main.model.Character;
 import main.model.hero.ArmoredSamurai;
 import main.model.hero.GoldenKnight;
 import main.model.hero.Hero;
@@ -13,9 +12,6 @@ import main.model.monster.Thug;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Andrea Zago on 24/08/2016.
- */
 public class CharacterManager {
 
     public static final String ARMORED_SAMURAI = "armoredSamurai";
