@@ -1,19 +1,12 @@
 package main.model.hero;
 
-import main.util.MessageUtils;
+import main.manager.CharacterManager;
 
-/**
- * Created by Andrea Zago on 24/08/2016.
- */
-public class GoldenKnight extends Hero{
+public class GoldenKnight extends Hero {
 
-    public GoldenKnight(String name, String imageUrl) {
-        super( name, imageUrl );
+    public GoldenKnight() {
+        super( CharacterManager.GOLDEN_KNIGHT );
     }
 
-    @Override
-    public String getName() {
-        return MessageUtils.getLocalizedString("hero0");
-    }
 
 }

@@ -1,60 +1,100 @@
 package main.gui;
 
+import main.model.Character;
+
 import javax.swing.*;
-import java.awt.event.*;
 
 public class ShowPlayerPanel extends JDialog {
     private JPanel contentPane;
-    private JButton buttonOK;
-    private JButton buttonCancel;
+    private JLabel iconSelectedImage;
+    private JLabel showSelectedName;
+    private JLabel showSelectedHP;
+    private JLabel showSelectedAttack;
+    private JLabel showSelectedDefence;
+    private JLabel showSelectedWeap;
+    private JLabel showSelectedArmor;
 
     public ShowPlayerPanel() {
         setContentPane( contentPane );
         setModal( true );
-        getRootPane().setDefaultButton( buttonOK );
-
-        buttonOK.addActionListener( new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                onOK();
-            }
-        } );
-
-        buttonCancel.addActionListener( new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                onCancel();
-            }
-        } );
-
-        // call onCancel() when cross is clicked
-        setDefaultCloseOperation( DO_NOTHING_ON_CLOSE );
-        addWindowListener( new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                onCancel();
-            }
-        } );
-
-        // call onCancel() on ESCAPE
-        contentPane.registerKeyboardAction( new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                onCancel();
-            }
-        }, KeyStroke.getKeyStroke( KeyEvent.VK_ESCAPE, 0 ), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT );
     }
+
+    public void init(Character caracther) {
+        this.setIconSelectedImage(caracther.getImageUrl());
+        this.setShowSelectedName(caracther.getName());
+        this.setShowSelectedWeap("");
+        this.setShowSelectedArmor("");
+        this.setShowSelectedAttack("");
+        this.setShowSelectedDefence("");
+        this.setShowSelectedHP("");
+    }
+
 
     private void onOK() {
         // add your code here
         dispose();
     }
 
-    private void onCancel() {
-        // add your code here if necessary
-        dispose();
+    // Icona del Character
+    public String getSelectedImage() {
+        return iconSelectedImage.getText();
     }
 
-    public static void main(String[] args) {
-        ShowPlayerPanel dialog = new ShowPlayerPanel();
-        dialog.pack();
-        dialog.setVisible( true );
-        System.exit( 0 );
+    public void setIconSelectedImage(String iconSelectedImage) {
+        this.iconSelectedImage.setText(iconSelectedImage);
+    }
+
+    // Nome del Character
+    public String getShowSelectedName() {
+        return showSelectedName.getText();
+    }
+
+    public void setShowSelectedName(String showSelectedName) {
+        this.showSelectedName.setText(showSelectedName);
+    }
+
+    // Arma del Character
+    public String getShowSelectedWeap() {
+        return showSelectedWeap.getText();
+    }
+
+    public void setShowSelectedWeap(String showSelectedWeap) {
+        this.showSelectedWeap.setText(showSelectedWeap);
+    }
+
+    // Armatura del Character
+    public String getShowSelectedArmor() {
+        return showSelectedArmor.getText();
+    }
+
+    public void setShowSelectedArmor(String showSelectedArmor) {
+        this.showSelectedArmor.setText(showSelectedArmor);
+    }
+
+    // Attacco del Character
+    public String getShowSelectedAttack() {
+        return showSelectedAttack.getText();
+    }
+
+    public void setShowSelectedAttack(String showSelectedAttack) {
+        this.showSelectedAttack.setText(showSelectedAttack);
+    }
+
+    // Difesa del Character
+    public String getShowSelectedDefence() {
+        return showSelectedDefence.getText();
+    }
+
+    public void setShowSelectedDefence(String showSelectedDefence) {
+        this.showSelectedDefence.setText(showSelectedDefence);
+    }
+
+    // HP del Character
+    public String getShowSelectedHP() {
+        return showSelectedHP.getText();
+    }
+
+    public void setShowSelectedHP(String showSelectedHP) {
+        this.showSelectedHP.setText(showSelectedHP);
     }
 }

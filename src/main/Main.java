@@ -1,11 +1,12 @@
 package main;
 
 import main.gui.*;
-import main.model.hero.ArmoredSamurai;
-import main.model.hero.GoldenKnight;
+import main.manager.CharacterManager;
 import main.model.hero.Hero;
-import main.model.hero.RedKnight;
 import main.model.monster.*;
+import main.model.weapon.Mace;
+import main.model.weapon.Sword;
+import main.model.weapon.Weapon;
 import main.util.MessageUtils;
 
 import java.util.ArrayList;
@@ -61,32 +62,24 @@ public class Main {
          *  Generazione Array e Random
          */
 
-        // Dati player
-        ArmoredSamurai hero1 = new ArmoredSamurai("hero0","/icon/Hero/armored-samurai-royalty-free-game-art.png");
-        GoldenKnight hero2 = new GoldenKnight("hero1","/icon/Hero/Golden_Knight_featured.png");
-        RedKnight hero3 = new RedKnight("hero2","/icon/Hero/red-knight-game-art-character-featured-2.png");
+        CharacterManager characterManager = new CharacterManager();
 
         // Array degli eroi
         Hero[] theHero = new Hero[3];
-        theHero[0] = hero1;
-        theHero[1] = hero2;
-        theHero[2] = hero3;
+        theHero[0] = characterManager.getHero( CharacterManager.ARMORED_SAMURAI );
+        theHero[1] = characterManager.getHero( CharacterManager.RED_KNIGHT );
+        theHero[2] = characterManager.getHero( CharacterManager.GOLDEN_KNIGHT );
 
         // Generatore di eroe
         Random k = new Random();
         k.nextInt(3);
         int herogen = k.nextInt(3);
 
-        // Dati mostro
-        DarknessKnight moster1 = new DarknessKnight("monster0", "/icon/Monster/Darkness_Knight_Featured.png");
-        Thug moster2 = new Thug("monster1", "/icon/Monster/thug.png");
-        Ogre moster3 = new Ogre("monster2", "/icon/Monster/ogre.png");
-
         // Array dei mostri
         Monster[] theMonsters = new Monster[3];
-        theMonsters[0] = moster1;
-        theMonsters[1] = moster2;
-        theMonsters[2] = moster3;
+        theMonsters[0] =  characterManager.getMonster( CharacterManager.THUG );
+        theMonsters[1] =  characterManager.getMonster( CharacterManager.OGRE );
+        theMonsters[2] =  characterManager.getMonster( CharacterManager.DARKNESS_KNIGHT );
 
 
         // Generazione avversario
@@ -108,20 +101,8 @@ public class Main {
 
             System.out.println("listOfHero.ArrayList.pack.Start");
 
-            //Lista dei player
-            ArrayList listOfHero = new ArrayList<Player>();
-            listOfHero.add(new Player(MessageUtils.getLocalizedString( "hero0"),"22","5","75",MessageUtils.getLocalizedString( "story")));
-            listOfHero.add(new Player(MessageUtils.getLocalizedString( "hero1"),"19","8","70",MessageUtils.getLocalizedString( "story1")));
-            listOfHero.add(new Player(MessageUtils.getLocalizedString( "hero2"),"21","4","72",MessageUtils.getLocalizedString( "story2")));
-
-
             // Avvio dialog
-            PlayerSelector secplayer = new PlayerSelector(listOfHero);
-            secplayer.setInfoPlayer(MessageUtils.getLocalizedString( "infoPlayer"));
-            secplayer.setInfoSelected(MessageUtils.getLocalizedString( "infoSelected"));
-            secplayer.pack();
-            secplayer.setVisible(true);
-
+            PlayerSelector secplayer = new PlayerSelector(theHero);
 
             /**
              * AVVIO WeaponSelector
@@ -135,17 +116,12 @@ public class Main {
 
             //Lista delle armi
             ArrayList listOfWeapon = new ArrayList<Weapon>();
-            listOfWeapon.add(new Weapon("Martello Supremo!", "ND", "ND"));
-            listOfWeapon.add(new Weapon("Spada Imperiale", "ND", "ND"));
-            listOfWeapon.add(new Weapon("Spada d'oriente", "ND", "ND"));
+            listOfWeapon.add(new Sword());
+            listOfWeapon.add(new Mace());
+            listOfWeapon.add(new Mace());
 
             // Avvio dialog
             WeapSelector secarm = new WeapSelector(listOfWeapon);
-            secarm.setInfoWeap(MessageUtils.getLocalizedString( "infoWeap"));
-            secarm.setInfoSelected(MessageUtils.getLocalizedString( "infoSelected"));
-            secarm.pack();
-            secarm.setVisible(true);
-
             /**
              * AVVIO ArmorSelector
              * Qui si avvia il dialog ArmorSelector, permettendo all'utente di scegliere la propria armatura!
@@ -163,10 +139,6 @@ public class Main {
 
             // Avvio dialog
             ArmorSelector secarmor = new ArmorSelector(listOfArmor);
-            secarmor.setInfoArmor(MessageUtils.getLocalizedString( "infoArmor"));
-            secarmor.setInfoSelected(MessageUtils.getLocalizedString( "infoSelected"));
-            secarmor.pack();
-            secarmor.setVisible(true);
 
 
             /**
@@ -175,8 +147,9 @@ public class Main {
              */
 
             System.out.println("ShowPlay.caratt.pack.Start");
-            ShowPlayer caratt = new ShowPlayer();
+            ShowSelectedCharacter caratt = new ShowSelectedCharacter(secplayer.getSelectedHero(), characterManager.getMonster( CharacterManager.OGRE ));
 
+/*
             // Sezione eroe
             caratt.setShowHeroTitle( MessageUtils.getLocalizedString( "yourHero"));
             caratt.setShowHeroName(theHero[herogen].getName());
@@ -194,6 +167,7 @@ public class Main {
             caratt.setShowMonsterAttack(" "+theMonsters[yell].attack());
             caratt.setShowMonsterDefence(" " + theMonsters[yell].defence());
             caratt.setShowMonsterHealt(" "+ theMonsters[yell].healt());
+*/
 
             caratt.pack();
             caratt.setVisible(true);

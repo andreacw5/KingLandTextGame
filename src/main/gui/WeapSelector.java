@@ -1,6 +1,7 @@
 package main.gui;
 
-import main.Weapon;
+import main.model.weapon.Weapon;
+import main.util.MessageUtils;
 
 import javax.swing.*;
 import java.awt.*;
@@ -83,6 +84,11 @@ public class WeapSelector extends JDialog {
         setPreferredSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
         setResizable(false);
         setLocationRelativeTo(null);
+        setInfoWeap( MessageUtils.getLocalizedString( "infoWeap"));
+        setInfoSelected(MessageUtils.getLocalizedString( "infoSelected"));
+        pack();
+        setVisible(true);
+
 
     }
 

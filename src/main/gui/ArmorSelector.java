@@ -1,6 +1,7 @@
 package main.gui;
 
 import main.Armor;
+import main.util.MessageUtils;
 
 import javax.swing.*;
 import java.awt.*;
@@ -78,6 +79,11 @@ public class ArmorSelector extends JDialog {
         setPreferredSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
         setResizable(false);
         setLocationRelativeTo(null);
+        setInfoArmor( MessageUtils.getLocalizedString( "infoArmor"));
+        setInfoSelected(MessageUtils.getLocalizedString( "infoSelected"));
+        pack();
+        setVisible(true);
+
     }
 
     private void onOK() {

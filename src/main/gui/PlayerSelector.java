@@ -1,11 +1,11 @@
 package main.gui;
 
-import main.Player;
+import main.model.hero.Hero;
+import main.util.MessageUtils;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
 
 public class PlayerSelector extends JDialog {
     private JPanel contentPane;
@@ -16,12 +16,18 @@ public class PlayerSelector extends JDialog {
     private PlayerPanel play2;
     private PlayerPanel play1;
     private PlayerPanel play3;
+    private Hero selectedHero;
     public static final int WIDTH=400;
     public static final int HEIGHT=WIDTH/12*9;
     public static final int SCALE=3;
 
-    public void setSelectedPlayer(String selectedPlayerText) {
-        this.selectedPlayer.setText(selectedPlayerText);
+    public Hero getSelectedHero() {
+        return selectedHero;
+    }
+
+    public void setSelectedHero(Hero selectedHero) {
+        this.selectedHero = selectedHero;
+        this.selectedPlayer.setText(selectedHero.getLocalizedName());
     }
 
     public String getSelectedPlayerText() {
@@ -37,10 +43,10 @@ public class PlayerSelector extends JDialog {
         this.infoSelected.setText(v34);
     }
 
-    public PlayerSelector(ArrayList<Player> listOfHero) {
-        Player gen1 = listOfHero.get(0);
-        Player gen2 = listOfHero.get(1);
-        Player gen3 = listOfHero.get(2);
+    public PlayerSelector(Hero[] listOfHero) {
+        Hero hero1 = listOfHero[0];
+        Hero hero2 = listOfHero[1];
+        Hero hero3 = listOfHero[2];
 
 
         setContentPane( contentPane );
@@ -52,28 +58,13 @@ public class PlayerSelector extends JDialog {
             }
         });
 
-        play1.setIconPlayer(new ImageIcon(PlayerSelector.this.getClass().getResource( "/icon/Hero/Golden_Knight_featured.png" )));
-        play1.setPlayerName(gen1.getName());
-        play1.setPlayerHistory(gen1.getHistory());
-        play1.setShowHeroAttack(gen1.getAttackPlayer());
-        play1.setShowHeroDefence(gen1.getDefencePlayer());
-        play1.setShowHeroHealt(gen1.getHealtPlayer());
+        play1.setHero( hero1 );
         play1.setSon(this);
 
-        play2.setIconPlayer(new ImageIcon(PlayerSelector.this.getClass().getResource( "/icon/Hero/red-knight-game-art-character-featured-2.png" )));
-        play2.setPlayerName(gen2.getName());
-        play2.setPlayerHistory(gen2.getHistory());
-        play2.setShowHeroAttack(gen2.getAttackPlayer());
-        play2.setShowHeroDefence(gen2.getDefencePlayer());
-        play2.setShowHeroHealt(gen2.getHealtPlayer());
+        play2.setHero( hero2 );
         play2.setSon(this);
 
-        play3.setIconPlayer(new ImageIcon(PlayerSelector.this.getClass().getResource( "/icon/Hero/armored-samurai-royalty-free-game-art.png" )));
-        play3.setPlayerName(gen3.getName());
-        play3.setPlayerHistory(gen3.getHistory());
-        play3.setShowHeroAttack(gen3.getAttackPlayer());
-        play3.setShowHeroDefence(gen3.getDefencePlayer());
-        play3.setShowHeroHealt(gen3.getHealtPlayer());
+        play3.setHero( hero3 );
         play3.setSon(this);
 
         setContentPane(contentPane);
@@ -83,6 +74,10 @@ public class PlayerSelector extends JDialog {
         setPreferredSize(new Dimension( WIDTH * SCALE, HEIGHT * SCALE ));
         setResizable(false);
         setLocationRelativeTo(null);
+        setInfoPlayer( MessageUtils.getLocalizedString( "infoPlayer"));
+        setInfoSelected(MessageUtils.getLocalizedString( "infoSelected"));
+        pack();
+        setVisible(true);
     }
 
     private void onOK() {

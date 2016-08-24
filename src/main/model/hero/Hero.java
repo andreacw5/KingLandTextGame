@@ -1,29 +1,23 @@
 package main.model.hero;
 
 import main.model.Character;
+import main.util.MessageUtils;
 
-public abstract class Hero extends Character{
-    String name;
-    String history;
+public abstract class Hero extends Character {
 
-    public Hero(String name, String imageUrl) {
-        super( name, imageUrl );
+    private String history;
+
+    public String getHistory() {
+        return history;
     }
 
-
-    @Override
-    public int attack() {
-        return 0;
+    public void setHistory(String history) {
+        this.history = history;
     }
 
-    @Override
-    public int defence() {
-        return 0;
-    }
-
-    @Override
-    public int healt() {
-        return 0;
+    public Hero(String name) {
+        super( name, "/icon/Hero/" + name + ".png" );
+        this.history = MessageUtils.getLocalizedString( name + ".story" );
     }
 
 }

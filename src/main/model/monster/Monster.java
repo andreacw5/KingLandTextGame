@@ -4,22 +4,8 @@ import main.model.Character;
 
 public abstract class Monster extends Character {
 
-    public Monster(String name, String imageUrl) {
-        super( name, imageUrl );
+    public Monster(String name) {
+        super( name, "/icon/Monster/" + name + ".png" );
     }
 
-    @Override
-    public int attack() {
-        return 0;
-    }
-
-    @Override
-    public int defence() {
-        return 0;
-    }
-
-    @Override
-    public int healt() {
-        return 0;
-    }
 }

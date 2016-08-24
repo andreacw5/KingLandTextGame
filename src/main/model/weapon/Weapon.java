@@ -1,7 +1,7 @@
-package main;
+package main.model.weapon;
 
 
-public class Weapon {
+public abstract class Weapon {
 
     private String name;
     private String ability1;

@@ -1,16 +1,12 @@
 package main.model.monster;
 
-import main.util.MessageUtils;
+import main.manager.CharacterManager;
 
-public class DarknessKnight extends Monster{
+public class DarknessKnight extends Monster {
 
-    public DarknessKnight(String name, String imageUrl) {
-        super( name, imageUrl );
+    public DarknessKnight() {
+        super( CharacterManager.DARKNESS_KNIGHT );
     }
 
-    @Override
-    public String getName() {
-        return MessageUtils.getLocalizedString("monster0");
-    }
 
 }

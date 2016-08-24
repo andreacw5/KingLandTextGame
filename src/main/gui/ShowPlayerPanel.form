@@ -1,70 +1,199 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="main.gui.ShowPlayerPanel">
-  <grid id="cbd77" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1" binding="contentPane">
+  <grid id="cbd77" binding="contentPane" layout-manager="GridLayoutManager" row-count="9" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="10" left="10" bottom="10" right="10"/>
     <constraints>
-      <xy x="48" y="54" width="436" height="297"/>
-      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3"/>
+      <xy x="48" y="54" width="832" height="800"/>
     </constraints>
-    <properties/>
-    <border type="none"/>
+    <properties>
+      <background color="-12503264"/>
+    </properties>
+    <border type="bevel-raised"/>
     <children>
-      <grid id="94766" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <component id="ff43c" class="javax.swing.JLabel" binding="iconSelectedImage">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <icon value="icon/StoryPR/King_Vlad_featured.png"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <grid id="57c5b" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <xy x="10" y="264" width="416" height="23"/>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="3" anchor="0" fill="3"/>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-12503264"/>
+        </properties>
         <border type="none"/>
         <children>
-          <hspacer id="98af6">
+          <hspacer id="80717">
             <constraints>
-              <xy x="0" y="6" width="266" height="11"/>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1"/>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
           </hspacer>
-          <grid id="9538f" row-count="1" column-count="2" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="0" left="0" bottom="0" right="0"/>
+          <hspacer id="f0b2d">
             <constraints>
-              <xy x="276" y="0" width="140" height="23"/>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3"/>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
-            <properties/>
-            <border type="none"/>
-            <children>
-              <component id="e7465" class="javax.swing.JButton" binding="buttonOK">
-                <constraints>
-                  <xy x="0" y="0" width="65" height="23"/>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1"/>
-                </constraints>
-                <properties>
-                  <text value="OK"/>
-                </properties>
-              </component>
-              <component id="5723f" class="javax.swing.JButton" binding="buttonCancel">
-                <constraints>
-                  <xy x="75" y="0" width="65" height="23"/>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1"/>
-                </constraints>
-                <properties>
-                  <text value="Cancel"/>
-                </properties>
-              </component>
-            </children>
-          </grid>
+          </hspacer>
+          <component id="707b0" class="javax.swing.JLabel" binding="showSelectedName">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-5126"/>
+              <font name="Footlight MT Light" size="26"/>
+              <foreground color="-5126"/>
+              <text value="showSelectedName"/>
+            </properties>
+          </component>
         </children>
       </grid>
-      <grid id="e3588" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="ea66a" layout-manager="GridLayoutManager" row-count="1" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <xy x="10" y="10" width="416" height="249"/>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3"/>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-12503264"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <hspacer id="69c4a">
+            <constraints>
+              <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+          <hspacer id="30c9b">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+          <component id="ca8e6" class="javax.swing.JLabel" binding="showSelectedWeap">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                <minimum-size width="0" height="0"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-5126"/>
+              <font name="Footlight MT Light" size="22"/>
+              <foreground color="-5126"/>
+              <iconTextGap value="4"/>
+              <opaque value="false"/>
+              <text value="showSelectedWeap"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <component id="bd5bb" class="javax.swing.JToolBar$Separator">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties/>
+      </component>
+      <component id="ff6fa" class="javax.swing.JToolBar$Separator">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <grid id="d7a8f" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-12503264"/>
+        </properties>
         <border type="none"/>
-        <children/>
+        <children>
+          <component id="42523" class="javax.swing.JLabel" binding="showSelectedHP">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-5126"/>
+              <font name="Footlight MT Light" size="22"/>
+              <foreground color="-5126"/>
+              <icon value="icon/40x40/healt_icon.png"/>
+              <text value="Healt"/>
+            </properties>
+          </component>
+          <component id="e0442" class="javax.swing.JLabel" binding="showSelectedAttack">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-5126"/>
+              <font name="Footlight MT Light" size="22"/>
+              <foreground color="-5126"/>
+              <icon value="icon/40x40/attack_icon.png"/>
+              <text value="Attk"/>
+            </properties>
+          </component>
+          <component id="88496" class="javax.swing.JLabel" binding="showSelectedDefence">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-5126"/>
+              <font name="Footlight MT Light" size="22"/>
+              <foreground color="-5126"/>
+              <icon value="icon/40x40/defence_icon.png"/>
+              <text value="Def"/>
+            </properties>
+          </component>
+        </children>
       </grid>
+      <component id="364e2" class="javax.swing.JToolBar$Separator">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <grid id="e925e" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-12503264"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <hspacer id="f2740">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+          <hspacer id="84b55">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+          <component id="95a0a" class="javax.swing.JLabel" binding="showSelectedArmor">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-5126"/>
+              <font name="Footlight MT Light" size="22"/>
+              <foreground color="-5126"/>
+              <text value="showSelectedArmor"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <component id="e5503" class="javax.swing.JToolBar$Separator">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+      </component>
     </children>
   </grid>
 </form>
