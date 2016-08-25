@@ -1,6 +1,5 @@
 package main.gui;
 
-import main.model.weapon.Weapon;
 import main.model.weapon.hero.HeroWeap;
 import main.util.MessageUtils;
 
@@ -8,7 +7,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class WeapSelector extends JDialog {
     private JPanel contentPane;

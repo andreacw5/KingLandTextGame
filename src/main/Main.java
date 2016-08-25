@@ -1,11 +1,12 @@
 package main;
 
 import main.gui.*;
+import main.gui.WeapSelector;
 import main.manager.CharacterManager;
 import main.manager.WeaponManager;
 import main.model.character.hero.Hero;
 import main.model.character.monster.*;
-import main.model.weapon.Weapon;
+import main.model.character.story.StoryCharacter;
 import main.model.weapon.hero.HeroWeap;
 import main.util.MessageUtils;
 
@@ -81,11 +82,15 @@ public class Main {
         theMonsters[1] =  characterManager.getMonster( CharacterManager.OGRE );
         theMonsters[2] =  characterManager.getMonster( CharacterManager.DARKNESS_KNIGHT );
 
-
         // Generazione avversario
         Random n = new Random();
         n.nextInt(3);
         int yell = n.nextInt(3);
+
+        // Array Personaggi della storia
+        StoryCharacter[] theStoryC = new StoryCharacter[2];
+        theStoryC[0] = characterManager.getStoryCharacter(CharacterManager.EXECUTIONER);
+        theStoryC[1] = characterManager.getStoryCharacter(CharacterManager.KING_VLAD);
 
         /**
          *  Avvio dei Dialog di Battaglia...
@@ -96,7 +101,6 @@ public class Main {
             /**
              * AVVIO PlayerSelector
              * Qui si avvia il Dialog PlayerSelector permettendo all'utente di scegliere il proprio eroe
-             * ASSOCIAZIONI: Player; PlayerPanel; PlayerSelector
              */
 
             System.out.println("listOfHero.ArrayList.pack.Start");
@@ -107,7 +111,6 @@ public class Main {
             /**
              * AVVIO WeaponSelector
              * Qui si avvia il dialog WeaponSelector, permettendo all'utente di scegliere la propria arma!ù
-             * ASSOCIAZIONI: Weapon; WeaponSelector; WeapPanel
              */
 
             Random generator = new Random();
@@ -126,7 +129,6 @@ public class Main {
             /**
              * AVVIO ArmorSelector
              * Qui si avvia il dialog ArmorSelector, permettendo all'utente di scegliere la propria armatura!
-             * ASSOCIAZIONI: Armor; ArmorSelector; ArmoPanel
              */
 
             System.out.println("listOfArmor.ArrayList.pack.Start");
