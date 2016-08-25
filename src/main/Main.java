@@ -2,8 +2,10 @@ package main;
 
 import main.gui.*;
 import main.gui.WeapSelector;
+import main.manager.ArmorManager;
 import main.manager.CharacterManager;
 import main.manager.WeaponManager;
+import main.model.armor.Armor;
 import main.model.character.hero.Hero;
 import main.model.character.monster.*;
 import main.model.character.story.StoryCharacter;
@@ -133,15 +135,16 @@ public class Main {
 
             System.out.println("listOfArmor.ArrayList.pack.Start");
 
-            //Lista delle armature
-            ArrayList listOfArmor = new ArrayList<Armor>();
-            listOfArmor.add(new Armor("Armatura di Krune", "Difesa", "Attacco Bonus"));
-            listOfArmor.add(new Armor("Armatura del Fuoco", "Forgia", "Runa"));
-            listOfArmor.add(new Armor("Armatura di Markart", "Difesa", "Munizioni"));
+            ArmorManager armorManager = new ArmorManager();
 
+            //Lista delle armature
+            Armor[] armorList = new Armor[3];
+            armorList[0] = armorManager.getArmor( ArmorManager.FIRE_ARMOR );
+            armorList[1] = armorManager.getArmor( ArmorManager.KRUNE_ARMOR );
+            armorList[2] = armorManager.getArmor( ArmorManager.MARKART_ARMOR );
 
             // Avvio dialog
-            ArmorSelector secarmor = new ArmorSelector(listOfArmor);
+            ArmorSelector secarmor = new ArmorSelector(armorList);
 
 
             /**

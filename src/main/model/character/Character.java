@@ -1,6 +1,6 @@
 package main.model.character;
 
-import main.Armor;
+import main.model.armor.Armor;
 import main.model.weapon.Weapon;
 import main.util.MessageUtils;
 
