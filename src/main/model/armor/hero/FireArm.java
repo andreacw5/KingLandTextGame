@@ -8,4 +8,6 @@ public class FireArm extends Armor {
     public FireArm(){
         super( ArmorManager.FIRE_ARMOR);
     }
+
+
 }

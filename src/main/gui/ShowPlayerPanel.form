@@ -45,7 +45,7 @@
             </constraints>
             <properties>
               <background color="-5126"/>
-              <font name="Footlight MT Light" size="26"/>
+              <font name="Footlight MT Light" size="36"/>
               <foreground color="-5126"/>
               <text value="showSelectedName"/>
             </properties>
@@ -80,7 +80,7 @@
             </constraints>
             <properties>
               <background color="-5126"/>
-              <font name="Footlight MT Light" size="22"/>
+              <font name="Footlight MT Light" size="26"/>
               <foreground color="-5126"/>
               <iconTextGap value="4"/>
               <opaque value="false"/>
@@ -117,7 +117,7 @@
             </constraints>
             <properties>
               <background color="-5126"/>
-              <font name="Footlight MT Light" size="22"/>
+              <font name="Footlight MT Light" size="24"/>
               <foreground color="-5126"/>
               <icon value="icon/40x40/healt_icon.png"/>
               <text value="Healt"/>
@@ -129,7 +129,7 @@
             </constraints>
             <properties>
               <background color="-5126"/>
-              <font name="Footlight MT Light" size="22"/>
+              <font name="Footlight MT Light" size="24"/>
               <foreground color="-5126"/>
               <icon value="icon/40x40/attack_icon.png"/>
               <text value="Attk"/>
@@ -141,7 +141,7 @@
             </constraints>
             <properties>
               <background color="-5126"/>
-              <font name="Footlight MT Light" size="22"/>
+              <font name="Footlight MT Light" size="24"/>
               <foreground color="-5126"/>
               <icon value="icon/40x40/defence_icon.png"/>
               <text value="Def"/>
@@ -181,7 +181,7 @@
             </constraints>
             <properties>
               <background color="-5126"/>
-              <font name="Footlight MT Light" size="22"/>
+              <font name="Footlight MT Light" size="26"/>
               <foreground color="-5126"/>
               <text value="showSelectedArmor"/>
             </properties>

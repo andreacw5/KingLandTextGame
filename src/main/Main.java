@@ -26,6 +26,7 @@ public class Main {
     private boolean mistic = true;
 
 
+
     public boolean isMistic() {
         return mistic;
     }
@@ -152,10 +153,25 @@ public class Main {
              */
 
             System.out.println("ShowPlay.caratt.pack.Start");
-            Monster monster = characterManager.getMonster( CharacterManager.OGRE );
-            monster.setArmor( armorManager.getArmor( ArmorManager.FIRE_ARMOR ) );
-            monster.setWeapon( weaponManager.getMonsterWeapon( WeaponManager.MACE_WEAPON ) );
-            ShowSelectedCharacter caratt = new ShowSelectedCharacter(secplayer.getSelectedHero(), monster);
+
+            int enemygen = generator.nextInt(3);
+
+            if(enemygen == 0){
+                Monster monster = characterManager.getMonster( CharacterManager.OGRE );
+                monster.setArmor( armorManager.getArmor( ArmorManager.FIRE_ARMOR ) );
+                monster.setWeapon( weaponManager.getMonsterWeapon( WeaponManager.MACE_WEAPON ) );
+                ShowSelectedCharacter caratt = new ShowSelectedCharacter(secplayer.getSelectedHero(), monster);
+            }if(enemygen == 1){
+                Monster monster = characterManager.getMonster( CharacterManager.DARKNESS_KNIGHT );
+                monster.setArmor( armorManager.getArmor( ArmorManager.FIRE_ARMOR ) );
+                monster.setWeapon( weaponManager.getMonsterWeapon( WeaponManager.AXE_WEAPON ) );
+                ShowSelectedCharacter caratt = new ShowSelectedCharacter(secplayer.getSelectedHero(), monster);
+            }else{
+                Monster monster = characterManager.getMonster( CharacterManager.THUG );
+                monster.setArmor( armorManager.getArmor( ArmorManager.KRUNE_ARMOR ) );
+                monster.setWeapon( weaponManager.getMonsterWeapon( WeaponManager.AXE_WEAPON ) );
+                ShowSelectedCharacter caratt = new ShowSelectedCharacter( secplayer.getSelectedHero(), monster );
+            }
 
             /**
              * AVVIO ShowBattleDialog

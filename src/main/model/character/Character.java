@@ -50,16 +50,16 @@ public abstract class Character implements CharacterFunctions {
         Random n = new Random();
         this.name = name;
         this.imageUrl = imageUrl;
-        this.defence =  n.nextInt(50);
-        this.attack =  n.nextInt(50);
-        this.heath =  n.nextInt(50);
+        this.defence =  5+n.nextInt(10);
+        this.attack = 15+n.nextInt(20);
+        this.heath =  50+n.nextInt(50);
     }
 
     public void reinit(){
         Random n = new Random();
-        this.defence =  n.nextInt(50);
-        this.attack =  n.nextInt(50);
-        this.heath =  n.nextInt(50);
+        this.defence =  5+n.nextInt(10);
+        this.attack = 15+n.nextInt(20);
+        this.heath =  50+n.nextInt(50);
     }
 
     public String getLocalizedName() {

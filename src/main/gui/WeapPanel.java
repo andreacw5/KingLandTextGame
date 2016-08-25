@@ -40,7 +40,7 @@ public class WeapPanel extends JDialog {
 
     public void setHeroWeapon(HeroWeap heroWeap){
         this.heroWeap = heroWeap;
-        this.iconHeader.setIcon(new ImageIcon( WeapPanel.class.getResource( heroWeap.getImageUrl() ) ) );
+        this.iconHeader.setIcon(new ImageIcon( WeapPanel.class.getResource( heroWeap.getImageUrl())));
         this.titleName.setText(heroWeap.getLocalizedName());
         this.firstAbility.setText(heroWeap.getAbility1());
         this.secondAbility.setText(heroWeap.getAbility2());
