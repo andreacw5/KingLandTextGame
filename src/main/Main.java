@@ -61,44 +61,42 @@ public class Main {
         loading.pack();
         loading.setVisible(true);
 
-        /**
-         *  Generazione Array e Random
-         */
-
-        CharacterManager characterManager = new CharacterManager();
-
-        // Array degli eroi
-        Hero[] theHero = new Hero[3];
-        theHero[0] = characterManager.getHero( CharacterManager.ARMORED_SAMURAI );
-        theHero[1] = characterManager.getHero( CharacterManager.RED_KNIGHT );
-        theHero[2] = characterManager.getHero( CharacterManager.GOLDEN_KNIGHT );
-
-        // Generatore di eroe
-        Random k = new Random();
-        k.nextInt(3);
-        int herogen = k.nextInt(3);
-
-        // Array dei mostri
-        Monster[] theMonsters = new Monster[3];
-        theMonsters[0] =  characterManager.getMonster( CharacterManager.THUG );
-        theMonsters[1] =  characterManager.getMonster( CharacterManager.OGRE );
-        theMonsters[2] =  characterManager.getMonster( CharacterManager.DARKNESS_KNIGHT );
-
-        // Generazione avversario
-        Random n = new Random();
-        n.nextInt(3);
-        int yell = n.nextInt(3);
-
-        // Array Personaggi della storia
-        StoryCharacter[] theStoryC = new StoryCharacter[2];
-        theStoryC[0] = characterManager.getStoryCharacter(CharacterManager.EXECUTIONER);
-        theStoryC[1] = characterManager.getStoryCharacter(CharacterManager.KING_VLAD);
-
-        /**
-         *  Avvio dei Dialog di Battaglia...
-         */
-
         while (isMistic()) {
+
+            System.out.println("isMistic.While.Start");
+
+            /**
+             *  Generazione Array e Random
+             */
+
+            CharacterManager characterManager = new CharacterManager();
+
+            // Array degli eroi
+            Hero[] theHero = new Hero[3];
+            theHero[0] = characterManager.getHero( CharacterManager.ARMORED_SAMURAI );
+            theHero[1] = characterManager.getHero( CharacterManager.RED_KNIGHT );
+            theHero[2] = characterManager.getHero( CharacterManager.GOLDEN_KNIGHT );
+
+            // Generatore di eroe
+            Random k = new Random();
+            k.nextInt(3);
+            int herogen = k.nextInt(3);
+
+            // Array dei mostri
+            Monster[] theMonsters = new Monster[3];
+            theMonsters[0] =  characterManager.getMonster( CharacterManager.THUG );
+            theMonsters[1] =  characterManager.getMonster( CharacterManager.OGRE );
+            theMonsters[2] =  characterManager.getMonster( CharacterManager.DARKNESS_KNIGHT );
+
+            // Generazione avversario
+            Random n = new Random();
+            n.nextInt(3);
+            int yell = n.nextInt(3);
+
+            // Array Personaggi della storia
+            StoryCharacter[] theStoryC = new StoryCharacter[2];
+            theStoryC[0] = characterManager.getStoryCharacter(CharacterManager.EXECUTIONER);
+            theStoryC[1] = characterManager.getStoryCharacter(CharacterManager.KING_VLAD);
 
             /**
              * AVVIO PlayerSelector
@@ -127,6 +125,7 @@ public class Main {
             System.out.println("weapons.getWeapon.WeaponManager.new");
 
             WeapSelector secweapon = new WeapSelector(weaponsA);
+            secplayer.getSelectedHero().setWeapon( secweapon.getSelectedWeapon() );
 
             /**
              * AVVIO ArmorSelector
@@ -145,7 +144,7 @@ public class Main {
 
             // Avvio dialog
             ArmorSelector secarmor = new ArmorSelector(armorList);
-
+            secplayer.getSelectedHero().setArmor( secarmor.getCurrentArmor() );
 
             /**
              * AVVIO showPlayerDialog
@@ -153,30 +152,10 @@ public class Main {
              */
 
             System.out.println("ShowPlay.caratt.pack.Start");
-            ShowSelectedCharacter caratt = new ShowSelectedCharacter(secplayer.getSelectedHero(), characterManager.getMonster( CharacterManager.OGRE ));
-
-/*
-            // Sezione eroe
-            caratt.setShowHeroTitle( MessageUtils.getLocalizedString( "yourHero"));
-            caratt.setShowHeroName(theHero[herogen].getName());
-            caratt.setShowHeroWeap(secarm.getSelectedWeapText());
-            caratt.setShowHeroArmor(secarmor.getSelectedArmorText());
-            caratt.setShowHeroAttack(" " + theHero[herogen].getName());
-            caratt.setShowHeroDefence(" " + theHero[herogen].defence());
-            caratt.setShowHeroHealt(" " + theHero[herogen].healt());
-
-            // Sezione mostro
-            caratt.setShowMonsterTitle(MessageUtils.getLocalizedString( "yourEnemy"));
-            caratt.setShowMonsterName(theMonsters[yell].getName());
-            caratt.setShowMonsterWeap("Spada a due lame");
-            caratt.setShowMonsterArmor("Vestito di pelle");
-            caratt.setShowMonsterAttack(" "+theMonsters[yell].attack());
-            caratt.setShowMonsterDefence(" " + theMonsters[yell].defence());
-            caratt.setShowMonsterHealt(" "+ theMonsters[yell].healt());
-*/
-
-            caratt.pack();
-            caratt.setVisible(true);
+            Monster monster = characterManager.getMonster( CharacterManager.OGRE );
+            monster.setArmor( armorManager.getArmor( ArmorManager.FIRE_ARMOR ) );
+            monster.setWeapon( weaponManager.getMonsterWeapon( WeaponManager.MACE_WEAPON ) );
+            ShowSelectedCharacter caratt = new ShowSelectedCharacter(secplayer.getSelectedHero(), monster);
 
             /**
              * AVVIO ShowBattleDialog

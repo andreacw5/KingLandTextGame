@@ -104,6 +104,9 @@ public class ShowSelectedCharacter extends JDialog {
         // Pannello DX
         enemy.init( rightCharacter );
 
+        pack();
+        setVisible(true);
+
     }
 
 }

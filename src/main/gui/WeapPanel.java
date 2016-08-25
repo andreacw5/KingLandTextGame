@@ -31,7 +31,7 @@ public class WeapPanel extends JDialog {
         selectorButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                father.setSelectedWeapText(titleName.getText());
+                father.setSelectedWeapon(heroWeap);
             }
         });
     }
@@ -46,6 +46,7 @@ public class WeapPanel extends JDialog {
         this.secondAbility.setText(heroWeap.getAbility2());
         this.iconFirstAbilityA.setIcon( new ImageIcon( WeapPanel.class.getResource( heroWeap.getAbility1Url() ) ) );
         this.iconSecondAbilityA.setIcon( new ImageIcon( WeapPanel.class.getResource( heroWeap.getAbility2Url() ) ) );
+
 
     }
 

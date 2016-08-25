@@ -43,7 +43,7 @@ public abstract class Character implements CharacterFunctions {
     }
 
     public void setWeapon(Weapon weapon) {
-        this.weapon = weapon;
+        this.weapon= weapon;
     }
 
     public Character(String name, String imageUrl) {
@@ -53,7 +53,13 @@ public abstract class Character implements CharacterFunctions {
         this.defence =  n.nextInt(50);
         this.attack =  n.nextInt(50);
         this.heath =  n.nextInt(50);
+    }
 
+    public void reinit(){
+        Random n = new Random();
+        this.defence =  n.nextInt(50);
+        this.attack =  n.nextInt(50);
+        this.heath =  n.nextInt(50);
     }
 
     public String getLocalizedName() {
@@ -76,5 +82,15 @@ public abstract class Character implements CharacterFunctions {
         this.imageUrl = imageUrl;
     }
 
+    public int getAttack() {
+        return attack;
+    }
 
+    public int getDefence() {
+        return defence;
+    }
+
+    public int getHeath() {
+        return heath;
+    }
 }

@@ -20,13 +20,16 @@ public class ArmorSelector extends JDialog {
     public static final int HEIGHT=WIDTH/12*9;
     public static final int SCALE=3;
 
-    public void setSelectedArmor(String selectedArmorText) {
-        this.selectedArmor.setText(selectedArmorText);
+    public Armor getCurrentArmor() {
+        return currentArmor;
     }
 
-    public String getSelectedArmorText() {
-        return this.selectedArmor.getText();
+    public void setCurrentArmor(Armor currentArmor) {
+        this.currentArmor = currentArmor;
+        this.selectedArmor.setText(currentArmor.getLocalizedName());
     }
+
+    private Armor currentArmor;
 
     public void setInfoArmor(String wel1){
         this.infoArmor.setText(wel1);

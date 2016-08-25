@@ -44,6 +44,7 @@ public class CharacterManager {
     public Monster getMonster(String name) {
         for (Monster character : monsterList) {
             if (character.getName().equals( name )) {
+                character.reinit();
                 return character;
             }
         }
@@ -53,6 +54,7 @@ public class CharacterManager {
     public Hero getHero(String name) {
         for (Hero character : heroList) {
             if (character.getName().equals( name )) {
+                character.reinit();
                 return character;
             }
         }

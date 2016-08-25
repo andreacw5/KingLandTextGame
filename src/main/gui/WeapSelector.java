@@ -1,5 +1,6 @@
 package main.gui;
 
+import main.model.weapon.Weapon;
 import main.model.weapon.hero.HeroWeap;
 import main.util.MessageUtils;
 
@@ -21,14 +22,16 @@ public class WeapSelector extends JDialog {
     public static final int HEIGHT=WIDTH/12*9;
     public static final int SCALE=3;
 
-
-    public void setSelectedWeapText(String selectedWeaponText) {
-        this.selectedWeap.setText(selectedWeaponText);
+    public Weapon getSelectedWeapon() {
+        return selectedWeapon;
     }
 
-    public String getSelectedWeapText() {
-        return this.selectedWeap.getText();
+    public void setSelectedWeapon(Weapon selectedWeapon) {
+        this.selectedWeapon = selectedWeapon;
+        this.selectedWeap.setText(this.selectedWeapon.getLocalizedName());
     }
+
+    private Weapon selectedWeapon;
 
     public void setInfoWeap(String wel1){
         this.infoWeap.setText(wel1);

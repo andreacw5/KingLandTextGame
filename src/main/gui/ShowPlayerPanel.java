@@ -1,6 +1,9 @@
 package main.gui;
 
+import main.manager.WeaponManager;
+import main.model.armor.Armor;
 import main.model.character.Character;
+import main.model.weapon.Weapon;
 
 import javax.swing.*;
 
@@ -13,20 +16,23 @@ public class ShowPlayerPanel extends JDialog {
     private JLabel showSelectedDefence;
     private JLabel showSelectedWeap;
     private JLabel showSelectedArmor;
+    private Character insieme;
+    private ArmorSelector rr;
 
     public ShowPlayerPanel() {
         setContentPane( contentPane );
         setModal( true );
     }
 
-    public void init(Character caracther) {
-        this.setIconSelectedImage(caracther.getImageUrl());
-        this.setShowSelectedName(caracther.getName());
-        this.setShowSelectedWeap("");
-        this.setShowSelectedArmor("");
-        this.setShowSelectedAttack("");
-        this.setShowSelectedDefence("");
-        this.setShowSelectedHP("");
+    public void init(Character insieme) {
+        this.insieme = insieme;
+        this.setIconSelectedImage(new ImageIcon( Character.class.getResource(insieme.getImageUrl())));
+        this.setShowSelectedName(insieme.getLocalizedName());
+        this.setShowSelectedWeap(insieme.getWeapon().getLocalizedName());
+        this.setShowSelectedArmor(insieme.getArmor().getLocalizedName());
+        this.setShowSelectedAttack(String.valueOf(insieme.getAttack()));
+        this.setShowSelectedDefence(String.valueOf(insieme.getDefence()));
+        this.setShowSelectedHP(String.valueOf(insieme.getHeath()));
     }
 
 
@@ -40,8 +46,8 @@ public class ShowPlayerPanel extends JDialog {
         return iconSelectedImage.getText();
     }
 
-    public void setIconSelectedImage(String iconSelectedImage) {
-        this.iconSelectedImage.setText(iconSelectedImage);
+    public void setIconSelectedImage(ImageIcon iconSelectedImage) {
+        this.iconSelectedImage.setIcon(iconSelectedImage);
     }
 
     // Nome del Character
