@@ -3,11 +3,10 @@ package main;
 import main.gui.*;
 import main.manager.CharacterManager;
 import main.manager.WeaponManager;
-import main.model.hero.Hero;
-import main.model.monster.*;
-import main.model.weapon.Hammer;
-import main.model.weapon.Sword;
+import main.model.character.hero.Hero;
+import main.model.character.monster.*;
 import main.model.weapon.Weapon;
+import main.model.weapon.hero.HeroWeap;
 import main.util.MessageUtils;
 
 import java.util.ArrayList;
@@ -115,14 +114,14 @@ public class Main {
 
             WeaponManager weaponManager = new WeaponManager();
 
-            Weapon[] weapons = new Weapon[3];
-            weapons[0] = weaponManager.getWeapon( WeaponManager.ALABARD_WEAPON );
-            weapons[1] = weaponManager.getWeapon( WeaponManager.HAMMER_WEAPON );
-            weapons[2] = weaponManager.getWeapon( WeaponManager.SWORD_WEAPON );
+            HeroWeap[] weaponsA = new HeroWeap[3];
+            weaponsA[0] = weaponManager.getHeroWeapon( WeaponManager.ALABARD_WEAPON );
+            weaponsA[1] = weaponManager.getHeroWeapon( WeaponManager.HAMMER_WEAPON );
+            weaponsA[2] = weaponManager.getHeroWeapon( WeaponManager.SWORD_WEAPON );
 
             System.out.println("weapons.getWeapon.WeaponManager.new");
 
-            WeapSelector secweapon = new WeapSelector(weapons);
+            WeapSelector secweapon = new WeapSelector(weaponsA);
 
             /**
              * AVVIO ArmorSelector

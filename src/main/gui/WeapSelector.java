@@ -1,6 +1,7 @@
 package main.gui;
 
 import main.model.weapon.Weapon;
+import main.model.weapon.hero.HeroWeap;
 import main.util.MessageUtils;
 
 import javax.swing.*;
@@ -39,10 +40,10 @@ public class WeapSelector extends JDialog {
         this.infoSelected.setText(v34);
     }
 
-    public WeapSelector(ArrayList<Weapon> listOfWeapon) {
-        Weapon wp1 = listOfWeapon.get(0);
-        Weapon wp2 = listOfWeapon.get(1);
-        Weapon wp3 = listOfWeapon.get(2);
+    public WeapSelector(HeroWeap[] heroWList) {
+        HeroWeap wp1 = heroWList[0];
+        HeroWeap wp2 = heroWList[1];
+        HeroWeap wp3 = heroWList[2];
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -51,30 +52,15 @@ public class WeapSelector extends JDialog {
         });
 
         // Pannello SX
-        pan1.setTitleNameText(wp1.getName());
-        pan1.setFirstAbility(wp1.getAbility1());
-        pan1.setIconFirstAbilityA(new ImageIcon(WeapSelector.this.getClass().getResource( "/icon/40x40/kill_icon.png" )));
-        pan1.setSecondAbility(wp1.getAbility2());
-        pan1.setIconSecondAbilityA(new ImageIcon(WeapSelector.this.getClass().getResource( "/icon/40x40/strength_icon.png" )));
-        pan1.setIconHeaderImage(new ImageIcon(WeapSelector.this.getClass().getResource( "/icon/Weap/Hammer_icon.png" )));
+        pan1.setHeroWeapon( wp1 );
         pan1.setFather(this);
 
         // Pannello Centrale
-        pan2.setTitleNameText(wp2.getName());
-        pan2.setFirstAbility(wp2.getAbility1());
-        pan2.setIconFirstAbilityA(new ImageIcon(WeapSelector.this.getClass().getResource( "/icon/40x40/agility_icon.png" )));
-        pan2.setSecondAbility(wp2.getAbility2());
-        pan2.setIconSecondAbilityA(new ImageIcon(WeapSelector.this.getClass().getResource( "/icon/40x40/rune_icon.png" )));
-        pan2.setIconHeaderImage(new ImageIcon(WeapSelector.this.getClass().getResource( "/icon/Weap/Sword_icon.png" )));
+        pan2.setHeroWeapon( wp2 );
         pan2.setFather(this);
 
         // Pannello DX
-        pan3.setTitleNameText(wp3.getName());
-        pan3.setFirstAbility(wp3.getAbility1());
-        pan3.setIconFirstAbilityA(new ImageIcon(WeapSelector.this.getClass().getResource( "/icon/40x40/raged_icon.png" )));
-        pan3.setSecondAbility(wp3.getAbility2());
-        pan3.setIconSecondAbilityA(new ImageIcon(WeapSelector.this.getClass().getResource( "/icon/40x40/ammo_icon.png" )));
-        pan3.setIconHeaderImage(new ImageIcon(WeapSelector.this.getClass().getResource( "/icon/Weap/Alabard_icon.png" )));
+        pan3.setHeroWeapon( wp3 );
         pan3.setFather(this);
 
         setContentPane(contentPane);

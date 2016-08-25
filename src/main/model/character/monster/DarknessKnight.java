@@ -1,4 +1,4 @@
-package main.model.monster;
+package main.model.character.monster;
 
 import main.manager.CharacterManager;
 

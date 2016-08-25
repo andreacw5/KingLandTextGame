@@ -1,8 +1,5 @@
-package main.model;
+package main.model.character;
 
-/**
- * Created by Andrea Zago on 24/08/2016.
- */
 public interface CharacterFunctions {
 
     public int attack();

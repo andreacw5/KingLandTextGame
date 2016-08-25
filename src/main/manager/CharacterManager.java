@@ -1,13 +1,13 @@
 package main.manager;
 
-import main.model.hero.ArmoredSamurai;
-import main.model.hero.GoldenKnight;
-import main.model.hero.Hero;
-import main.model.hero.RedKnight;
-import main.model.monster.DarknessKnight;
-import main.model.monster.Monster;
-import main.model.monster.Ogre;
-import main.model.monster.Thug;
+import main.model.character.hero.ArmoredSamurai;
+import main.model.character.hero.GoldenKnight;
+import main.model.character.hero.Hero;
+import main.model.character.hero.RedKnight;
+import main.model.character.monster.DarknessKnight;
+import main.model.character.monster.Monster;
+import main.model.character.monster.Ogre;
+import main.model.character.monster.Thug;
 
 import java.util.ArrayList;
 import java.util.List;

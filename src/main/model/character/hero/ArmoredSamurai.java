@@ -1,4 +1,4 @@
-package main.model.hero;
+package main.model.character.hero;
 
 import main.manager.CharacterManager;
 

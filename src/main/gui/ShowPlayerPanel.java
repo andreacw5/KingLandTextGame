@@ -1,6 +1,6 @@
 package main.gui;
 
-import main.model.Character;
+import main.model.character.Character;
 
 import javax.swing.*;
 

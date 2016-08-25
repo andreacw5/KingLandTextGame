@@ -1,5 +1,7 @@
 package main.gui;
 
+import main.model.weapon.hero.HeroWeap;
+
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -13,6 +15,7 @@ public class WeapPanel extends JDialog {
     private JLabel iconSecondAbilityA;
     private JLabel iconFirstAbilityA;
     public WeapSelector father;
+    private HeroWeap heroWeap;
 
     public void setFather(WeapSelector father) {
         this.father = father;
@@ -33,67 +36,17 @@ public class WeapPanel extends JDialog {
         });
     }
 
-    // Nome dell'arma
-    public String getTitleNameText() {
-        return titleName.getText();
-    }
+    public HeroWeap getHeroWeapon(){return heroWeap;}
 
-    public void setTitleNameText(String titleName) {
-        this.titleName.setText(titleName);
-    }
+    public void setHeroWeapon(HeroWeap heroWeap){
+        this.heroWeap = heroWeap;
+        this.iconHeader.setIcon(new ImageIcon( WeapPanel.class.getResource( heroWeap.getImageUrl() ) ) );
+        this.titleName.setText(heroWeap.getLocalizedName());
+        this.firstAbility.setText(heroWeap.getAbility1());
+        this.secondAbility.setText(heroWeap.getAbility2());
+        this.iconFirstAbilityA.setIcon( new ImageIcon( WeapPanel.class.getResource( heroWeap.getAbility1Url() ) ) );
+        this.iconSecondAbilityA.setIcon( new ImageIcon( WeapPanel.class.getResource( heroWeap.getAbility2Url() ) ) );
 
-
-    // Abilità N°1
-    public JLabel getFirstAbility() {
-        return firstAbility;
-    }
-
-    public void setFirstAbility(String firstAbility) {
-        this.firstAbility.setText(firstAbility);
-
-    }
-
-    public JLabel getIconFirstAbilityA() {
-        return iconFirstAbilityA;
-    }
-
-    public void setIconFirstAbilityA(Icon iconFirstAbilityA) {
-        this.iconFirstAbilityA.setIcon(iconFirstAbilityA);
-    }
-
-    // Abilità N°2
-    public void setSecondAbility(String secondAbility) {
-        this.secondAbility.setText(secondAbility);
-    }
-
-    public JLabel getSecondAbility() {
-        return secondAbility;
-    }
-
-    public JLabel getIconSecondAbilityA() {
-        return iconSecondAbilityA;
-    }
-
-    public void setIconSecondAbilityA(Icon iconSecondAbilityA) {
-        this.iconSecondAbilityA.setIcon(iconSecondAbilityA);
-    }
-
-    // Icona dell'arma
-    public JLabel getIconHeader() {
-        return iconHeader;
-    }
-
-    public void setIconHeaderImage(Icon iconHeaderImage) {
-        this.iconHeader.setIcon(iconHeaderImage);
-    }
-
-    // Pulsante di selezione
-    public JButton getSelectorButton() {
-        return selectorButton;
-    }
-
-    public void setSelectorButton(JButton selectorButton) {
-        this.selectorButton = selectorButton;
     }
 
 }

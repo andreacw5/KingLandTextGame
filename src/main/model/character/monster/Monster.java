@@ -1,6 +1,6 @@
-package main.model.monster;
+package main.model.character.monster;
 
-import main.model.Character;
+import main.model.character.Character;
 
 public abstract class Monster extends Character {
 

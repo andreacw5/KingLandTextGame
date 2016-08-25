@@ -1,6 +1,6 @@
-package main.model.hero;
+package main.model.character.hero;
 
-import main.model.Character;
+import main.model.character.Character;
 import main.util.MessageUtils;
 
 public abstract class Hero extends Character {

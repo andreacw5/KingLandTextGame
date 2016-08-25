@@ -1,6 +1,6 @@
 package main.gui;
 
-import main.model.hero.Hero;
+import main.model.character.hero.Hero;
 import main.util.MessageUtils;
 
 import javax.swing.*;

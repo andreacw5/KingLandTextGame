@@ -1,4 +1,4 @@
-package main.model;
+package main.model.character;
 
 import main.Armor;
 import main.model.weapon.Weapon;
