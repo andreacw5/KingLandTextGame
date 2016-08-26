@@ -16,6 +16,8 @@ public class WelcomeDialog extends JDialog {
     public static final int SCALE=3;
 
     public WelcomeDialog() {
+        setIconImage(null);
+        setTitle("King Land - The RoleplayGame");
         setContentPane(contentPane);
         setModal(true);
         setMinimumSize(new Dimension(WIDTH*SCALE,HEIGHT*SCALE));

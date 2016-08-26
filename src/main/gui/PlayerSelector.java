@@ -21,6 +21,7 @@ public class PlayerSelector extends JDialog {
     public static final int HEIGHT=WIDTH/12*9;
     public static final int SCALE=3;
 
+
     public Hero getSelectedHero() {
         return selectedHero;
     }
