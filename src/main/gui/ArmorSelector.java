@@ -26,6 +26,7 @@ public class ArmorSelector extends JDialog {
 
     public void setCurrentArmor(Armor currentArmor) {
         this.currentArmor = currentArmor;
+        buttonOK.setEnabled(true);
         this.selectedArmor.setText(currentArmor.getLocalizedName());
     }
 
@@ -40,6 +41,7 @@ public class ArmorSelector extends JDialog {
     }
 
     public ArmorSelector(Armor[] armorList) {
+        buttonOK.setEnabled(false);
         Armor ar1 = armorList[0];
         Armor ar2 = armorList[1];
         Armor ar3 = armorList[2];

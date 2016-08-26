@@ -14,6 +14,7 @@ public class ShowBattle extends JDialog {
     private JLabel war6;
     private JLabel war7;
     private JButton buttonCancel;
+    private JLabel battleIcon;
     public static final int WIDTH=400;
     public static final int HEIGHT=WIDTH/12*9;
     public static final int SCALE=3;
@@ -77,6 +78,14 @@ public class ShowBattle extends JDialog {
 
     public void setWar2(String testo2){
         this.war2.setText(testo2);
+    }
+
+    public JLabel getBattleIcon() {
+        return battleIcon;
+    }
+
+    public void setBattleIcon(JLabel battleIcon) {
+        this.battleIcon = battleIcon;
     }
 
     public void setWar3(String testo3){

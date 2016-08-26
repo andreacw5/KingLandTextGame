@@ -45,4 +45,14 @@ public class PlayerPanel extends JDialog {
         this.playerName.setText( hero.getLocalizedName() );
         this.playerHistory.setText( hero.getHistory() );
     }
+
+    public JButton getSelectorButtonP() {
+        return selectorButtonP;
+    }
+
+    public void setSelectorButtonP(JButton selectorButtonP) {
+        this.selectorButtonP = selectorButtonP;
+    }
+
 }
+

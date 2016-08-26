@@ -27,6 +27,7 @@ public class PlayerSelector extends JDialog {
 
     public void setSelectedHero(Hero selectedHero) {
         this.selectedHero = selectedHero;
+        buttonOK.setEnabled(true);
         this.selectedPlayer.setText(selectedHero.getLocalizedName());
     }
 
@@ -44,19 +45,19 @@ public class PlayerSelector extends JDialog {
     }
 
     public PlayerSelector(Hero[] listOfHero) {
+        buttonOK.setEnabled(false);
         Hero hero1 = listOfHero[0];
         Hero hero2 = listOfHero[1];
         Hero hero3 = listOfHero[2];
-
-
-        setContentPane( contentPane );
-        setModal( true );
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onOK();
             }
         });
+
+        setContentPane( contentPane );
+        setModal( true );
 
         play1.setHero( hero1 );
         play1.setSon(this);

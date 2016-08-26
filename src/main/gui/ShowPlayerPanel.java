@@ -1,9 +1,7 @@
 package main.gui;
 
-import main.manager.WeaponManager;
-import main.model.armor.Armor;
+import main.manager.BattleManager;
 import main.model.character.Character;
-import main.model.weapon.Weapon;
 
 import javax.swing.*;
 
@@ -24,15 +22,15 @@ public class ShowPlayerPanel extends JDialog {
         setModal( true );
     }
 
-    public void init(Character insieme) {
-        this.insieme = insieme;
-        this.setIconSelectedImage(new ImageIcon( Character.class.getResource(insieme.getImageUrl())));
-        this.setShowSelectedName(insieme.getLocalizedName());
-        this.setShowSelectedWeap(insieme.getWeapon().getLocalizedName());
-        this.setShowSelectedArmor(insieme.getArmor().getLocalizedName());
-        this.setShowSelectedAttack(String.valueOf(insieme.getAttack()));
-        this.setShowSelectedDefence(String.valueOf(insieme.getDefence()));
-        this.setShowSelectedHP(String.valueOf(insieme.getHeath()));
+    public void init(Character character) {
+        this.insieme = character;
+        this.setIconSelectedImage(new ImageIcon( Character.class.getResource(character.getImageUrl())));
+        this.setShowSelectedName(character.getLocalizedName());
+        this.setShowSelectedWeap(character.getWeapon().getLocalizedName());
+        this.setShowSelectedArmor(character.getArmor().getLocalizedName());
+        this.setShowSelectedAttack(String.valueOf(character.getAttack()));
+        this.setShowSelectedDefence(String.valueOf(character.getDefence()));
+        this.setShowSelectedHP(String.valueOf(character.getHeath()));
     }
 
 

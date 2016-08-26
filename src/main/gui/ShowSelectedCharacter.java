@@ -9,6 +9,23 @@ import java.awt.event.*;
 public class ShowSelectedCharacter extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
+
+    public ShowPlayerPanel getHero() {
+        return hero;
+    }
+
+    public void setHero(ShowPlayerPanel hero) {
+        this.hero = hero;
+    }
+
+    public ShowPlayerPanel getEnemy() {
+        return enemy;
+    }
+
+    public void setEnemy(ShowPlayerPanel enemy) {
+        this.enemy = enemy;
+    }
+
     private ShowPlayerPanel hero;
     private ShowPlayerPanel enemy;
     private JButton buttonCancel;

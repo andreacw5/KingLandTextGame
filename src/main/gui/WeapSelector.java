@@ -28,6 +28,7 @@ public class WeapSelector extends JDialog {
 
     public void setSelectedWeapon(Weapon selectedWeapon) {
         this.selectedWeapon = selectedWeapon;
+        buttonOK.setEnabled(true);
         this.selectedWeap.setText(this.selectedWeapon.getLocalizedName());
     }
 
@@ -42,6 +43,7 @@ public class WeapSelector extends JDialog {
     }
 
     public WeapSelector(HeroWeap[] heroWList) {
+        buttonOK.setEnabled(false);
         HeroWeap wp1 = heroWList[0];
         HeroWeap wp2 = heroWList[1];
         HeroWeap wp3 = heroWList[2];
