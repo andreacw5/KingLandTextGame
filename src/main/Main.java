@@ -1,30 +1,36 @@
 package main;
 
-import java.util.ArrayList;
-import java.util.Locale;
+import main.gui.*;
+import main.gui.WeapSelector;
+import main.manager.ArmorManager;
+import main.manager.CharacterManager;
+import main.manager.WeaponManager;
+import main.model.armor.Armor;
+import main.model.character.Character;
+import main.model.character.hero.Hero;
+import main.model.character.monster.*;
+import main.model.character.story.StoryCharacter;
+import main.model.weapon.hero.HeroWeap;
+import main.util.MessageUtils;
+
 import java.util.Random;
-import java.util.ResourceBundle;
 
 /**
  * King Land, The Roleplay gaming
  * Build V. 1.0.0 - DEVELOP
- * @Author:AndreaZago
+ * @Author: Andrea Zago
  */
 
 public class Main {
 
     private boolean mistic = true;
-    private String country;
-    private String language;
-
 
     public boolean isMistic() {
         return mistic;
     }
 
     public Main(String country, String language) {
-        this.country = country;
-        this.language = language;
+        MessageUtils.init( country, language );
     }
 
     public void setMistic(boolean mistic) {
@@ -37,20 +43,13 @@ public class Main {
          * Caricamento Traduzioni...
          */
 
-        Locale currentLocale;
-        ResourceBundle messages;
-
-        currentLocale = new Locale(this.language, this.country);
-
-        messages = ResourceBundle.getBundle("MessagesBundle", currentLocale);
-
         System.out.println("WelcomeDialog.monitor1.pack.Start");
 
         // Avvio WelcomeDialog
         WelcomeDialog monitor1 = new WelcomeDialog();
-        monitor1.setWelcome1(messages.getString("welcome"));
-        monitor1.setWelcome2(messages.getString("dial1"));
-        monitor1.setWelcome3(messages.getString("dial2"));
+        monitor1.setWelcome1(MessageUtils.getLocalizedString( "welcome"));
+        monitor1.setWelcome2(MessageUtils.getLocalizedString( "dial1"));
+        monitor1.setWelcome3(MessageUtils.getLocalizedString( "dial2"));
         monitor1.pack();
         monitor1.setVisible(true);
 
@@ -61,127 +60,82 @@ public class Main {
         loading.pack();
         loading.setVisible(true);
 
-        /**
-         *  Generazione Array e Random
-         */
-
-        // Dati player
-        Hero hero1 = new Hero(messages.getString("hero0"));
-        Hero hero2 = new Hero(messages.getString("hero1"));
-        Hero hero4 = new Hero(messages.getString("hero2"));
-        Hero hero5 = new Hero(messages.getString("hero3"));
-
-        // Array degli eroi
-        Hero[] theHero = new Hero[4];
-        theHero[0] = hero1;
-        theHero[1] = hero2;
-        theHero[2] = hero4;
-        theHero[3] = hero5;
-
-        // Generatore di eroe
-        Random k = new Random();
-        k.nextInt(4);
-        int herogen = k.nextInt(3);
-
-        // Dati mostro
-        Monster moster1 = new Monster(messages.getString("monster0"));
-        Monster moster2 = new Monster(messages.getString("monster1"));
-        Monster moster4 = new Monster(messages.getString("monster2"));
-        Monster moster5 = new Monster(messages.getString("monster3"));
-        Monster moster6 = new Monster(messages.getString("monster4"));
-        Monster moster7 = new Monster(messages.getString("monster5"));
-        Monster moster8 = new Monster(messages.getString("monster6"));
-
-        // Array dei mostri
-        Monster[] theMonsters = new Monster[7];
-        theMonsters[0] = moster1;
-        theMonsters[1] = moster2;
-        theMonsters[2] = moster4;
-        theMonsters[3] = moster5;
-        theMonsters[4] = moster6;
-        theMonsters[5] = moster7;
-        theMonsters[6] = moster8;
-
-
-        // Generazione avversario
-        Random n = new Random();
-        n.nextInt(6);
-        int yell = n.nextInt(6);
-
-        /**
-         *  Avvio dei Dialog di Battaglia...
-         */
-
         while (isMistic()) {
+
+            System.out.println("isMistic.While.Start");
+
+            /**
+             *  Generazione Array e Random
+             */
+
+            CharacterManager characterManager = new CharacterManager();
+
+            // Array degli eroi
+            Hero[] theHero = new Hero[3];
+            theHero[0] = characterManager.getHero( CharacterManager.ARMORED_SAMURAI );
+            theHero[1] = characterManager.getHero( CharacterManager.RED_KNIGHT );
+            theHero[2] = characterManager.getHero( CharacterManager.GOLDEN_KNIGHT );
+
+            // Array dei mostri
+            Monster[] theMonsters = new Monster[3];
+            theMonsters[0] =  characterManager.getMonster( CharacterManager.THUG );
+            theMonsters[1] =  characterManager.getMonster( CharacterManager.OGRE );
+            theMonsters[2] =  characterManager.getMonster( CharacterManager.DARKNESS_KNIGHT );
+
+            // Array Personaggi della storia
+            StoryCharacter[] theStoryC = new StoryCharacter[2];
+            theStoryC[0] = characterManager.getStoryCharacter(CharacterManager.EXECUTIONER);
+            theStoryC[1] = characterManager.getStoryCharacter(CharacterManager.KING_VLAD);
 
             /**
              * AVVIO PlayerSelector
              * Qui si avvia il Dialog PlayerSelector permettendo all'utente di scegliere il proprio eroe
-             * ASSOCIAZIONI: Player; PlayerPanel; PlayerSelector
              */
 
             System.out.println("listOfHero.ArrayList.pack.Start");
 
-            //Lista dei player
-            ArrayList listOfHero = new ArrayList<Player>();
-            listOfHero.add(new Player(messages.getString("hero0"),"22","5","75",messages.getString("story")));
-            listOfHero.add(new Player(messages.getString("hero1"),"19","8","70",messages.getString("story1")));
-            listOfHero.add(new Player(messages.getString("hero2"),"21","4","72",messages.getString("story2")));
-
-
             // Avvio dialog
-            PlayerSelector secplayer = new PlayerSelector(listOfHero);
-            secplayer.setInfoPlayer(messages.getString("infoPlayer"));
-            secplayer.setInfoSelected(messages.getString("infoSelected"));
-            secplayer.pack();
-            secplayer.setVisible(true);
-
+            PlayerSelector secplayer = new PlayerSelector(theHero);
 
             /**
              * AVVIO WeaponSelector
              * Qui si avvia il dialog WeaponSelector, permettendo all'utente di scegliere la propria arma!ù
-             * ASSOCIAZIONI: Weapon; WeaponSelector; WeapPanel
              */
 
             Random generator = new Random();
 
-            System.out.println("listOfWeapon.ArrayList.pack.Start");
+            WeaponManager weaponManager = new WeaponManager();
 
-            //Lista delle armi
-            ArrayList listOfWeapon = new ArrayList<Weapon>();
-            listOfWeapon.add(new Weapon("Martello Supremo!", "ND", "ND"));
-            listOfWeapon.add(new Weapon("Spada Imperiale", "ND", "ND"));
-            listOfWeapon.add(new Weapon("Spada d'oriente", "ND", "ND"));
+            HeroWeap[] weaponsA = new HeroWeap[3];
+            weaponsA[0] = weaponManager.getHeroWeapon( WeaponManager.ALABARD_WEAPON );
+            weaponsA[1] = weaponManager.getHeroWeapon( WeaponManager.HAMMER_WEAPON );
+            weaponsA[2] = weaponManager.getHeroWeapon( WeaponManager.SWORD_WEAPON );
 
-            // Avvio dialog
-            WeapSelector secarm = new WeapSelector(listOfWeapon);
-            secarm.setInfoWeap(messages.getString("infoWeap"));
-            secarm.setInfoSelected(messages.getString("infoSelected"));
-            secarm.pack();
-            secarm.setVisible(true);
+            System.out.println("weapons.getWeapon.WeaponManager.new");
+
+            WeapSelector secweapon = new WeapSelector(weaponsA);
+            secplayer.getSelectedHero().setWeapon( secweapon.getSelectedWeapon() );
+
+
 
             /**
              * AVVIO ArmorSelector
              * Qui si avvia il dialog ArmorSelector, permettendo all'utente di scegliere la propria armatura!
-             * ASSOCIAZIONI: Armor; ArmorSelector; ArmoPanel
              */
 
             System.out.println("listOfArmor.ArrayList.pack.Start");
 
-            //Lista delle armature
-            ArrayList listOfArmor = new ArrayList<Armor>();
-            listOfArmor.add(new Armor("Armatura di Krune", "Difesa", "Attacco Bonus"));
-            listOfArmor.add(new Armor("Armatura del Fuoco", "Forgia", "Runa"));
-            listOfArmor.add(new Armor("Armatura di Markart", "Difesa", "Munizioni"));
+            ArmorManager armorManager = new ArmorManager();
 
+            //Lista delle armature
+            Armor[] armorList = new Armor[3];
+            armorList[0] = armorManager.getArmor( ArmorManager.FIRE_ARMOR );
+            armorList[1] = armorManager.getArmor( ArmorManager.KRUNE_ARMOR );
+            armorList[2] = armorManager.getArmor( ArmorManager.MARKART_ARMOR );
 
             // Avvio dialog
-            ArmorSelector secarmor = new ArmorSelector(listOfArmor);
-            secarmor.setInfoArmor(messages.getString("infoArmor"));
-            secarmor.setInfoSelected(messages.getString("infoSelected"));
-            secarmor.pack();
-            secarmor.setVisible(true);
-
+            ArmorSelector secarmor = new ArmorSelector(armorList);
+            secplayer.getSelectedHero().setArmor( secarmor.getCurrentArmor() );
 
             /**
              * AVVIO showPlayerDialog
@@ -189,111 +143,123 @@ public class Main {
              */
 
             System.out.println("ShowPlay.caratt.pack.Start");
-            ShowPlayer caratt = new ShowPlayer();
 
-            // Sezione eroe
-            caratt.setShowHeroTitle(messages.getString("yourHero"));
-            caratt.setShowHeroName(theHero[herogen].name);
-            caratt.setShowHeroWeap(secarm.getSelectedWeapText());
-            caratt.setShowHeroArmor(secarmor.getSelectedArmorText());
-            caratt.setShowHeroAttack(" " + theHero[herogen].attack());
-            caratt.setShowHeroDefence(" " + theHero[herogen].defence());
-            caratt.setShowHeroHealt(" " + theHero[herogen].healt());
-
-            // Sezione mostro
-            caratt.setShowMonsterTitle(messages.getString("yourEnemy"));
-            caratt.setShowMonsterName(theMonsters[yell].name);
-            caratt.setShowMonsterWeap("Spada a due lame");
-            caratt.setShowMonsterArmor("Vestito di pelle");
-            caratt.setShowMonsterAttack(" "+theMonsters[yell].attack());
-            caratt.setShowMonsterDefence(" " + theMonsters[yell].defence());
-            caratt.setShowMonsterHealt(" "+ theMonsters[yell].healt());
-
-            caratt.pack();
-            caratt.setVisible(true);
+            ShowSelectedCharacter showSelectedCharacter;
+            Monster monster;
+            switch (generator.nextInt(3)){
+                case 0:
+                    monster = characterManager.getMonster( CharacterManager.OGRE );
+                    monster.setArmor( armorManager.getArmor( ArmorManager.FIRE_ARMOR ) );
+                    monster.setWeapon( weaponManager.getMonsterWeapon( WeaponManager.MACE_WEAPON ) );
+                    showSelectedCharacter = new ShowSelectedCharacter(secplayer.getSelectedHero(), monster);
+                    break;
+                case 1:
+                    monster = characterManager.getMonster( CharacterManager.DARKNESS_KNIGHT );
+                    monster.setArmor( armorManager.getArmor( ArmorManager.FIRE_ARMOR ) );
+                    monster.setWeapon( weaponManager.getMonsterWeapon( WeaponManager.AXE_WEAPON ) );
+                    showSelectedCharacter = new ShowSelectedCharacter(secplayer.getSelectedHero(), monster);
+                    break;
+                default:
+                    monster = characterManager.getMonster( CharacterManager.THUG );
+                    monster.setArmor( armorManager.getArmor( ArmorManager.KRUNE_ARMOR ) );
+                    monster.setWeapon( weaponManager.getMonsterWeapon( WeaponManager.AXE_WEAPON ) );
+                    showSelectedCharacter = new ShowSelectedCharacter( secplayer.getSelectedHero(), monster );
+                    break;
+            }
 
             /**
              * AVVIO ShowBattleDialog
+             * Qui si avvia il Dialog in base al generatore attacker
              */
 
+            // Conversione dati eroe
+            String heroName = showSelectedCharacter.getHero().getShowSelectedName();
+            int heroAttackInt = new Integer(showSelectedCharacter.getHero().getShowSelectedAttack()).intValue();
+            int heroDefenceInt = new Integer(showSelectedCharacter.getHero().getShowSelectedDefence()).intValue();
+            int heroHpInt = new Integer(showSelectedCharacter.getHero().getShowSelectedHP()).intValue();
+
+            // Conversione dati mostro
+            String monsterName = showSelectedCharacter.getEnemy().getShowSelectedName();
+            int monsterAttackInt = new Integer(showSelectedCharacter.getEnemy().getShowSelectedAttack()).intValue();
+            int monsterDefenceInt = new Integer(showSelectedCharacter.getEnemy().getShowSelectedDefence()).intValue();
+            int monsterHPInt = new Integer(showSelectedCharacter.getEnemy().getShowSelectedHP()).intValue();
+
+            int dice = generator.nextInt(6) + 1 + generator.nextInt(6) + 1;
+            int attackValue = dice;
+
             Random generator67 = new Random();
-            boolean attacker = generator67.nextBoolean();
+            switch (generator67.nextInt(2)){
+                case 0:
+                    /**
+                     * ATTACCO
+                     */
 
-            if (attacker) {
+                    System.out.println("War.Dialog.Start.True.Player");
 
-                /**
-                 * ATTACCO
-                 */
+                    // Avvio dialog
+                    ShowBattle player = new ShowBattle();
+                    player.setWar2(heroName + " " + (MessageUtils.getLocalizedString( "attack1")));
+                    player.setWar3((MessageUtils.getLocalizedString( "enemyAttack")) + " " + heroAttackInt +  " " + (MessageUtils.getLocalizedString( "attack2")));
+                    player.setWar4((MessageUtils.getLocalizedString( "critical")) + " " + dice);
 
-                System.out.println("War.Dialog.Start.True.Player");
-                ShowBattle player = new ShowBattle();
-                player.setWar2(theHero[herogen].name + " " + (messages.getString("attack1")));
-                int dice = generator.nextInt(6) + 1 + generator.nextInt(6) + 1;
-                int attackValue = theHero[herogen].attack() + dice;
-                player.setWar3((messages.getString("enemyAttack")) + " " + theHero[herogen].attack() + " " + (messages.getString("attack2")));
-                player.setWar4((messages.getString("critical")) + " " + dice);
-                if (attackValue > theMonsters[yell].defence()) {
+                    if (attackValue > monsterDefenceInt) {
 
-                    // Successo attacco, danni inflitti
-                    player.setWar5((messages.getString("yourAttack")) + " " + theHero[herogen].name + " " + (messages.getString("attack3")));
-                    int restmonster1 = theMonsters[yell].healt() - theHero[herogen].attack();
+                        // Successo attacco, danni inflitti
+                        player.setWar5((MessageUtils.getLocalizedString( "yourAttack")) + " " + heroName + " " + (MessageUtils.getLocalizedString( "attack3")));
+                        int restmonster1 = monsterHPInt - heroAttackInt;
 
-                    if (restmonster1 >= 0) {
+                        if (restmonster1 >= 0) {
 
-                        // Mostro morto
-                        player.setWar6(messages.getString("deadMonster"));
+                            // Mostro morto
+                            player.setWar6(MessageUtils.getLocalizedString( "deadMonster"));
 
+                        } else {
 
-                    } else {
+                            //Attacco Fallito
+                            player.setWar7(MessageUtils.getLocalizedString( "notSuccess"));
 
-                        //Attacco Fallito
-                        player.setWar7(messages.getString("notSuccess"));
-
-                    }
-
-                }
-
-                System.out.println("War.ShowBattle.player.End");
-                player.pack();
-                player.setVisible(true);
-
-            } else {
-
-                /**
-                 * DIFESA
-                 */
-
-                System.out.println("War.Dialog.Start.False.Player");
-                ShowBattleEnemy enemy4 = new ShowBattleEnemy();
-                enemy4.setWarE2(theMonsters[yell].name + " " + (messages.getString("underAttack")));
-                int dice = generator.nextInt(6) + 1 + generator.nextInt(6) + 1;
-                int attackValue = theMonsters[yell].attack() + dice;
-                enemy4.setWarE3((messages.getString("criticalDefence")) + " " + dice);
-                enemy4.setWarE4((messages.getString("yourEnemyAttack")) + " " + theMonsters[yell].attack());
-                if (attackValue > theHero[herogen].defence()) {
-
-                    // Successo attacco, danni inflitti
-                    int resthero1 = theHero[herogen].healt() - theMonsters[yell].attack();
-                    enemy4.setWarE5(messages.getString("successAttack"));
-
-                    if (resthero1 >= 0) {
-
-                        // Eroe Morto
-                        enemy4.setWarE6(messages.getString("playerDead"));
-
-                    } else {
-
-                        // Attacco Fallito del Mostro
-                        enemy4.setWarE7(messages.getString("lostAttack"));
+                        }
 
                     }
 
-                }
+                    System.out.println("War.ShowBattle.player.End");
+                    player.pack();
+                    player.setVisible(true);
+                    break;
+                case 1:
+                    /**
+                     * DIFESA
+                     */
 
-                System.out.println("War.ShowBattleEnemy.enemy4.End");
-                enemy4.pack();
-                enemy4.setVisible(true);
+                    System.out.println("War.Dialog.Start.False.Player");
+                    ShowBattleEnemy enemy4 = new ShowBattleEnemy();
+                    enemy4.setWarE2(monsterName + " " + (MessageUtils.getLocalizedString( "underAttack")));
+                    enemy4.setWarE3((MessageUtils.getLocalizedString( "criticalDefence")) + " " + dice);
+                    enemy4.setWarE4((MessageUtils.getLocalizedString( "yourEnemyAttack")) + " " + monsterAttackInt);
+                    if (attackValue > heroDefenceInt) {
 
+                        // Successo attacco, danni inflitti
+                        int resthero1 = heroHpInt - monsterAttackInt;
+                        enemy4.setWarE5(MessageUtils.getLocalizedString( "successAttack"));
+
+                        if (resthero1 >= 0) {
+
+                            // Eroe Morto
+                            enemy4.setWarE6(MessageUtils.getLocalizedString( "playerDead"));
+
+                        } else {
+
+                            // Attacco Fallito del Mostro
+                            enemy4.setWarE7(MessageUtils.getLocalizedString( "lostAttack"));
+
+                        }
+
+                    }
+
+                    System.out.println("War.ShowBattleEnemy.enemy4.End");
+                    enemy4.pack();
+                    enemy4.setVisible(true);
+                    break;
             }
 
             /**
@@ -315,8 +281,8 @@ public class Main {
 
         System.out.println("ValutationDialog.endTable.pack.Start");
         ValutationDialog endTable = new ValutationDialog();
-        endTable.setValuationTitle(messages.getString("valuationTitle"));
-        endTable.setValuation(messages.getString("valuation"));
+        endTable.setValuationTitle( "valuationTitle");
+        endTable.setValuation( "valuation");
         endTable.pack();
         endTable.setVisible(true);
 
