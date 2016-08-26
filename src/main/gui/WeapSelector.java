@@ -78,7 +78,6 @@ public class WeapSelector extends JDialog {
         pack();
         setVisible(true);
 
-
     }
 
     private void onOK() {
