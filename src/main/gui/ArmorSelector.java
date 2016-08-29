@@ -72,8 +72,6 @@ public class ArmorSelector extends JDialog {
         setInfoSelected(MessageUtils.getLocalizedString( "infoSelected"));
         pack();
         setVisible(true);
-        setIconImage(null);
-        setTitle("King Land - The RoleplayGame");
 
     }
 

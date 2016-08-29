@@ -20,8 +20,6 @@ public class LoadingScreen extends JDialog {
         setPreferredSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
         setResizable(false);
         setLocationRelativeTo(null);
-        setIconImage(null);
-        setTitle("King Land - The RoleplayGame");
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

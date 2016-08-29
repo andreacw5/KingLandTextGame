@@ -25,8 +25,6 @@ public class WelcomeDialog extends JDialog {
         setPreferredSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
         setResizable(false);
         setLocationRelativeTo(null);
-        setIconImage(null);
-        setTitle("King Land - The RoleplayGame");
 
 
         buttonOK.addActionListener(new ActionListener() {

@@ -24,8 +24,6 @@ public class ArmoPanel extends JDialog {
     public ArmoPanel() {
         setContentPane(contentPane);
         setModal(true);
-        setIconImage(null);
-        setTitle("King Land - The RoleplayGame");
 
         selectorButtonA.addActionListener(new ActionListener() {
             @Override
