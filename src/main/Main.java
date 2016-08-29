@@ -6,31 +6,29 @@ import main.manager.ArmorManager;
 import main.manager.CharacterManager;
 import main.manager.WeaponManager;
 import main.model.armor.Armor;
-import main.model.character.Character;
 import main.model.character.hero.Hero;
 import main.model.character.monster.*;
 import main.model.character.story.StoryCharacter;
 import main.model.weapon.hero.HeroWeap;
 import main.util.MessageUtils;
 
-import javax.swing.*;
 import java.util.Random;
 
-/**
- * King Land, The Roleplay gaming
- * Build V. 1.0.0 - DEVELOP
- * @Author: Andrea Zago
- */
+/***********************************************
+ King Land, The Roleplay gaming
+ Build V. 1.0.1
+ @Author:AndreaZago
+ ************************************************/
 
 public class Main {
 
     private boolean mistic = true;
 
-    public boolean isMistic() {
+    private boolean isMistic() {
         return mistic;
     }
 
-    public Main(String country, String language) {
+    private Main(String country, String language) {
         MessageUtils.init( country, language );
     }
 
@@ -38,10 +36,10 @@ public class Main {
         this.mistic = mistic;
     }
 
-    public void initialize() throws InterruptedException {
+    private void initialize() throws InterruptedException {
 
-        /**
-         * Caricamento Traduzioni...
+        /*
+          Caricamento Traduzioni...
          */
 
         System.out.println("WelcomeDialog.monitor1.pack.Start");
@@ -65,8 +63,8 @@ public class Main {
 
             System.out.println("isMistic.While.Start");
 
-            /**
-             *  Generazione Array e Random
+            /*
+               Generazione Array e Random
              */
 
             CharacterManager characterManager = new CharacterManager();
@@ -88,9 +86,9 @@ public class Main {
             theStoryC[0] = characterManager.getStoryCharacter(CharacterManager.EXECUTIONER);
             theStoryC[1] = characterManager.getStoryCharacter(CharacterManager.KING_VLAD);
 
-            /**
-             * AVVIO PlayerSelector
-             * Qui si avvia il Dialog PlayerSelector permettendo all'utente di scegliere il proprio eroe
+            /*
+              AVVIO PlayerSelector
+              Qui si avvia il Dialog PlayerSelector permettendo all'utente di scegliere il proprio eroe
              */
 
             System.out.println("listOfHero.ArrayList.pack.Start");
@@ -98,9 +96,9 @@ public class Main {
             // Avvio dialog
             PlayerSelector secplayer = new PlayerSelector(theHero);
 
-            /**
-             * AVVIO WeaponSelector
-             * Qui si avvia il dialog WeaponSelector, permettendo all'utente di scegliere la propria arma!
+            /*
+              AVVIO WeaponSelector
+              Qui si avvia il dialog WeaponSelector, permettendo all'utente di scegliere la propria arma!
              */
 
             Random generator = new Random();
@@ -117,9 +115,9 @@ public class Main {
             WeapSelector secweapon = new WeapSelector(weaponsA);
             secplayer.getSelectedHero().setWeapon( secweapon.getSelectedWeapon() );
 
-            /**
-             * AVVIO ArmorSelector
-             * Qui si avvia il dialog ArmorSelector, permettendo all'utente di scegliere la propria armatura!
+            /*
+              AVVIO ArmorSelector
+              Qui si avvia il dialog ArmorSelector, permettendo all'utente di scegliere la propria armatura!
              */
 
             System.out.println("listOfArmor.ArrayList.pack.Start");
@@ -136,9 +134,9 @@ public class Main {
             ArmorSelector secarmor = new ArmorSelector(armorList);
             secplayer.getSelectedHero().setArmor( secarmor.getCurrentArmor() );
 
-            /**
-             * AVVIO showPlayerDialog
-             * Qui si avvia il dialog ShowPlayer, che mostra i nomi dei personaggi di gioco!
+            /*
+              AVVIO showPlayerDialog
+              Qui si avvia il dialog ShowPlayer, che mostra i nomi dei personaggi di gioco!
              */
 
             System.out.println("ShowPlay.caratt.pack.Start");
@@ -166,9 +164,9 @@ public class Main {
                     break;
             }
 
-            /**
-             * AVVIO ShowBattleDialog
-             * Qui si avvia il Dialog in base al generatore attacker
+            /*
+              AVVIO ShowBattleDialog
+              Qui si avvia il Dialog in base al generatore attacker
              */
 
             // Conversione dati eroe
@@ -184,9 +182,9 @@ public class Main {
             int monsterHPInt = Integer.parseInt(showSelectedCharacter.getEnemy().getShowSelectedHP());
 
             int dice = generator.nextInt(6) + 1 + generator.nextInt(6) + 1;
-            int attackValue = dice;
 
-                Random generator67 = new Random();
+
+            Random generator67 = new Random();
 
 
             ShowUniqueBattle player = new ShowUniqueBattle();
@@ -206,7 +204,7 @@ public class Main {
                         player.setDialog2( (MessageUtils.getLocalizedString( "enemyAttack" )) + " " + heroAttackInt + " " + (MessageUtils.getLocalizedString( "attack2" )) );
                         player.setDialog3( (MessageUtils.getLocalizedString( "critical" )) + " " + dice );
 
-                        if (attackValue > monsterDefenceInt) {
+                        if (dice > monsterDefenceInt) {
 
                             // Successo attacco, danni inflitti
                             player.setDialog4( (MessageUtils.getLocalizedString( "yourAttack" )) + " " + heroName + " " + (MessageUtils.getLocalizedString( "attack3" )) );
@@ -238,7 +236,7 @@ public class Main {
                         player.setDialog2( (MessageUtils.getLocalizedString( "criticalDefence" )) + " " + dice );
                         player.setDialog3( (MessageUtils.getLocalizedString( "yourEnemyAttack" )) + " " + monsterAttackInt );
                         int resthero1 = heroHpInt - monsterAttackInt;
-                        if (attackValue > heroDefenceInt) {
+                        if (dice > heroDefenceInt) {
                             // Successo attacco, danni inflitti
                             player.setDialog4( MessageUtils.getLocalizedString( "successAttack" ) );
                             if (resthero1 >= 0) {
@@ -270,8 +268,8 @@ public class Main {
             // Valutation Dialog
             System.out.println("ValutationDialog.endTable.pack.Start");
             ValutationDialog endTable = new ValutationDialog();
-            endTable.setValuationTitle( "valuationTitle");
-            endTable.setValuation( "valuation");
+            endTable.setValuationTitle(MessageUtils.getLocalizedString("valuationTitle"));
+            endTable.setValuation( MessageUtils.getLocalizedString("valuation"));
             endTable.pack();
             endTable.setVisible(true);
         }
@@ -281,11 +279,11 @@ public class Main {
         String country;
 
         if (args.length != 2) {
-            language = new String("it");
-            country = new String("IT");
+            language = "it";
+            country = "IT";
         } else {
-            language = new String(args[0]);
-            country = new String(args[1]);
+            language = args[0];
+            country = args[1];
         }
         Main main = new Main(language, country);
         main.initialize();
