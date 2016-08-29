@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class WelcomeDialog extends JDialog {
+public class WelcomeDialog extends JDialog implements WindowConstants{
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
@@ -25,8 +25,6 @@ public class WelcomeDialog extends JDialog {
         setPreferredSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
         setResizable(false);
         setLocationRelativeTo(null);
-        setIconImage(null);
-        setTitle("King Land - The RoleplayGame");
 
 
         buttonOK.addActionListener(new ActionListener() {

@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class ValutationDialog extends JDialog {
+public class ValutationDialog extends JDialog implements WindowConstants{
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
@@ -20,13 +20,13 @@ public class ValutationDialog extends JDialog {
     public ValutationDialog() {
         setContentPane(contentPane);
         setModal(true);
+        setIconImage(null);
+        setTitle("King Land - The RoleplayGame");
         getRootPane().setDefaultButton(buttonOK);
         setMinimumSize(new Dimension(WIDTH*SCALE,HEIGHT*SCALE));
         setMaximumSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
         setPreferredSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
         setResizable(false);
-        setIconImage(null);
-        setTitle("King Land - The RoleplayGame");
         setLocationRelativeTo(null);
 
         buttonOK.addActionListener(new ActionListener() {
@@ -38,11 +38,6 @@ public class ValutationDialog extends JDialog {
         buttonCancel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
-
-                // Uscita dall'applicazione
-                System.out.println("Bypass.Exit.System");
-                System.out.println("System.Stop.No.Error");
-                System.exit(0);
             }
         });
 
@@ -51,11 +46,6 @@ public class ValutationDialog extends JDialog {
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 onCancel();
-
-                // Uscita dall'applicazione
-                System.out.println("Bypass.Exit.System");
-                System.out.println("System.Stop.No.Error");
-                System.exit(0);
             }
         });
 
@@ -63,11 +53,6 @@ public class ValutationDialog extends JDialog {
         contentPane.registerKeyboardAction(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
-
-                // Uscita dall'applicazione
-                System.out.println("Bypass.Exit.System");
-                System.out.println("System.Stop.No.Error");
-                System.exit(0);
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
@@ -85,11 +70,6 @@ public class ValutationDialog extends JDialog {
     private void onCancel() {
 // add your code here if necessary
         dispose();
-
-        // Uscita dall'applicazione
-        System.out.println("Bypass.Exit.System");
-        System.out.println("System.Stop.No.Error");
-        System.exit(0);
     }
 
     public void setValuationTitle(String mark1){

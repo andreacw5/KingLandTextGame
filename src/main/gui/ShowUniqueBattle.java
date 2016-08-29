@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class ShowUniqueBattle extends JDialog {
+public class ShowUniqueBattle extends JDialog implements WindowConstants{
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;

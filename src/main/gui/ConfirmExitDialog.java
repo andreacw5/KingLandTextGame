@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class ConfirmExitDialog extends JDialog {
+public class ConfirmExitDialog extends JDialog implements WindowConstants{
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
@@ -25,6 +25,8 @@ public class ConfirmExitDialog extends JDialog {
         setMaximumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
         setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
         setResizable(false);
+        setIconImage(null);
+        setTitle("King Land - The RoleplayGame");
         setLocationRelativeTo(null);
 
         buttonOK.addActionListener(new ActionListener() {

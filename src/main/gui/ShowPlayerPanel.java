@@ -20,8 +20,6 @@ public class ShowPlayerPanel extends JDialog {
     public ShowPlayerPanel() {
         setContentPane( contentPane );
         setModal( true );
-        setIconImage(null);
-        setTitle("King Land - The RoleplayGame");
     }
 
     public void init(Character character) {
@@ -42,8 +40,8 @@ public class ShowPlayerPanel extends JDialog {
     }
 
     // Icona del Character
-    public void getSelectedImage(ImageIcon iconSelectedImage) {
-        this.iconSelectedImage.setIcon(iconSelectedImage);
+    public String getSelectedImage() {
+        return iconSelectedImage.getText();
     }
 
     public void setIconSelectedImage(ImageIcon iconSelectedImage) {

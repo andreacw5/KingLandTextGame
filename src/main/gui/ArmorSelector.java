@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class ArmorSelector extends JDialog {
+public class ArmorSelector extends JDialog implements WindowConstants{
     private JPanel contentPane;
     private JLabel infoArmor;
     private JButton buttonOK;
@@ -71,9 +71,9 @@ public class ArmorSelector extends JDialog {
         setInfoArmor( MessageUtils.getLocalizedString( "infoArmor"));
         setInfoSelected(MessageUtils.getLocalizedString( "infoSelected"));
         pack();
-        setVisible(true);
         setIconImage(null);
         setTitle("King Land - The RoleplayGame");
+        setVisible(true);
 
     }
 

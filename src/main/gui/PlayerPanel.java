@@ -26,9 +26,6 @@ public class PlayerPanel extends JDialog {
     public PlayerPanel() {
         setContentPane( contentPane );
         setModal( true );
-        setIconImage(null);
-        setTitle("King Land - The RoleplayGame");
-
         selectorButtonP.addActionListener( new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

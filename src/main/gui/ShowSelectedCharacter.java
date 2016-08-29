@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class ShowSelectedCharacter extends JDialog {
+public class ShowSelectedCharacter extends JDialog implements WindowConstants{
     private JPanel contentPane;
     private JButton buttonOK;
 
@@ -41,6 +41,8 @@ public class ShowSelectedCharacter extends JDialog {
         setPreferredSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
         setResizable(false);
         setLocationRelativeTo(null);
+        setIconImage(null);
+        setTitle("King Land - The RoleplayGame");
 
         buttonOK.addActionListener( new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -87,8 +89,6 @@ public class ShowSelectedCharacter extends JDialog {
         setMaximumSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
         setPreferredSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
         setResizable(false);
-        setIconImage(null);
-        setTitle("King Land - The RoleplayGame");
         setLocationRelativeTo(null);
 
         buttonOK.addActionListener( new ActionListener() {
@@ -102,11 +102,6 @@ public class ShowSelectedCharacter extends JDialog {
         addWindowListener( new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 onCancel();
-
-                // Uscita dall'applicazione
-                System.out.println("Bypass.Exit.System");
-                System.out.println("System.Stop.No.Error");
-                System.exit(0);
             }
         } );
 
@@ -114,11 +109,6 @@ public class ShowSelectedCharacter extends JDialog {
         contentPane.registerKeyboardAction( new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
-
-                // Uscita dall'applicazione
-                System.out.println("Bypass.Exit.System");
-                System.out.println("System.Stop.No.Error");
-                System.exit(0);
             }
         }, KeyStroke.getKeyStroke( KeyEvent.VK_ESCAPE, 0 ), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT );
         buttonOK.addActionListener(new ActionListener() {
