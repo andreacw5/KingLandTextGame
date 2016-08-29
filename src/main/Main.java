@@ -13,6 +13,7 @@ import main.model.character.story.StoryCharacter;
 import main.model.weapon.hero.HeroWeap;
 import main.util.MessageUtils;
 
+import javax.swing.*;
 import java.util.Random;
 
 /**
@@ -186,87 +187,85 @@ public class Main {
             int attackValue = dice;
 
                 Random generator67 = new Random();
-                switch (generator67.nextInt(2)) {
+
+
+            ShowUniqueBattle player = new ShowUniqueBattle();
+
+
+            switch (generator67.nextInt(2)) {
                     case 0:
 
                         // hero line
-                        System.out.println( "War.Dialog.Start.True.Player" );
+                        System.out.println( "War.Dialog.Start.True.Player"+generator67 );
 
                         // Avvio dialog
-                        ShowBattle player = new ShowBattle();
-                        player.setWar2( heroName + " " + (MessageUtils.getLocalizedString( "attack1" )) );
-                        player.setWar3( (MessageUtils.getLocalizedString( "enemyAttack" )) + " " + heroAttackInt + " " + (MessageUtils.getLocalizedString( "attack2" )) );
-                        player.setWar4( (MessageUtils.getLocalizedString( "critical" )) + " " + dice );
+
+                        //player.setIconShow
+                        player.setTitleBattle( MessageUtils.getLocalizedString( "playerAtta" ));
+                        player.setDialog1( heroName + " " + (MessageUtils.getLocalizedString( "attack1" )) );
+                        player.setDialog2( (MessageUtils.getLocalizedString( "enemyAttack" )) + " " + heroAttackInt + " " + (MessageUtils.getLocalizedString( "attack2" )) );
+                        player.setDialog3( (MessageUtils.getLocalizedString( "critical" )) + " " + dice );
 
                         if (attackValue > monsterDefenceInt) {
 
                             // Successo attacco, danni inflitti
-                            player.setWar5( (MessageUtils.getLocalizedString( "yourAttack" )) + " " + heroName + " " + (MessageUtils.getLocalizedString( "attack3" )) );
+                            player.setDialog4( (MessageUtils.getLocalizedString( "yourAttack" )) + " " + heroName + " " + (MessageUtils.getLocalizedString( "attack3" )) );
                             int restmonster1 = monsterHPInt - heroAttackInt;
 
                             if (restmonster1 >= 0) {
 
                                 // Mostro morto
-                                player.setWar6( MessageUtils.getLocalizedString( "deadMonster" ) );
+                                player.setDialog5( MessageUtils.getLocalizedString( "deadMonster" ) );
 
                                 System.out.println("Confirm.Start.Success");
 
                             } else {
 
                                 //Attacco Fallito
-                                player.setWar7( MessageUtils.getLocalizedString( "notSuccess" ) );
-
+                                player.setDialog6( MessageUtils.getLocalizedString( "notSuccess" ) );
                             }
-
                         }
 
                         System.out.println( "War.ShowBattle.player.End" );
-                        player.pack();
-                        player.setVisible( true );
                         break;
+
                     case 1:
 
                         // Defence line
-                        System.out.println( "War.Dialog.Start.False.Player" );
-                        ShowBattleEnemy enemy4 = new ShowBattleEnemy();
-                        enemy4.setWarE2( monsterName + " " + (MessageUtils.getLocalizedString( "underAttack" )) );
-                        enemy4.setWarE3( (MessageUtils.getLocalizedString( "criticalDefence" )) + " " + dice );
-                        enemy4.setWarE4( (MessageUtils.getLocalizedString( "yourEnemyAttack" )) + " " + monsterAttackInt );
+                        System.out.println( "War.Dialog.Start.False.Player"+generator67 );
+                        player.setTitleBattle( MessageUtils.getLocalizedString( "enemyAtta" ));
+                        player.setDialog1( monsterName + " " + (MessageUtils.getLocalizedString( "underAttack" )) );
+                        player.setDialog2( (MessageUtils.getLocalizedString( "criticalDefence" )) + " " + dice );
+                        player.setDialog3( (MessageUtils.getLocalizedString( "yourEnemyAttack" )) + " " + monsterAttackInt );
+                        int resthero1 = heroHpInt - monsterAttackInt;
                         if (attackValue > heroDefenceInt) {
-
                             // Successo attacco, danni inflitti
-                            int resthero1 = heroHpInt - monsterAttackInt;
-                            enemy4.setWarE5( MessageUtils.getLocalizedString( "successAttack" ) );
-
+                            player.setDialog4( MessageUtils.getLocalizedString( "successAttack" ) );
                             if (resthero1 >= 0) {
-
                                 // Eroe Morto
-                                enemy4.setWarE6( MessageUtils.getLocalizedString( "playerDead" ) );
+                                player.setDialog5( MessageUtils.getLocalizedString( "playerDead" ) );
 
                             } else {
-
                                 // Attacco Fallito del Mostro
-                                enemy4.setWarE7( MessageUtils.getLocalizedString( "lostAttack" ) );
+                                player.setDialog6( MessageUtils.getLocalizedString( "lostAttack" ) );
 
                             }
-
                         }
 
                         System.out.println( "War.ShowBattleEnemy.enemy4.End" );
-                        enemy4.pack();
-                        enemy4.setVisible( true );
-                        break;
-                    default:
                         break;
                 }
+
+            player.pack();
+            player.setVisible( true );
 
                 //Termine ciclo While, conferma d' uscita
                 System.out.println("Confirm.Start.Success");
                 ConfirmExitDialog yesMan = new ConfirmExitDialog(this);
                 yesMan.pack();
                 yesMan.setVisible(true);
-
             }
+
 
             // Valutation Dialog
             System.out.println("ValutationDialog.endTable.pack.Start");
@@ -275,7 +274,6 @@ public class Main {
             endTable.setValuation( "valuation");
             endTable.pack();
             endTable.setVisible(true);
-
         }
 
     public static void main(String[] args) throws InterruptedException {

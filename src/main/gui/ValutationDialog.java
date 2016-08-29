@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class ValutationDialog extends JDialog {
+public class ValutationDialog extends JDialog implements WindowConstants{
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
@@ -20,6 +20,8 @@ public class ValutationDialog extends JDialog {
     public ValutationDialog() {
         setContentPane(contentPane);
         setModal(true);
+        setIconImage(null);
+        setTitle("King Land - The RoleplayGame");
         getRootPane().setDefaultButton(buttonOK);
         setMinimumSize(new Dimension(WIDTH*SCALE,HEIGHT*SCALE));
         setMaximumSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));

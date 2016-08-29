@@ -9,7 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class WeapSelector extends JDialog {
+public class WeapSelector extends JDialog implements WindowConstants {
     private JPanel contentPane;
     private WeapPanel pan1;
     private WeapPanel pan2;
@@ -77,6 +77,8 @@ public class WeapSelector extends JDialog {
         setInfoSelected(MessageUtils.getLocalizedString( "infoSelected"));
         pack();
         setVisible(true);
+        setIconImage(null);
+        setTitle("King Land - The RoleplayGame");
 
     }
 

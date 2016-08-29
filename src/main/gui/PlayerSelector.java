@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class PlayerSelector extends JDialog {
+public class PlayerSelector extends JDialog implements WindowConstants{
     private JPanel contentPane;
     private JButton buttonOK;
     private JLabel selectedPlayer;
@@ -76,6 +76,8 @@ public class PlayerSelector extends JDialog {
         setPreferredSize(new Dimension( WIDTH * SCALE, HEIGHT * SCALE ));
         setResizable(false);
         setLocationRelativeTo(null);
+        setIconImage(null);
+        setTitle("King Land - The RoleplayGame");
         setInfoPlayer( MessageUtils.getLocalizedString( "infoPlayer"));
         setInfoSelected(MessageUtils.getLocalizedString( "infoSelected"));
         pack();

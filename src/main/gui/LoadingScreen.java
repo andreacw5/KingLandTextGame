@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class LoadingScreen extends JDialog {
+public class LoadingScreen extends JDialog implements WindowConstants{
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
@@ -19,6 +19,8 @@ public class LoadingScreen extends JDialog {
         setMaximumSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
         setPreferredSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
         setResizable(false);
+        setIconImage(null);
+        setTitle("King Land - The RoleplayGame");
         setLocationRelativeTo(null);
 
         buttonOK.addActionListener(new ActionListener() {

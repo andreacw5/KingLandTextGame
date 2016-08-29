@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class ShowSelectedCharacter extends JDialog {
+public class ShowSelectedCharacter extends JDialog implements WindowConstants{
     private JPanel contentPane;
     private JButton buttonOK;
 
@@ -41,6 +41,8 @@ public class ShowSelectedCharacter extends JDialog {
         setPreferredSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
         setResizable(false);
         setLocationRelativeTo(null);
+        setIconImage(null);
+        setTitle("King Land - The RoleplayGame");
 
         buttonOK.addActionListener( new ActionListener() {
             public void actionPerformed(ActionEvent e) {
