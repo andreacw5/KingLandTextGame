@@ -33,4 +33,9 @@ Inizio sviluppo
 * Introduzione di 4 nuove immagini
 * Valutazione testuale
 
+### 1.0.1 ###
+
+* Miglioramento performance
+* Miglioramento dei Dialog
+* Miglioramento sostanziale della grafica
 
