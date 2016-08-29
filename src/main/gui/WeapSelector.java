@@ -72,6 +72,8 @@ public class WeapSelector extends JDialog {
         setMaximumSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
         setPreferredSize(new Dimension (WIDTH*SCALE,HEIGHT*SCALE));
         setResizable(false);
+        setIconImage(null);
+        setTitle("King Land - The RoleplayGame");
         setLocationRelativeTo(null);
         setInfoWeap( MessageUtils.getLocalizedString( "infoWeap"));
         setInfoSelected(MessageUtils.getLocalizedString( "infoSelected"));

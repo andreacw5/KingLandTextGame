@@ -28,6 +28,8 @@ public class WeapPanel extends JDialog {
     public WeapPanel() {
         setContentPane(contentPane);
         setModal(true);
+        setIconImage(null);
+        setTitle("King Land - The RoleplayGame");
         selectorButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
