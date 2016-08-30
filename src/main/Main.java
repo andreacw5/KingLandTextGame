@@ -157,9 +157,9 @@ public class Main {
                     showSelectedCharacter = new ShowSelectedCharacter(secplayer.getSelectedHero(), monster);
                     break;
                 default:
-                    monster = characterManager.getMonster( CharacterManager.THUG );
-                    monster.setArmor( armorManager.getArmor( ArmorManager.KRUNE_ARMOR ) );
-                    monster.setWeapon( weaponManager.getMonsterWeapon( WeaponManager.AXE_WEAPON ) );
+                    monster = characterManager.getMonster(CharacterManager.THUG );
+                    monster.setArmor(armorManager.getArmor( ArmorManager.KRUNE_ARMOR ) );
+                    monster.setWeapon(weaponManager.getMonsterWeapon( WeaponManager.AXE_WEAPON ) );
                     showSelectedCharacter = new ShowSelectedCharacter( secplayer.getSelectedHero(), monster );
                     break;
             }

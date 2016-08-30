@@ -11,11 +11,11 @@ public class ValutationDialog extends JDialog implements WindowConstants{
     private JButton buttonOK;
     private JButton buttonCancel;
     private JLabel valuation;
-    private JLabel valuationTitle;
+    public JLabel valuationTitle;
     private JTextField textField1;
-    public static final int WIDTH=400;
-    public static final int HEIGHT=WIDTH/12*9;
-    public static final int SCALE=3;
+    private static final int WIDTH=400;
+    private static final int HEIGHT=WIDTH/12*9;
+    private static final int SCALE=3;
 
     public ValutationDialog() {
         setContentPane(contentPane);
@@ -73,7 +73,7 @@ public class ValutationDialog extends JDialog implements WindowConstants{
     }
 
     public void setValuationTitle(String mark1){
-        this.valuationTitle.setText( MessageUtils.getLocalizedString( mark1 ));
+        this.valuationTitle.setText(mark1);
     }
 
     public void setValuation(String mark2){

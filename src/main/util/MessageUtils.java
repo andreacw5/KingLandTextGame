@@ -17,5 +17,7 @@ public class MessageUtils {
         Locale currentLocale;
         currentLocale = new Locale( language, country );
         return ResourceBundle.getBundle( "MessagesBundle", currentLocale ).getString( key );
+
     }
+
 }

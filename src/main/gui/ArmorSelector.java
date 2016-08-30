@@ -16,9 +16,9 @@ public class ArmorSelector extends JDialog implements WindowConstants{
     private ArmoPanel far1;
     private ArmoPanel far2;
     private ArmoPanel far3;
-    public static final int WIDTH=400;
-    public static final int HEIGHT=WIDTH/12*9;
-    public static final int SCALE=3;
+    private static final int WIDTH=400;
+    private static final int HEIGHT=WIDTH/12*9;
+    private static final int SCALE=3;
 
     public Armor getCurrentArmor() {
         return currentArmor;
@@ -32,11 +32,11 @@ public class ArmorSelector extends JDialog implements WindowConstants{
 
     private Armor currentArmor;
 
-    public void setInfoArmor(String wel1){
+    private void setInfoArmor(String wel1){
         this.infoArmor.setText(wel1);
     }
 
-    public void setInfoSelected(String v34){
+    private void setInfoSelected(String v34){
         this.infoSelected.setText(v34);
     }
 
