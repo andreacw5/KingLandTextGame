@@ -29,9 +29,9 @@ public class ShowSelectedCharacter extends JDialog implements WindowConstants{
     private ShowPlayerPanel hero;
     private ShowPlayerPanel enemy;
     private JButton buttonCancel;
-    public static final int WIDTH=400;
-    public static final int HEIGHT=WIDTH/12*9;
-    public static final int SCALE=3;
+    private static final int WIDTH=400;
+    private static final int HEIGHT=WIDTH/12*9;
+    private static final int SCALE=3;
 
     public ShowSelectedCharacter() {
         setContentPane(contentPane);

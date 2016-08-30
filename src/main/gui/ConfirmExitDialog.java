@@ -12,9 +12,9 @@ public class ConfirmExitDialog extends JDialog implements WindowConstants{
     private JButton buttonCancel;
     private JLabel exitGame;
     private Main mainContainer;
-    public static final int WIDTH=400;
-    public static final int HEIGHT=WIDTH/12*9;
-    public static final int SCALE=3;
+    private static final int WIDTH=400;
+    private static final int HEIGHT=WIDTH/12*9;
+    private static final int SCALE=3;
 
 
     public ConfirmExitDialog(Main mainContainer) {

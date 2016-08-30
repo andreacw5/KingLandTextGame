@@ -13,7 +13,7 @@ public class PlayerPanel extends JDialog {
     private JButton selectorButtonP;
     private JLabel playerHistory;
     public PlayerSelector son;
-    private Hero hero;
+    public Hero hero;
 
     public void setSon(PlayerSelector son) {
         this.son = son;

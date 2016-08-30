@@ -28,7 +28,7 @@
           <enabled value="true"/>
           <font name="Footlight MT Light" size="48"/>
           <foreground color="-5126"/>
-          <text value="VALUTA L' APPLICAZIONE:"/>
+          <text value=""/>
         </properties>
       </component>
       <component id="4f834" class="javax.swing.JLabel" binding="valuation">

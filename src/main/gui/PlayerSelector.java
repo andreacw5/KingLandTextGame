@@ -17,9 +17,9 @@ public class PlayerSelector extends JDialog implements WindowConstants{
     private PlayerPanel play1;
     private PlayerPanel play3;
     private Hero selectedHero;
-    public static final int WIDTH=400;
-    public static final int HEIGHT=WIDTH/12*9;
-    public static final int SCALE=3;
+    private static final int WIDTH=400;
+    private static final int HEIGHT=WIDTH/12*9;
+    private static final int SCALE=3;
 
 
     public Hero getSelectedHero() {

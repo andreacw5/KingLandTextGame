@@ -18,9 +18,9 @@ public class WeapSelector extends JDialog implements WindowConstants {
     private JButton buttonOK;
     private JLabel infoWeap;
     private JLabel infoSelected;
-    public static final int WIDTH=400;
-    public static final int HEIGHT=WIDTH/12*9;
-    public static final int SCALE=3;
+    private static final int WIDTH=400;
+    private static final int HEIGHT=WIDTH/12*9;
+    private static final int SCALE=3;
 
     public Weapon getSelectedWeapon() {
         return selectedWeapon;
@@ -34,11 +34,11 @@ public class WeapSelector extends JDialog implements WindowConstants {
 
     private Weapon selectedWeapon;
 
-    public void setInfoWeap(String wel1){
+    private void setInfoWeap(String wel1){
         this.infoWeap.setText(wel1);
     }
 
-    public void setInfoSelected(String v34){
+    private void setInfoSelected(String v34){
         this.infoSelected.setText(v34);
     }
 
