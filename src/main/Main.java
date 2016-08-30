@@ -1,7 +1,9 @@
 package main;
 
 import main.gui.*;
-import main.gui.WeapSelector;
+import main.gui.weap.WeapSelector;
+import main.gui.armor.ArmorSelector;
+import main.gui.player.PlayerSelector;
 import main.manager.ArmorManager;
 import main.manager.CharacterManager;
 import main.manager.WeaponManager;
@@ -12,6 +14,7 @@ import main.model.character.story.StoryCharacter;
 import main.model.weapon.hero.HeroWeap;
 import main.util.MessageUtils;
 
+import javax.swing.*;
 import java.util.Random;
 
 /***********************************************
@@ -263,7 +266,6 @@ public class Main {
                 yesMan.pack();
                 yesMan.setVisible(true);
             }
-
 
             // Valutation Dialog
             System.out.println("ValutationDialog.endTable.pack.Start");

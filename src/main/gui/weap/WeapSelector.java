@@ -1,4 +1,4 @@
-package main.gui;
+package main.gui.weap;
 
 import main.model.weapon.Weapon;
 import main.model.weapon.hero.HeroWeap;

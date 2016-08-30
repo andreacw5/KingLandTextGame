@@ -1,4 +1,4 @@
-package main.gui;
+package main.gui.player;
 
 import main.model.character.hero.Hero;
 
