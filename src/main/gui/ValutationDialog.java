@@ -60,11 +60,6 @@ public class ValutationDialog extends JDialog implements WindowConstants{
     private void onOK() {
 // add your code here
         dispose();
-
-        // Uscita dall'applicazione
-        System.out.println("Bypass.Exit.System");
-        System.out.println("System.Stop.No.Error");
-        System.exit(0);
     }
 
     private void onCancel() {

@@ -28,10 +28,28 @@ public class ShowSelectedCharacter extends JDialog implements WindowConstants{
 
     private ShowPlayerPanel hero;
     private ShowPlayerPanel enemy;
+    private JLabel yourHero;
+    private JLabel yourEnemy;
     private JButton buttonCancel;
     private static final int WIDTH=400;
     private static final int HEIGHT=WIDTH/12*9;
     private static final int SCALE=3;
+
+    public String getYourHero() {
+        return yourHero.getText();
+    }
+
+    public void setYourHero(String text1) {
+        this.yourHero.setText(text1);
+    }
+
+    public String getYourEnemy() {
+        return yourEnemy.getText();
+    }
+
+    public void setYourEnemy(String text2) {
+        this.yourEnemy.setText(text2);
+    }
 
     public ShowSelectedCharacter() {
         setContentPane(contentPane);
@@ -43,6 +61,8 @@ public class ShowSelectedCharacter extends JDialog implements WindowConstants{
         setLocationRelativeTo(null);
         setIconImage(null);
         setTitle("King Land - The RoleplayGame");
+
+
 
         buttonOK.addActionListener( new ActionListener() {
             public void actionPerformed(ActionEvent e) {
