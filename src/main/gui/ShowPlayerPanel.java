@@ -1,6 +1,6 @@
 package main.gui;
 
-import main.manager.BattleManager;
+import main.gui.armor.ArmorSelector;
 import main.model.character.Character;
 
 import javax.swing.*;
@@ -40,12 +40,13 @@ public class ShowPlayerPanel extends JDialog {
     }
 
     // Icona del Character
-    public String getSelectedImage() {
-        return iconSelectedImage.getText();
-    }
 
     public void setIconSelectedImage(ImageIcon iconSelectedImage) {
         this.iconSelectedImage.setIcon(iconSelectedImage);
+    }
+
+    public JLabel getIconSelectedImage() {
+        return iconSelectedImage;
     }
 
     // Nome del Character

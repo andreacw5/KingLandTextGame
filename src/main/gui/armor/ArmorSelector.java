@@ -1,4 +1,4 @@
-package main.gui;
+package main.gui.armor;
 
 import main.model.armor.Armor;
 import main.util.MessageUtils;

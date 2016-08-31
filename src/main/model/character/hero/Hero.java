@@ -3,6 +3,8 @@ package main.model.character.hero;
 import main.model.character.Character;
 import main.util.MessageUtils;
 
+import java.util.Random;
+
 public abstract class Hero extends Character {
 
     private String history;

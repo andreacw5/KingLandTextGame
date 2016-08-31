@@ -3,6 +3,7 @@ package main.gui;
 import main.Main;
 
 import javax.swing.*;
+import javax.xml.soap.Text;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -17,6 +18,14 @@ public class ConfirmExitDialog extends JDialog implements WindowConstants{
     private static final int SCALE=3;
 
 
+    public String getExitGame() {
+        return exitGame.getText();
+    }
+
+    public void setExitGame(String omega) {
+        this.exitGame.setText(omega);
+    }
+
     public ConfirmExitDialog(Main mainContainer) {
         this.mainContainer = mainContainer;
         setContentPane(contentPane);
@@ -28,6 +37,8 @@ public class ConfirmExitDialog extends JDialog implements WindowConstants{
         setIconImage(null);
         setTitle("King Land - The RoleplayGame");
         setLocationRelativeTo(null);
+
+
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

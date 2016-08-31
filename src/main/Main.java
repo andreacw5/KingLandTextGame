@@ -1,7 +1,9 @@
 package main;
 
 import main.gui.*;
-import main.gui.WeapSelector;
+import main.gui.weap.WeapSelector;
+import main.gui.armor.ArmorSelector;
+import main.gui.player.PlayerSelector;
 import main.manager.ArmorManager;
 import main.manager.CharacterManager;
 import main.manager.WeaponManager;
@@ -13,6 +15,7 @@ import main.model.weapon.hero.HeroWeap;
 import main.util.MessageUtils;
 
 import java.util.Random;
+import java.util.logging.Level;
 
 /***********************************************
  King Land, The Roleplay gaming
@@ -36,32 +39,35 @@ public class Main {
         this.mistic = mistic;
     }
 
+    private static void log(String aMessage){
+        System.out.println(aMessage);
+    }
+
     private void initialize() throws InterruptedException {
 
         /*
           Caricamento Traduzioni...
          */
 
-        System.out.println("WelcomeDialog.monitor1.pack.Start");
+        log("WelcomeDialog.welcomeDialog.pack.Start");
 
         // Avvio WelcomeDialog
-        WelcomeDialog monitor1 = new WelcomeDialog();
-        monitor1.setWelcome1(MessageUtils.getLocalizedString( "welcome"));
-        monitor1.setWelcome2(MessageUtils.getLocalizedString( "dial1"));
-        monitor1.setWelcome3(MessageUtils.getLocalizedString( "dial2"));
-        monitor1.pack();
-        monitor1.setVisible(true);
+        WelcomeDialog welcomeDialog = new WelcomeDialog();
+        welcomeDialog.setWelcome1(MessageUtils.getLocalizedString( "welcome"));
+        welcomeDialog.setWelcome2(MessageUtils.getLocalizedString( "dial1"));
+        welcomeDialog.setWelcome3(MessageUtils.getLocalizedString( "dial2"));
+        welcomeDialog.pack();
+        welcomeDialog.setVisible(true);
 
         // Avvio LoadingDialog
-
-        System.out.println("LoadingScreen.loading.pack.Start");
-        LoadingScreen loading = new LoadingScreen();
-        loading.pack();
-        loading.setVisible(true);
+        log("LoadingScreen.loadingScreen.pack.Start");
+        LoadingScreen loadingScreen = new LoadingScreen();
+        loadingScreen.pack();
+        loadingScreen.setVisible(true);
 
         while (isMistic()) {
 
-            System.out.println("isMistic.While.Start");
+            log("isMistic.While.Start");
 
             /*
                Generazione Array e Random
@@ -91,7 +97,7 @@ public class Main {
               Qui si avvia il Dialog PlayerSelector permettendo all'utente di scegliere il proprio eroe
              */
 
-            System.out.println("listOfHero.ArrayList.pack.Start");
+            log("listOfHero.ArrayList.pack.Start");
 
             // Avvio dialog
             PlayerSelector secplayer = new PlayerSelector(theHero);
@@ -110,7 +116,7 @@ public class Main {
             weaponsA[1] = weaponManager.getHeroWeapon( WeaponManager.HAMMER_WEAPON );
             weaponsA[2] = weaponManager.getHeroWeapon( WeaponManager.SWORD_WEAPON );
 
-            System.out.println("weapons.getWeapon.WeaponManager.new");
+            log("weapons.getWeapon.WeaponManager.new");
 
             WeapSelector secweapon = new WeapSelector(weaponsA);
             secplayer.getSelectedHero().setWeapon( secweapon.getSelectedWeapon() );
@@ -120,7 +126,7 @@ public class Main {
               Qui si avvia il dialog ArmorSelector, permettendo all'utente di scegliere la propria armatura!
              */
 
-            System.out.println("listOfArmor.ArrayList.pack.Start");
+            log("listOfArmor.ArrayList.pack.Start");
 
             ArmorManager armorManager = new ArmorManager();
 
@@ -139,7 +145,7 @@ public class Main {
               Qui si avvia il dialog ShowPlayer, che mostra i nomi dei personaggi di gioco!
              */
 
-            System.out.println("ShowPlay.caratt.pack.Start");
+            log("ShowPlay.caratt.pack.Start");
 
             ShowSelectedCharacter showSelectedCharacter;
             Monster monster;
@@ -149,18 +155,24 @@ public class Main {
                     monster.setArmor( armorManager.getArmor( ArmorManager.FIRE_ARMOR ) );
                     monster.setWeapon( weaponManager.getMonsterWeapon( WeaponManager.MACE_WEAPON ) );
                     showSelectedCharacter = new ShowSelectedCharacter(secplayer.getSelectedHero(), monster);
+                    showSelectedCharacter.setYourEnemy((MessageUtils.getLocalizedString( "yourEnemy" )));
+                    showSelectedCharacter.setYourHero((MessageUtils.getLocalizedString( "yourHero" )));
                     break;
                 case 1:
                     monster = characterManager.getMonster( CharacterManager.DARKNESS_KNIGHT );
                     monster.setArmor( armorManager.getArmor( ArmorManager.FIRE_ARMOR ) );
                     monster.setWeapon( weaponManager.getMonsterWeapon( WeaponManager.AXE_WEAPON ) );
                     showSelectedCharacter = new ShowSelectedCharacter(secplayer.getSelectedHero(), monster);
+                    showSelectedCharacter.setYourEnemy((MessageUtils.getLocalizedString( "yourEnemy" )));
+                    showSelectedCharacter.setYourHero((MessageUtils.getLocalizedString( "yourHero" )));
                     break;
                 default:
                     monster = characterManager.getMonster(CharacterManager.THUG );
                     monster.setArmor(armorManager.getArmor( ArmorManager.KRUNE_ARMOR ) );
                     monster.setWeapon(weaponManager.getMonsterWeapon( WeaponManager.AXE_WEAPON ) );
                     showSelectedCharacter = new ShowSelectedCharacter( secplayer.getSelectedHero(), monster );
+                    showSelectedCharacter.setYourEnemy((MessageUtils.getLocalizedString( "yourEnemy" )));
+                    showSelectedCharacter.setYourHero((MessageUtils.getLocalizedString( "yourHero" )));
                     break;
             }
 
@@ -183,95 +195,96 @@ public class Main {
 
             int dice = generator.nextInt(6) + 1 + generator.nextInt(6) + 1;
 
-
             Random generator67 = new Random();
 
-
-            ShowUniqueBattle player = new ShowUniqueBattle();
+            ShowUniqueBattle showUniqueBattle = new ShowUniqueBattle();
 
 
             switch (generator67.nextInt(2)) {
                     case 0:
 
                         // hero line
-                        System.out.println( "War.Dialog.Start.True.Player"+generator67 );
+                        log( "War.Dialog.Start.True.Player"+generator67 );
 
                         // Avvio dialog
 
-                        //player.setIconShow
-                        player.setTitleBattle( MessageUtils.getLocalizedString( "playerAtta" ));
-                        player.setDialog1( heroName + " " + (MessageUtils.getLocalizedString( "attack1" )) );
-                        player.setDialog2( (MessageUtils.getLocalizedString( "enemyAttack" )) + " " + heroAttackInt + " " + (MessageUtils.getLocalizedString( "attack2" )) );
-                        player.setDialog3( (MessageUtils.getLocalizedString( "critical" )) + " " + dice );
+                        //showUniqueBattle.setIconShow
+                        showSelectedCharacter.getHero();
+                        showUniqueBattle.setTitleBattle( MessageUtils.getLocalizedString( "playerAtta" ));
+                        showUniqueBattle.setDialog1( heroName + " " + (MessageUtils.getLocalizedString( "attack1" )) );
+                        showUniqueBattle.setDialog2( (MessageUtils.getLocalizedString( "enemyAttack" )) + " " + heroAttackInt + " " + (MessageUtils.getLocalizedString( "attack2" )) );
+                        showUniqueBattle.setDialog3( (MessageUtils.getLocalizedString( "critical" )) + " " + dice );
 
                         if (dice > monsterDefenceInt) {
 
                             // Successo attacco, danni inflitti
-                            player.setDialog4( (MessageUtils.getLocalizedString( "yourAttack" )) + " " + heroName + " " + (MessageUtils.getLocalizedString( "attack3" )) );
+                            showUniqueBattle.setDialog4( (MessageUtils.getLocalizedString( "yourAttack" )) + " " + heroName + " " + (MessageUtils.getLocalizedString( "attack3" )) );
                             int restmonster1 = monsterHPInt - heroAttackInt;
 
                             if (restmonster1 >= 0) {
 
                                 // Mostro morto
-                                player.setDialog5( MessageUtils.getLocalizedString( "deadMonster" ) );
+                                showUniqueBattle.setDialog5( MessageUtils.getLocalizedString( "deadMonster" ) );
 
-                                System.out.println("Confirm.Start.Success");
+                                log("Confirm.Start.Success");
 
                             } else {
 
                                 //Attacco Fallito
-                                player.setDialog6( MessageUtils.getLocalizedString( "notSuccess" ) );
+                                showUniqueBattle.setDialog6( MessageUtils.getLocalizedString( "notSuccess" ) );
                             }
                         }
 
-                        System.out.println( "War.ShowBattle.player.End" );
+                        log( "War.ShowBattle.showUniqueBattle.End" );
                         break;
 
                     case 1:
 
                         // Defence line
-                        System.out.println( "War.Dialog.Start.False.Player"+generator67 );
-                        player.setTitleBattle( MessageUtils.getLocalizedString( "enemyAtta" ));
-                        player.setDialog1( monsterName + " " + (MessageUtils.getLocalizedString( "underAttack" )) );
-                        player.setDialog2( (MessageUtils.getLocalizedString( "criticalDefence" )) + " " + dice );
-                        player.setDialog3( (MessageUtils.getLocalizedString( "yourEnemyAttack" )) + " " + monsterAttackInt );
+                        log( "War.Dialog.Start.False.Player"+generator67 );
+                        showSelectedCharacter.getEnemy();
+                        showUniqueBattle.setTitleBattle( MessageUtils.getLocalizedString( "enemyAtta" ));
+                        showUniqueBattle.setDialog1( monsterName + " " + (MessageUtils.getLocalizedString( "underAttack" )) );
+                        showUniqueBattle.setDialog2( (MessageUtils.getLocalizedString( "criticalDefence" )) + " " + dice );
+                        showUniqueBattle.setDialog3( (MessageUtils.getLocalizedString( "yourEnemyAttack" )) + " " + monsterAttackInt );
                         int resthero1 = heroHpInt - monsterAttackInt;
                         if (dice > heroDefenceInt) {
                             // Successo attacco, danni inflitti
-                            player.setDialog4( MessageUtils.getLocalizedString( "successAttack" ) );
+                            showUniqueBattle.setDialog4( MessageUtils.getLocalizedString( "successAttack" ) );
                             if (resthero1 >= 0) {
                                 // Eroe Morto
-                                player.setDialog5( MessageUtils.getLocalizedString( "playerDead" ) );
+                                showUniqueBattle.setDialog5( MessageUtils.getLocalizedString( "playerDead" ) );
 
                             } else {
                                 // Attacco Fallito del Mostro
-                                player.setDialog6( MessageUtils.getLocalizedString( "lostAttack" ) );
+                                showUniqueBattle.setDialog6( MessageUtils.getLocalizedString( "lostAttack" ) );
 
                             }
                         }
 
-                        System.out.println( "War.ShowBattleEnemy.enemy4.End" );
+                        log( "War.ShowBattleEnemy.enemy4.End" );
                         break;
                 }
 
-            player.pack();
-            player.setVisible( true );
+            showUniqueBattle.pack();
+            showUniqueBattle.setVisible( true );
 
                 //Termine ciclo While, conferma d' uscita
-                System.out.println("Confirm.Start.Success");
-                ConfirmExitDialog yesMan = new ConfirmExitDialog(this);
-                yesMan.pack();
-                yesMan.setVisible(true);
+                log("Confirm.Start.Success");
+
+                ConfirmExitDialog confirmExit = new ConfirmExitDialog(this);
+                confirmExit.setExitGame(MessageUtils.getLocalizedString("ExitDialogText"));
+                confirmExit.pack();
+                confirmExit.setVisible(true);
             }
 
-
             // Valutation Dialog
-            System.out.println("ValutationDialog.endTable.pack.Start");
-            ValutationDialog endTable = new ValutationDialog();
-            endTable.setValuationTitle(MessageUtils.getLocalizedString("valuationTitle"));
-            endTable.setValuation( MessageUtils.getLocalizedString("valuation"));
-            endTable.pack();
-            endTable.setVisible(true);
+            log("ValutationDialog.valutationDialog.pack.Start");
+            ValutationDialog valutationDialog = new ValutationDialog();
+            valutationDialog.setValuationTitle(MessageUtils.getLocalizedString("valuationTitle"));
+            valutationDialog.setValuation( MessageUtils.getLocalizedString("valuation"));
+            valutationDialog.pack();
+            valutationDialog.setVisible(true);
         }
 
     public static void main(String[] args) throws InterruptedException {
